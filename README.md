@@ -233,3 +233,4 @@ To attach a custom domain, use Lovable's Project Settings → Domains.
 ---
 
 **Questions?** Ping the MJV team or open an issue against this project inside Lovable.
+# firm-mjv
