@@ -93,7 +93,7 @@ const FUND_META: Record<
 > = {
   ALL: {
     code: "ALL",
-    badge: "All Vehicles",
+    badge: "All Investments",
     name: "Complete Conviction Portfolio",
     blurb:
       "All active & exited investments across Mount Judi India Growth Fund (MJIGF) and Mount Judi India Micro Fund (MJIMF).",
@@ -246,7 +246,7 @@ export default function PortfolioIndex() {
                         : "text-neutral-700 hover:text-[#0284c7] hover:bg-[#f0f8ff]"
                         }`}
                     >
-                      <span>{tab === "ALL" ? "All Vehicles" : tab}</span>
+                      <span>{tab === "ALL" ? "All Investments" : tab}</span>
                       <span
                         className={`rounded-full px-2 py-0.5 text-[11px] font-sans font-bold leading-none ${active ? "bg-white text-[#0284c7]" : "bg-[#f0f8ff] text-neutral-700"
                           }`}
