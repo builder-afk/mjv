@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import mountFooterWatermark from "@/assets/mount-footer-watermark.png";
+import faviconIcon from "@/assets/favicon.png";
 
 const nav = [
   { to: "/portfolio", label: "Portfolio" },
@@ -15,6 +16,16 @@ const nav = [
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  const handleNavClick = useCallback(
+    (to: string) => {
+      // Always scroll to top — whether same page or new page
+      window.scrollTo({ top: 0, behavior: "instant" });
+    },
+    [],
+  );
 
   useEffect(() => {
     if (mobileOpen) {
@@ -28,18 +39,39 @@ export function SiteHeader() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
+
+      setScrolled(currentScrollY > 10);
+
+      // Always show when near the very top of the page
+      if (currentScrollY <= 20) {
+        setVisible(true);
+      } else if (delta > 8 && currentScrollY > 80) {
+        // Scrolling down -> hide navbar
+        setVisible(false);
+      } else if (delta < -8) {
+        // Scrolling up -> reveal navbar
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isVisible = visible || mobileOpen;
+
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 border-b border-neutral-200/80 ${
+      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-transform duration-300 ease-in-out border-b border-neutral-200/80 ${
         scrolled ? "shadow-sm" : "shadow-2xs"
-      }`}
+      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
-      {/* Floating Navigation — separate rounded pills over the page */}
+      {/* Floating Navigation - separate rounded pills over the page */}
       <div className="container-tight flex items-center justify-between gap-3 py-3 md:py-3.5">
         {/* Left pill: brand + links (active link = solid ink pill) */}
         <div
@@ -52,7 +84,7 @@ export function SiteHeader() {
           <Link
             to="/"
             className="flex items-center group pl-3 pr-2 md:pl-4 focus:outline-none"
-            onClick={() => setMobileOpen(false)}
+            onClick={() => { setMobileOpen(false); handleNavClick("/"); }}
           >
             <img
               src="/Mountjudilogo.png"
@@ -70,6 +102,7 @@ export function SiteHeader() {
                 activeProps={{
                   className: "!bg-neutral-950 !text-white !font-semibold shadow-xs",
                 }}
+                onClick={() => handleNavClick(n.to)}
               >
                 {n.label}
               </Link>
@@ -98,7 +131,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          {/* Mobile / tablet menu toggle — matches the pill language */}
+          {/* Mobile / tablet menu toggle - matches the pill language */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -111,7 +144,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Drawer — floating rounded card */}
+      {/* Mobile Drawer - floating rounded card */}
       {mobileOpen && (
         <div
           role="dialog"
@@ -135,7 +168,7 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => { setMobileOpen(false); handleNavClick(n.to); }}
                   className="py-3.5 px-4 rounded-2xl font-sans text-lg font-semibold text-neutral-900 hover:bg-neutral-100 transition-all flex items-center justify-between group"
                 >
                   <span>{n.label}</span>
@@ -144,7 +177,7 @@ export function SiteHeader() {
               ))}
               <Link
                 to="/perspective"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => { setMobileOpen(false); handleNavClick("/perspective"); }}
                 className="py-3.5 px-4 rounded-2xl font-sans text-lg font-semibold text-neutral-900 hover:bg-neutral-100 transition-all flex items-center justify-between group"
               >
                 <span>Perspectives</span>
@@ -286,9 +319,8 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                   </h3>
                   <ul className="space-y-3 font-sans text-xs sm:text-[13px] text-neutral-700">
                     <li><Link to="/about" className="hover:text-black transition-colors">About MJV</Link></li>
-                    <li><Link to="/team" className="hover:text-black transition-colors">Partners &amp; Team</Link></li>
+                    <li><Link to="/team" search={{ profile: undefined }} className="hover:text-black transition-colors">Partners &amp; Team</Link></li>
                     <li><Link to="/thesis" className="hover:text-black transition-colors">Investment Thesis</Link></li>
-                    <li><Link to="/about" className="hover:text-black transition-colors">Why Us</Link></li>
                     <li><Link to="/media" className="hover:text-black transition-colors">Media Room</Link></li>
                     <li><Link to="/faq" className="hover:text-black transition-colors">FAQs</Link></li>
                   </ul>
@@ -303,7 +335,6 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                     <li><Link to="/portfolio" className="hover:text-black transition-colors">Active Portfolio</Link></li>
                     <li><Link to="/perspective" className="hover:text-black transition-colors">Perspectives</Link></li>
                     <li><Link to="/funds" className="hover:text-black transition-colors">Fund I &amp; II</Link></li>
-                    <li><Link to="/funds" className="hover:text-black transition-colors">Co-Investments</Link></li>
                     <li><Link to="/contact" className="hover:text-black transition-colors">Submit Pitch</Link></li>
                   </ul>
                 </div>
@@ -322,16 +353,6 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                         className="hover:text-black transition-colors"
                       >
                         LinkedIn
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:text-black transition-colors"
-                      >
-                        X (Twitter)
                       </a>
                     </li>
                     <li>
@@ -378,7 +399,7 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
               <Link to="/resources" className="hover:text-black transition-colors">Privacy</Link>
               <Link to="/faq" className="hover:text-black transition-colors">FAQs</Link>
               <Link to="/contact" className="hover:text-black transition-colors">Contact</Link>
-              <Link to="/team" className="hover:text-black transition-colors">Careers</Link>
+              <Link to="/team" search={{ profile: undefined }} className="hover:text-black transition-colors">Careers</Link>
               <Link to="/funds" className="hover:text-black transition-colors">SEBI Disclosures</Link>
             </div>
 
@@ -426,9 +447,17 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
 
         {/* ── Giant Architectural Brand Title (Directly underneath the card on the canvas) ── */}
         <div className="pt-12 sm:pt-16 pb-4 text-center select-none overflow-hidden">
-          <h2 className="font-display font-black text-6xl sm:text-8xl md:text-9xl lg:text-[130px] uppercase tracking-[-0.03em] text-neutral-950 leading-none">
-            MOUNT JUDI
-          </h2>
+          <div className="inline-flex items-start justify-center flex-nowrap relative">
+            <h2 className="font-display font-black text-5xl sm:text-8xl md:text-9xl lg:text-[130px] uppercase tracking-[-0.03em] leading-none">
+              <span className="text-[#036089]">MOUNT JUDI</span>
+            </h2>
+            <img
+              src={faviconIcon}
+              alt="Mount Judi ship emblem"
+              aria-hidden="true"
+              className="w-7 sm:w-11 md:w-16 lg:w-20 xl:w-24 h-auto object-contain -mt-1.5 sm:-mt-3 md:-mt-5 lg:-mt-7 xl:-mt-8 ml-1.5 sm:ml-2.5 md:ml-3 shrink-0 pointer-events-none select-none"
+            />
+          </div>
         </div>
       </div>
     </footer>

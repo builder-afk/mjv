@@ -8,9 +8,7 @@ const HERO_TAGS = [
   "Exceptional Founders",
   "Strong Unit Economics",
   "Ethical Value Creation",
-  "Fair and Equitable",
-  "Responsible Investing",
-  "Financial Prudence",
+
 ];
 
 export function HomeHero() {
@@ -56,16 +54,18 @@ export function HomeHero() {
         <div className="absolute inset-x-0 top-0 h-20 sm:h-28 lg:h-36 bg-gradient-to-b from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
         {/* ── Top Investment Tenets Ribbon Over Background Mountain ── */}
-        <div className="absolute inset-x-0 top-5 sm:top-7 lg:top-9 z-20 flex justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-2.5 px-4 sm:px-8 max-w-[1280px]">
-            {HERO_TAGS.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border-2 border-transparent bg-white/95 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-900 shadow-xs hover:border-[#036089] hover:bg-[#036089] hover:text-white transition-all duration-200 cursor-default"
-              >
-                {tag}
-              </span>
-            ))}
+        <div className="absolute inset-x-0 top-5 sm:top-7 lg:top-9 z-20 px-3 sm:px-6">
+          <div className="w-full overflow-x-auto no-scrollbar py-1">
+            <div className="mx-auto flex w-fit flex-nowrap items-center justify-center gap-1.5 sm:gap-2 xl:gap-2.5">
+              {HERO_TAGS.map((tag) => (
+                <span
+                  key={tag}
+                  className="shrink-0 whitespace-nowrap rounded-full border-2 border-transparent bg-white/95 backdrop-blur-md px-2.5 sm:px-3 xl:px-3.5 py-1 sm:py-1.5 font-mono text-[9px] sm:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-bold uppercase tracking-wide text-neutral-900 shadow-xs hover:border-[#036089] hover:bg-[#036089] hover:text-white transition-all duration-200 cursor-default"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ export function HomeHero() {
         <div className="relative w-full overflow-hidden">
           <img
             src={peaksImg}
-            alt="Mount Judi — Elevation of Value"
+            alt="Mount Judi - Elevation of Value"
             className="w-full h-auto min-h-[460px] sm:min-h-[580px] lg:min-h-[680px] object-cover pointer-events-none select-none"
           />
 

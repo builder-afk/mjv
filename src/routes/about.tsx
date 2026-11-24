@@ -68,146 +68,11 @@ const valueSystemSteps = [
 function About() {
   return (
     <div className="bg-[var(--paper)] text-[var(--ink)] min-h-screen">
-      {/* ── 1. INVESTMENT THESIS & UNDERWRITING PILLARS HERO ── */}
-      <section className="relative overflow-hidden bg-white text-neutral-950 pt-6 pb-6 sm:pt-8 sm:pb-8 md:pt-10 md:pb-10 lg:pt-12 lg:pb-10">
-        <div className="container-tight">
-          {/* Header Row */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-            <div className="flex items-center gap-3">
-              <div>
-                <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-[-0.035em] leading-[0.94] text-balance text-neutral-950">
-                  Capital with
-                  Conciction.
-                  <br />
-                  Character for
-                  Generations.
-                </h1>
-              </div>
-            </div>
-          </div>
-
-          {/* Lead Statement */}
-          <div className="max-w-4xl mb-12 sm:mb-16">
-            <p className="font-sans text-xl sm:text-2xl md:text-3xl text-neutral-800 font-normal leading-snug tracking-tight">
-              Mount Judi Ventures along with our co-investors backs{" "}
-              <span className="font-bold text-neutral-950">technology transformation leading to innovation &amp; novel business models</span>,{" "}
-              meeting the growing demand &amp; aspiration of people.
-            </p>
-          </div>
-
-          {/* 5-Column Stats & Criteria Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-16 sm:mb-20">
-            {/* Pillar 1: High Potential Sectors */}
-            <div className="flex flex-col">
-              <div className="font-display font-black text-4xl sm:text-5xl text-[#036089] tracking-tight">
-                6 Sectors
-              </div>
-              <div className="my-2.5">
-                <CurlyBrace />
-              </div>
-              <div className="font-sans text-sm text-neutral-700 leading-relaxed">
-                <span className="font-bold block text-neutral-950 mb-1">High Potential Sectors</span>
-                Healthcare, EdTech, Digital / IoT / Tech, Consumer, Clean Energy, Trans. &amp; Logistics.
-              </div>
-            </div>
-
-            {/* Pillar 2: Early Growth Stage */}
-            <div className="flex flex-col">
-              <div className="font-display font-black text-4xl sm:text-5xl text-[#036089] tracking-tight">
-                Seed → A
-              </div>
-              <div className="my-2.5">
-                <CurlyBrace />
-              </div>
-              <div className="font-sans text-sm text-neutral-700 leading-relaxed">
-                <span className="font-bold block text-neutral-950 mb-1">Early Growth Stage</span>
-                Seed, Pre-Series A, and Series A conviction cheques with committed follow-on reserves.
-              </div>
-            </div>
-
-            {/* Pillar 3: Robust Team Credentials */}
-            <div className="flex flex-col">
-              <div className="font-display font-black text-4xl sm:text-5xl text-[#036089] tracking-tight">
-                Zero Risk
-              </div>
-              <div className="my-2.5">
-                <CurlyBrace />
-              </div>
-              <div className="font-sans text-sm text-neutral-700 leading-relaxed">
-                <span className="font-bold block text-neutral-950 mb-1">Robust Team Credentials</span>
-                Deep experience in sector. Resilient leadership with no key man risk taken.
-              </div>
-            </div>
-
-            {/* Pillar 4: Product-Market Fit Established */}
-            <div className="flex flex-col">
-              <div className="font-display font-black text-4xl sm:text-5xl text-[#036089] tracking-tight">
-                IP &amp; USP
-              </div>
-              <div className="my-2.5">
-                <CurlyBrace />
-              </div>
-              <div className="font-sans text-sm text-neutral-700 leading-relaxed">
-                <span className="font-bold block text-neutral-950 mb-1">Product-Market Fit</span>
-                Established PMF with innovation &amp; IP-based competitive advantage and USP.
-              </div>
-            </div>
-
-            {/* Pillar 5: Strong Unit Economics */}
-            <div className="flex flex-col">
-              <div className="font-display font-black text-4xl sm:text-5xl text-[#036089] tracking-tight">
-                &lt; 2 Yrs
-              </div>
-              <div className="my-2.5">
-                <CurlyBrace />
-              </div>
-              <div className="font-sans text-sm text-neutral-700 leading-relaxed">
-                <span className="font-bold block text-neutral-950 mb-1">Strong Unit Economics</span>
-                Profitable in &lt;2 yrs paired with large, expanding market potential.
-              </div>
-            </div>
-          </div>
-
-          {/* Asymmetric Staggered Photo Showcase */}
-          <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-8 w-full mt-4 sm:mt-8">
-            {/* Photo 1: Left tall portrait */}
-            <div className="w-full md:w-[28%] shrink-0">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-black/10 bg-neutral-100 shadow-xs hover:shadow-md transition-shadow">
-                <img
-                  src={aliPhoto}
-                  alt="Mount Judi Ventures partner panel"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-            </div>
-
-            {/* Photo 2: Middle portrait - Offset DOWN */}
-            <div className="w-full md:w-[32%] shrink-0 md:mt-24 lg:mt-36">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-black/10 bg-neutral-100 shadow-xs hover:shadow-md transition-shadow">
-                <img
-                  src={ebaadPhoto}
-                  alt="Ebaad Momin, Partner at Mount Judi Ventures"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-            </div>
-
-            {/* Photo 3: Right wide landscape */}
-            <div className="w-full md:flex-1 md:mt-12 lg:mt-16">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 bg-neutral-100 shadow-xs hover:shadow-md transition-shadow">
-                <img
-                  src={sherifPhoto}
-                  alt="Sherif Kottapurath, Partner at Mount Judi Ventures"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. SECTION 02: INSTITUTIONAL THESIS & CODE OF ETHICS (PEDALSTART UI/UX + GENERAL.JPEG) ── */}
-      <section className="bg-white pt-2 sm:pt-4 md:pt-6 pb-4 sm:pb-6 md:pb-8">
+      {/* ── 1. SECTION 01: INSTITUTIONAL THESIS & CODE OF ETHICS (WHY MJV EXISTS HERO) ── */}
+      <section
+        id="about-hero"
+        className="bg-white pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20 scroll-mt-28"
+      >
         <div className="container-tight">
           {/* Top Showcase: Why MJV Exists Narrative + Photo with Floating Badges */}
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -220,7 +85,7 @@ function About() {
                 </div>
 
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-6">
-                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black  tracking-tight text-neutral-950 leading-[0.98]">
+                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-950 leading-[0.98]">
                     Why MJV exists.
                     <br />
                     <span className="text-neutral-800">Capital with character.</span>
@@ -251,8 +116,8 @@ function About() {
 
                 {/* Bold Lead Paragraph */}
                 <p className="font-sans text-lg sm:text-xl md:text-2xl font-medium text-neutral-900 leading-snug tracking-tight mb-6">
-                  India is in the middle of a once-in-a-century rebuilding. New rails — payments,
-                  identity, logistics, healthcare, energy — are being laid every quarter. The
+                  India is in the middle of a once-in-a-century rebuilding. New rails - payments,
+                  identity, logistics, healthcare, energy - are being laid every quarter. The
                   founders building on top of them are bolder, more global, and more accountable
                   than any generation before them.
                 </p>
@@ -268,7 +133,7 @@ function About() {
                     We started MJV to be a different kind of partner. Patient. Principled. Present.
                   </p>
                   <p className="font-semibold text-neutral-950">
-                    Capital with character — because the companies India needs deserve nothing less.
+                    Capital with character - because the companies India needs deserve nothing less.
                   </p>
                 </div>
               </div>
@@ -294,34 +159,7 @@ function About() {
                 {/* 3 Floating Badges Overlapping the Left Edge of Photo */}
                 <div className="flex flex-col gap-3 sm:gap-3.5 absolute -left-2 sm:-left-6 lg:-left-8 top-1/2 -translate-y-1/2 z-20 w-[200px] sm:w-[220px]">
                   {/* Badge 1 */}
-                  <div className="rounded-2xl bg-[#2ea868] text-white p-3.5 sm:p-4 shadow-xl border border-white/20 transition-all hover:scale-102">
-                    <div className="font-display font-black text-sm sm:text-base tracking-tight leading-tight">
-                      Fair &amp; Equitable
-                    </div>
-                    <p className="font-sans text-[11px] text-white/90 mt-1 leading-snug">
-                      An investor’s capital is important, but not sacrosanct.
-                    </p>
-                  </div>
 
-                  {/* Badge 2 */}
-                  <div className="rounded-2xl bg-[#3da872] text-white p-3.5 sm:p-4 shadow-xl border border-white/20 transition-all hover:scale-102">
-                    <div className="font-display font-black text-sm sm:text-base tracking-tight leading-tight">
-                      No Double Dipping
-                    </div>
-                    <p className="font-sans text-[11px] text-white/90 mt-1 leading-snug">
-                      Proportionate capital recovery during liquidation.
-                    </p>
-                  </div>
-
-                  {/* Badge 3 */}
-                  <div className="rounded-2xl bg-[#24955b] text-white p-3.5 sm:p-4 shadow-xl border border-white/20 transition-all hover:scale-102">
-                    <div className="font-display font-black text-sm sm:text-base tracking-tight leading-tight">
-                      Shared Risk
-                    </div>
-                    <p className="font-sans text-[11px] text-white/90 mt-1 leading-snug">
-                      No guaranteed profits when the business does not.
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -329,8 +167,136 @@ function About() {
         </div>
       </section>
 
+      {/* ── 2. SECTION 02: INVESTMENT THESIS & UNDERWRITING PILLARS ── */}
+      <section
+        id="investment-thesis"
+        className="relative overflow-x-clip bg-white text-neutral-950 pt-10 pb-12 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 border-t border-black/[0.08] scroll-mt-28"
+      >
+        <div className="container-tight">
+          {/* Lead Statement */}
+          <div className="max-w-4xl mb-7 sm:mb-9">
+            <p className="font-sans text-xl sm:text-2xl md:text-3xl text-neutral-800 font-normal leading-snug tracking-tight">
+              Mount Judi Ventures along with our co-investors backs{" "}
+              <span className="font-bold text-neutral-950">
+                technology transformation leading to innovation &amp; novel business models
+              </span>
+              , meeting the growing demand &amp; aspiration of people.
+            </p>
+          </div>
+
+          {/* 5-Column Stats & Criteria Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5 mb-8 sm:mb-10">
+            {/* Pillar 1: High Potential Sectors */}
+            <div className="flex flex-col">
+              <div className="font-display font-black text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl text-[#036089] tracking-tight leading-none">
+                6 Sectors
+              </div>
+              <div className="my-1.5 sm:my-2">
+                <CurlyBrace className="w-3.5 h-5 sm:h-6 text-[#036089]" />
+              </div>
+              <div className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <span className="font-bold block text-neutral-950 leading-snug mb-1">High Potential Sectors</span>
+                Healthcare, EdTech, Digital / IoT / Tech, Consumer, Clean Energy, Trans. &amp; Logistics.
+              </div>
+            </div>
+
+            {/* Pillar 2: Early Growth Stage */}
+            <div className="flex flex-col">
+              <div className="font-display font-black text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl text-[#036089] tracking-tight leading-none">
+                Seed → A
+              </div>
+              <div className="my-1.5 sm:my-2">
+                <CurlyBrace className="w-3.5 h-5 sm:h-6 text-[#036089]" />
+              </div>
+              <div className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <span className="font-bold block text-neutral-950 leading-snug mb-1">Early Growth Stage</span>
+                Seed, Pre-Series A, and Series A conviction cheques with committed follow-on reserves.
+              </div>
+            </div>
+
+            {/* Pillar 3: Robust Team Credentials */}
+            <div className="flex flex-col">
+              <div className="font-display font-black text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl text-[#036089] tracking-tight leading-none">
+                Zero Risk
+              </div>
+              <div className="my-1.5 sm:my-2">
+                <CurlyBrace className="w-3.5 h-5 sm:h-6 text-[#036089]" />
+              </div>
+              <div className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <span className="font-bold block text-neutral-950 leading-snug mb-1">Robust Team Credentials</span>
+                Deep experience in sector. Resilient leadership with no key man risk taken.
+              </div>
+            </div>
+
+            {/* Pillar 4: Product-Market Fit Established */}
+            <div className="flex flex-col">
+              <div className="font-display font-black text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl text-[#036089] tracking-tight leading-none">
+                IP &amp; USP
+              </div>
+              <div className="my-1.5 sm:my-2">
+                <CurlyBrace className="w-3.5 h-5 sm:h-6 text-[#036089]" />
+              </div>
+              <div className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <span className="font-bold block text-neutral-950 leading-snug mb-1">Product-Market Fit</span>
+                Established PMF with innovation &amp; IP-based competitive advantage and USP.
+              </div>
+            </div>
+
+            {/* Pillar 5: Strong Unit Economics */}
+            <div className="flex flex-col">
+              <div className="font-display font-black text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl text-[#036089] tracking-tight leading-none">
+                &lt; 2 Yrs
+              </div>
+              <div className="my-1.5 sm:my-2">
+                <CurlyBrace className="w-3.5 h-5 sm:h-6 text-[#036089]" />
+              </div>
+              <div className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <span className="font-bold block text-neutral-950 leading-snug mb-1">Strong Unit Economics</span>
+                Profitable in &lt;2 yrs paired with large, expanding market potential.
+              </div>
+            </div>
+          </div>
+
+          {/* Asymmetric Staggered Photo Showcase */}
+          <div className="flex flex-col md:flex-row items-start gap-5 lg:gap-6 w-full">
+            {/* Photo 1: Left tall portrait */}
+            <div className="w-full md:w-[30%] shrink-0">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-black/10 bg-neutral-100 shadow-xs hover:shadow-md transition-shadow">
+                <img
+                  src={aliPhoto}
+                  alt="Mount Judi Ventures partner panel"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+
+            {/* Photo 2: Middle portrait - Subtle Offset DOWN (never cut off) */}
+            <div className="w-full md:w-[33%] shrink-0 md:mt-4 lg:mt-6">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-black/10 bg-neutral-100 shadow-xs hover:shadow-md transition-shadow">
+                <img
+                  src={ebaadPhoto}
+                  alt="Ebaad Momin, Partner at Mount Judi Ventures"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+
+            {/* Photo 3: Right wide landscape */}
+            <div className="w-full md:flex-1 md:mt-2 lg:mt-3">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/10 bg-neutral-100 shadow-xs hover:shadow-md transition-shadow">
+                <img
+                  src={sherifPhoto}
+                  alt="Sherif Kottapurath, Partner at Mount Judi Ventures"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── 3. MOUNT JUDI VALUE SYSTEM (8 CORE VALUES) ── */}
-      <section className="bg-white pt-2 sm:pt-4 md:pt-6 pb-16 md:pb-24">
+      <section className="bg-white pt-8 sm:pt-12 md:pt-16 pb-16 md:pb-24 border-t border-black/[0.08]">
         <div className="container-tight">
           <div className="relative pb-10 md:pb-14">
             {/* Header Row */}
@@ -418,7 +384,7 @@ function About() {
   );
 }
 
-function CurlyBrace({ className = "w-4 h-7 text-[#036089]" }: { className?: string }) {
+function CurlyBrace({ className = "w-3.5 h-5 sm:h-6 text-[#036089]" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 16 28"

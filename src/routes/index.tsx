@@ -110,7 +110,7 @@ function Index() {
               <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-neutral-950 tracking-tight leading-[1.02]">
                 The startups &amp; founders
                 <br />
-                who are the <span className="text-[#036089]">&ldquo;Category Creators&rdquo;</span>
+                who are the <span className="text-[#036089]">Category Creators</span>
               </h2>
             </div>
 
@@ -273,7 +273,7 @@ function Index() {
                     <span>REGISTRY</span>
                   </div>
                   <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-neutral-950">
-                    02
+                    03
                   </div>
                   <div className="mt-1 font-mono text-[11px] tracking-wider text-neutral-600 uppercase font-bold">
                     SEBI AIFs
@@ -282,7 +282,7 @@ function Index() {
 
                 <div>
                   <div className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-2">
-                    INVESTMENTS
+                    Vintage
                   </div>
                   <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-neutral-950">
                     2020

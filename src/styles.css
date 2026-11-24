@@ -53,6 +53,9 @@
   --color-brand-blue: var(--navy);
   --color-brand-gold: var(--gold);
   --color-brand-cyan: #1a5075;
+  --color-theme-consumer: #b78c2d;
+  --color-theme-enabler: #0ab1d7;
+  --color-theme-tech: #1e6086;
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
@@ -79,11 +82,23 @@
   --navy-surface: #12243d;
 
   /* Luxury Brushed Gold */
-  --gold: #c5a059;
-  --gold-hover: #d8b368;
-  --gold-dark: #9e7c36;
-  --gold-muted: rgba(197, 160, 89, 0.18);
-  --gold-faint: rgba(197, 160, 89, 0.08);
+  --gold: #b78c2d;
+  --gold-hover: #c9a03a;
+  --gold-dark: #7c622b;
+  --gold-muted: rgba(183, 140, 45, 0.18);
+  --gold-faint: rgba(183, 140, 45, 0.08);
+
+  /* Category: Consumer Enablers - Cyan/Teal */
+  --cyan: #0ab1d7;
+  --cyan-hover: #2cc5e5;
+  --cyan-dark: #0d748f;
+  --cyan-muted: rgba(10, 177, 215, 0.18);
+  --cyan-faint: rgba(10, 177, 215, 0.08);
+
+  /* Category: Disruptive Tech - Dark Teal */
+  --teal: #1e6086;
+  --teal-hover: #2878a3;
+  --teal-dark: #133f58;
 
   /* Institutional Ink typography */
   --ink: #0c1a2e;
@@ -542,6 +557,16 @@
   }
 }
 
+@keyframes marquee-vertical-reverse {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @utility animate-fade-up {
   animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -571,6 +596,14 @@
 }
 
 .animate-marquee-vertical:hover {
+  animation-play-state: paused;
+}
+
+@utility animate-marquee-vertical-reverse {
+  animation: marquee-vertical-reverse 42s linear infinite;
+}
+
+.animate-marquee-vertical-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -629,6 +662,14 @@
 
 @utility animate-panel-wipe {
   animation: panel-wipe-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Custom image framing for portfolio cards */

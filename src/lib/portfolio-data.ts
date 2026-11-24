@@ -16,7 +16,8 @@ import thimblerrLogo from "@/assets/logos/thimblerr.webp";
 import boinggLogo from "@/assets/logos/boingg.webp";
 import hexalogLogo from "@/assets/logos/hexalog.webp";
 import extramileLogo from "@/assets/logos/extramile.webp";
-import freshleafLogo from "@/assets/logos/freshleaf.png";
+import freshleafLogo from "@/assets/logos/freshleaf.svg";
+import freshleafWhiteLogo from "@/assets/logos-white/freshleaf.svg";
 import sandowitchLogo from "@/assets/logos/sandowitch_logo.jpeg";
 import flawsomeLogo from "@/assets/logos/flawsome_xleap_care_logo.jpeg";
 
@@ -73,6 +74,9 @@ import chickenSandwichImg from "@/assets/portfolio/ChickenSandwich1.webp";
 import freshleafImg from "@/assets/portfolio/FreshleafProfileFeatureImage-1717987632067.avif";
 import sandowitchImg from "@/assets/portfolio/vivek.jpg";
 import flawsomeImg from "@/assets/portfolio/ranukhade.jpeg";
+import rubickaiImg from "@/assets/portfolio/rubick.png";
+import extramileImg from "@/assets/founders/extramile.png";
+
 
 import dilFoodsWhiteLogo from "@/assets/logos-white/dil-foods.png";
 import proteinChefWhiteLogo from "@/assets/logos-white/protein-chef.png";
@@ -102,6 +106,20 @@ export type CompanySocials = {
   linkedin?: string;
   twitter?: string;
   facebook?: string;
+};
+
+export type AssociatedBrand = {
+  name: string;
+  category?: string;
+  relationship?: string;
+  tagline?: string;
+  description?: string;
+  website?: string;
+  socials?: {
+    instagram?: string;
+    twitter?: string;
+    linkedin?: string;
+  };
 };
 
 export type Company = {
@@ -139,6 +157,7 @@ export type Company = {
   fund?: "Growth Fund" | "Micro Fund" | "Both";
   website?: string;
   socials?: CompanySocials;
+  associatedBrand?: AssociatedBrand;
 };
 
 export const companies: Company[] = [
@@ -241,7 +260,7 @@ export const companies: Company[] = [
     problem:
       "Less than 5% of cancer patients in emerging markets receive genomic testing. Western reference databases miss the genetic variants common in South Asian populations.",
     whyInvested:
-      "Precision oncology in India requires clinical rigour and software velocity simultaneously. Hitesh and Kshitij refused to treat the South Asian genome as an afterthought. That commitment allows 4baseCare to define this category for emerging markets. The team understands the oncologist's workflow: turnaround times, tumour boards, and targeted therapeutic matching. Combined with deep genomic research, this operational empathy creates an enduring competitive advantage.",
+      "Precision oncology in India needs founders who can hold clinical rigour and software velocity in the same head. Hitesh and Kshitij do - and their refusal to treat the South Asian genome as an afterthought is why we believe 4baseCare can define this category for emerging markets. What convinced us most was how deeply the team had thought about the oncologist's workflow, not just the science: the reports, the turnaround times, the tumour boards, the tough conversations with families. That empathy - combined with genuine research depth - is a rare compounding moat, and one we wanted to back for the long arc.",
     convictionPoints: [
       "Proprietary South Asian cancer variant database",
       "Software-led economics layered on regulated diagnostics",
@@ -319,7 +338,7 @@ export const companies: Company[] = [
     },
     whyInvested:
       "Staqu is building AI infrastructure that turns existing video systems into real-time intelligence. With JARVIS deployed across 12+ state police forces and 100+ enterprise accounts, the company has demonstrated the ability to take AI beyond experimentation and into large-scale, real-world environments.\n\nIts combination of video and audio analytics, VMS and JARVIS GPT, supported by 25+ research papers and 4 patents, creates a strong technology foundation for solving security, safety and operational challenges across multiple sectors.",
-    keyAchievements: [
+    convictionPoints: [
       "Trusted across 12+ state police forces and 100+ enterprise customers",
       "25+ published research papers and 4 patents",
       "Large-scale deployments across law enforcement, prisons, homeland security, retail, sports venues and critical infrastructure",
@@ -362,7 +381,7 @@ export const companies: Company[] = [
       author: "Atul Rai, Co-founder & CEO",
     },
     featured: true,
-    fund: "Both",
+    fund: "Growth Fund",
     logo: staquLogo,
     whiteLogo: staquWhiteLogo,
     image: staquImg,
@@ -397,7 +416,7 @@ export const companies: Company[] = [
     problem:
       "Cloud kitchen 1.0 burned billions building dark kitchens nobody loved. Meanwhile, India's best neighborhood chefs were under-utilized and under-paid.",
     whyInvested:
-      "Every investment starts with the founding team. In Arpita we saw a repeat operator with disciplined unit economics and operational excellence. Her ability to execute while respecting partner chefs made this an immediate conviction investment. Dil's asset-light thesis inverts cloud-kitchen unit economics by activating existing kitchen capacity. We backed a founder building food-tech that generates positive contribution margin from month one.",
+      "Every investment starts with the founding team. In Arpita we saw a repeat operator with deep conviction, operational excellence, and the ambition to build for the long term. Her ability to execute while staying obsessively customer-focused - and respectful of the chefs and kitchens that power the model - is what made this an investment we were excited to make. Dil's asset-light thesis flips cloud-kitchen economics on its head, and Arpita's clarity on why the previous generation of dark kitchens burned capital gave us confidence in the roadmap. We're backing a founder who is building the version of Indian food-tech that finally works for the chef, the customer, and the balance sheet at the same time.",
     convictionPoints: [
       "Asset-light unit economics with profitability per kitchen from month one",
       "Chef-first model with measurable income uplift",
@@ -506,7 +525,7 @@ export const companies: Company[] = [
       },
     ],
     featured: true,
-    fund: "Both",
+    fund: "Growth Fund",
     logo: convegeniusLogo,
     whiteLogo: convegeniusWhiteLogo,
     image: convegeniusImg,
@@ -726,7 +745,7 @@ export const companies: Company[] = [
     fund: "Both",
     logo: rubickaiLogo,
     whiteLogo: rubickaiWhiteLogo,
-    image: press_inc42_0ce28eb9d7,
+    image: rubickaiImg,
     website: "https://rubick.ai",
     socials: {
       website: "https://rubick.ai",
@@ -795,7 +814,7 @@ export const companies: Company[] = [
         url: "https://timesofindia.indiatimes.com/sp-robotic-works-raises-usd-3-mn-in-funding-round-led-by-mount-judi-india-growth-fund/articleshow/84893316.cms",
       },
     ],
-    fund: "Growth Fund",
+    fund: "Micro Fund",
     logo: sprwLogo,
     whiteLogo: sprwWhiteLogo,
     image: press_edtechreview_9e3707b291,
@@ -1150,7 +1169,7 @@ export const companies: Company[] = [
     tagline: "Tech-enabled fast-fashion outsourcing for large brands.",
     oneLiner: "Platform for tech-enabled fast-fashion outsourcing for large brands.",
     description:
-      "Thimblerr is a platform for tech-enabled fast-fashion outsourcing for large brands, connecting apparel brands with verified manufacturing partners. It digitises sourcing, sampling, production tracking, and quality management, giving brands visibility into order status across a distributed supplier base. Customers include emerging and established apparel brands seeking reliable capacity without building in-house sourcing teams. By vetting manufacturers and managing production workflows on a single platform, Thimblerr addresses fragmentation and opacity in the garment manufacturing and supply chain category.",
+      "Thimblerr is a platform for tech-enabled fast-fashion outsourcing for large brands, connecting apparel brands with verified manufacturing partners. It digitises sourcing, sampling, production tracking, and quality management, giving brands visibility into order status across a distributed supplier base. Customers include emerging and established apparel brands seeking reliable capacity without building in-house sourcing teams. By vetting manufacturers and managing production workflows on a single platform, Thimblerr addresses fragmentation and opacity in the garment manufacturing and supply chain category.\n\nMaison X is an Indian direct-to-consumer clothing brand operated by Thimblerr Commerce and Technology Private Limited. Founded in 2022 and based in Gurgaon by Piyush Jalan, it sells everyday essentials—such as linen shirts, cotton tees, polos, crewnecks, and women's wear—crafted from mill fabrics without luxury brand markups.",
     founders: "Piyush Jalan",
     founderLinkedins: {
       "Piyush Jalan": "https://www.linkedin.com/in/pjalan/",
@@ -1160,6 +1179,7 @@ export const companies: Company[] = [
     whyInvested:
       "Underwriting apparel supply chains requires operational grounding in factory workflows. The Thimblerr founders lived this reality before building their software platform. Their combination of manufacturing tracking and disciplined credit evaluation matches our focus on embedded B2B infrastructure. They prioritize underwriting quality over premature scale, bringing risk discipline to a critical industrial sector.",
     convictionPoints: [
+      "Operates Maison X — D2C essentials brand crafted directly from mill fabrics",
       "Platform-embedded distribution with low CAC and high commercial intent",
       "Proprietary underwriting models tuned for MSME data patterns",
       "Founders with prior lending and platform experience",
@@ -1203,10 +1223,22 @@ export const companies: Company[] = [
       instagram: "https://www.instagram.com/thimblerrofficial/",
       linkedin: "https://www.linkedin.com/company/thimblerr/",
     },
+    associatedBrand: {
+      name: "Maison X",
+      category: "D2C Brand",
+      relationship: "Operated by Thimblerr",
+      tagline: "Everyday Essentials",
+      description: "Direct-to-consumer clothing crafted from mill fabrics without luxury brand markups.",
+      website: "https://maisonx.in/",
+      socials: {
+        instagram: "https://www.instagram.com/maisonx.shop/",
+        twitter: "https://x.com/getmaisonx",
+      },
+    },
   },
   {
     slug: "boingg",
-    name: "Boingg",
+    name: "Boingg!",
     sector: "Consumer d2c",
     category: "Consumer",
     thesis: "Consumer Brands",
@@ -1331,7 +1363,7 @@ export const companies: Company[] = [
         url: "https://yourstory.com/2025/09/gurugram-startup-hexalog-cross-border-shipping-supply-chain-logistics",
       },
     ],
-    fund: "Micro Fund",
+    fund: "Growth Fund",
     logo: hexalogLogo,
     whiteLogo: hexalogWhiteLogo,
     image: hexalogImg,
@@ -1404,7 +1436,7 @@ export const companies: Company[] = [
     fund: "Micro Fund",
     logo: extramileLogo,
     whiteLogo: extramileWhiteLogo,
-    image: press_tribuneindia_634ad29006,
+    image: extramileImg,
     website: "https://extramile.in",
     socials: {
       website: "https://extramile.in",
@@ -1469,7 +1501,7 @@ export const companies: Company[] = [
     featured: false,
     fund: "Micro Fund",
     logo: freshleafLogo,
-    whiteLogo: freshleafLogo,
+    whiteLogo: freshleafWhiteLogo,
     image: freshleafImg,
     website: "https://freshleafteas.in/",
     socials: {

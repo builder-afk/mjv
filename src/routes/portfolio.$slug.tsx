@@ -62,6 +62,14 @@ export const Route = createFileRoute("/portfolio/$slug")({
 function CompanyPage() {
   const { company: c } = Route.useLoaderData();
 
+  // Per-category color mapping (Consumer / Consumer Enablers / Disruptive Tech)
+  const thesisColor =
+    c.thesis === "Consumer Brands"
+      ? { bg: "bg-[#b78c2d]", text: "text-[#b78c2d]", dot: "#b78c2d" }
+      : c.thesis === "Consumer Enablers"
+        ? { bg: "bg-[#0ab1d7]", text: "text-[#0ab1d7]", dot: "#0ab1d7" }
+        : { bg: "bg-[#1e6086]", text: "text-[#1e6086]", dot: "#1e6086" };
+
   // Find adjacent companies for footer navigation
   const currentIndex = companies.findIndex((item) => item.slug === c.slug);
   const prevCompany = companies[(currentIndex - 1 + companies.length) % companies.length];
@@ -109,7 +117,7 @@ function CompanyPage() {
               <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
               <span>Portfolio</span>
               <span className="text-neutral-300">/</span>
-              <span className="text-[#036089]">{c.thesis}</span>
+              <span className={thesisColor.text}>{c.thesis}</span>
             </Link>
 
             <div className="hidden sm:flex items-center gap-3 font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-400">
@@ -124,7 +132,7 @@ function CompanyPage() {
             <div>
               {/* Badges Cluster */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#036089] text-white font-mono text-[11px] uppercase tracking-wider font-bold shadow-2xs">
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full ${thesisColor.bg} text-white font-mono text-[11px] uppercase tracking-wider font-bold shadow-2xs`}>
                   {c.thesis}
                 </span>
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-neutral-100 text-neutral-800 border border-neutral-200/90 font-mono text-[11px] uppercase tracking-wider font-bold">
@@ -167,7 +175,7 @@ function CompanyPage() {
               )}
 
               {/* Large Display Title */}
-              <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight uppercase leading-[0.92] text-neutral-950">
+              <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight leading-[0.92] text-neutral-950">
                 {c.name}
               </h1>
 
@@ -280,7 +288,7 @@ function CompanyPage() {
         {/* Minimalist Sub-Bar Metadata Strip */}
         <div className="w-full border-t border-neutral-200/80 bg-neutral-50/70 text-neutral-900 px-6 sm:px-10 py-3.5 flex flex-wrap items-center justify-between gap-4 font-mono text-xs uppercase tracking-wider font-bold">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#036089]" />
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: thesisColor.dot }} />
             <span className="text-neutral-950">{c.thesis}</span>
             <span className="text-neutral-400">·</span>
             <span className="text-neutral-700">{c.sector}</span>
@@ -322,7 +330,7 @@ function CompanyPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                 <div className="px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md text-white font-mono text-[10px] uppercase tracking-wider border border-white/20 font-bold shadow-md">
-                  {c.name.toUpperCase()} · FIELD DEPLOYMENT
+                  {c.name} · FIELD DEPLOYMENT
                 </div>
               </div>
             </div>
@@ -331,7 +339,7 @@ function CompanyPage() {
             <div className="rounded-2xl sm:rounded-3xl border border-neutral-200/90 bg-white p-5 sm:p-6 shadow-xs">
               <div className="flex items-center justify-between pb-3.5 border-b border-neutral-100 mb-4">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#036089]" />
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: thesisColor.dot }} />
                   <span className="font-mono text-xs uppercase tracking-wider font-bold text-neutral-900">
                     Investment Specs
                   </span>
@@ -445,6 +453,113 @@ function CompanyPage() {
                 </div>
               </div>
             </div>
+
+            {/* Associated Brand Card (e.g. Maison X for Thimblerr) */}
+            {c.associatedBrand && (
+              <div className="rounded-2xl sm:rounded-3xl border border-neutral-200/90 bg-white p-5 sm:p-6 shadow-xs">
+                <div className="flex items-center justify-between pb-3.5 border-b border-neutral-100 mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#036089]" />
+                    <span className="font-mono text-xs uppercase tracking-wider font-bold text-neutral-900">
+                      {c.associatedBrand.name}
+                    </span>
+                  </div>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#036089]/10 text-[#036089] font-mono text-[10px] font-bold tracking-wider uppercase">
+                    {c.associatedBrand.category || "D2C Brand"}
+                  </span>
+                </div>
+
+                {/* Header Tile */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-neutral-950 text-white shadow-2xs mb-3">
+                  <div className="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">
+                    {c.associatedBrand.relationship || `Operated by ${c.name}`}
+                  </div>
+                  <div className="mt-1 font-bold text-sm sm:text-base text-white">
+                    {c.associatedBrand.name} {c.associatedBrand.tagline ? `· ${c.associatedBrand.tagline}` : ""}
+                  </div>
+                  {c.associatedBrand.description && (
+                    <p className="mt-1 text-xs text-neutral-300 font-sans leading-relaxed">
+                      {c.associatedBrand.description}
+                    </p>
+                  )}
+                </div>
+
+                {/* Links */}
+                <div className="space-y-2 font-mono text-xs">
+                  {c.associatedBrand.website && (
+                    <a
+                      href={c.associatedBrand.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center justify-between p-3 rounded-xl bg-neutral-50/90 border border-neutral-200/60 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-7 h-7 rounded-lg bg-white border border-neutral-200/90 flex items-center justify-center text-neutral-700 group-hover:bg-neutral-900 group-hover:border-neutral-800 group-hover:text-white transition-colors shrink-0">
+                          <Globe className="h-3.5 w-3.5" />
+                        </div>
+                        <div className="min-w-0 truncate">
+                          <div className="text-[9px] uppercase tracking-widest text-neutral-500 group-hover:text-neutral-400 font-bold">
+                            Website
+                          </div>
+                          <div className="font-bold text-xs text-neutral-950 group-hover:text-white truncate">
+                            {c.associatedBrand.website.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                          </div>
+                        </div>
+                      </div>
+                      <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400 group-hover:text-white transition-colors shrink-0 ml-2" />
+                    </a>
+                  )}
+
+                  {c.associatedBrand.socials?.instagram && (
+                    <a
+                      href={c.associatedBrand.socials.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center justify-between p-3 rounded-xl bg-neutral-50/90 border border-neutral-200/60 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-7 h-7 rounded-lg bg-white border border-neutral-200/90 flex items-center justify-center text-neutral-700 group-hover:bg-neutral-900 group-hover:border-neutral-800 group-hover:text-white transition-colors shrink-0">
+                          <Instagram className="h-3.5 w-3.5" />
+                        </div>
+                        <div className="min-w-0 truncate">
+                          <div className="text-[9px] uppercase tracking-widest text-neutral-500 group-hover:text-neutral-400 font-bold">
+                            Instagram
+                          </div>
+                          <div className="font-bold text-xs text-neutral-950 group-hover:text-white truncate">
+                            @{c.associatedBrand.socials.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, "")}
+                          </div>
+                        </div>
+                      </div>
+                      <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400 group-hover:text-white transition-colors shrink-0 ml-2" />
+                    </a>
+                  )}
+
+                  {c.associatedBrand.socials?.twitter && (
+                    <a
+                      href={c.associatedBrand.socials.twitter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center justify-between p-3 rounded-xl bg-neutral-50/90 border border-neutral-200/60 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-7 h-7 rounded-lg bg-white border border-neutral-200/90 flex items-center justify-center text-neutral-700 group-hover:bg-neutral-900 group-hover:border-neutral-800 group-hover:text-white transition-colors shrink-0">
+                          <Twitter className="h-3.5 w-3.5" />
+                        </div>
+                        <div className="min-w-0 truncate">
+                          <div className="text-[9px] uppercase tracking-widest text-neutral-500 group-hover:text-neutral-400 font-bold">
+                            X (Twitter)
+                          </div>
+                          <div className="font-bold text-xs text-neutral-950 group-hover:text-white truncate">
+                            @{c.associatedBrand.socials.twitter.replace(/^https?:\/\/(www\.)?(twitter|x)\.com\//, "").replace(/\/$/, "")}
+                          </div>
+                        </div>
+                      </div>
+                      <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400 group-hover:text-white transition-colors shrink-0 ml-2" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* ═══════════════════════════════════════════════════════
@@ -610,7 +725,7 @@ function CompanyPage() {
                                 {name}
                               </span>
                               <span className="font-mono text-[11px] text-neutral-500 font-medium block mt-0.5">
-                                Co-Founder / Leadership
+                                Co-Founder - Leadership
                               </span>
                             </div>
                             <span className="px-3 py-1.5 rounded-full bg-neutral-100 font-mono text-[10px] uppercase tracking-wider text-neutral-800 group-hover:bg-[#036089] group-hover:text-white transition-all inline-flex items-center gap-1 font-bold shrink-0 border border-neutral-200 group-hover:border-[#036089]">
@@ -684,7 +799,7 @@ function CompanyPage() {
                   <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 relative z-10">
                     <div className="font-mono text-xs uppercase tracking-widest text-[#d9a13b] font-bold flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#d9a13b]" />
-                      <span>— {c.testimonial.author}</span>
+                      <span>- {c.testimonial.author}</span>
                     </div>
                     <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400">
                       Portfolio Company Founder

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { companies, type Company } from "@/lib/portfolio-data";
+import internshalaIcon from "@/assets/logos/internshala.png";
 import { ArrowUpRight, CheckCircle2, Sparkles, Layers, ShieldCheck, Zap } from "lucide-react";
 import { CompassRoseEngraving } from "@/components/editorial-engravings";
 
@@ -35,12 +36,13 @@ type Theme = {
   tagline: string;
   paragraphs: React.ReactNode[];
   portfolio: string[];
-  pinColor: "gold" | "blue" | "orange" | "purple";
+  pinColor: "gold" | "blue" | "orange" | "purple" | "cyan" | "navy";
   badge: string;
   innerBg: string;
   innerBorder: string;
   numberColor: string;
   tiltClass: string;
+  cardBg: string;
 };
 
 const themes: Theme[] = [
@@ -48,88 +50,67 @@ const themes: Theme[] = [
     number: "01",
     name: "Consumer Brands",
     anchor: "consumer",
-    accentBg: "bg-neutral-900",
+    accentBg: "bg-[#b78c2d]",
     accentText: "text-white",
     pinColor: "gold",
     badge: "THEME - CATEGORY FOCUS",
-    innerBg: "bg-[#C78D1E]/10",
-    innerBorder: "border-[#C78D1E]/30",
-    numberColor: "text-[#C78D1E]",
-    tiltClass: "lg:-rotate-2 lg:mr-auto lg:ml-2 xl:ml-6",
-    tagline: "Brands engineered with deep operational discipline, not subsidized vanity metrics.",
+    innerBg: "bg-[#b78c2d]/10",
+    innerBorder: "border-[#b78c2d]/30",
+    numberColor: "text-[#b78c2d]",
+    tiltClass: "",
+    cardBg: "bg-[#b78c2d]",
+    tagline: "Brands engineered with deep operational discipline, not subsidized vanity metrics, focused on category creation and or business-model innovation",
     paragraphs: [
       <>
-        The consumer enterprises we back take a non-negotiable everyday habit and build an enduring
-        institution around doing it properly across nutrition, culinary infrastructure, and
-        lifestyle. The demand is rarely in question. What is perpetually absent in contemporary
-        venture is a brand built from{" "}
-        <strong className="text-neutral-900 font-semibold">first principles</strong>, backed by the
-        operational grit to control sourcing, cold chains, and direct customer intimacy.
+        The consumer brands we like tend to take a habit everyone already has and build a category around doing it better - whether in food, personal care, or beyond. The demand is rarely in question. What tends to be missing is a brand built on fresh thinking, innovation and first principles, backed by the discipline to do the heavy lifting on sourcing, quality, and supply, and the conviction to own the customer relationship directly.
+
       </>,
       <>
-        That is where our partners spend operating hours with founders. Early on, the questions are
-        about category positioning; later, they turn{" "}
-        <strong className="text-neutral-900 font-semibold">relentlessly operational</strong>. In our
-        experience, this is where high-growth consumer ventures quietly unravel. We stay closely
-        embedded to ensure unit economics stay cash-generative.
+        That is where we spend our time with founders. Early on, the questions are about story; later, they turn operational. In our experience, the second set is where high-growth consumer ventures quietly unravel. We stay closely embedded to ensure unit economics restricts large cash-burns.
+
       </>,
       <>
-        A brand that masters sourcing and authentic customer trust builds an enduring{" "}
-        <strong className="text-neutral-900 font-semibold">economic moat</strong>. Customers return
-        without discounts attached, and gross margins compound as distribution scales.
+        A brand that gets both right, ends up with something durable. Customers come back without a discount attached, and margins improve as the company scales.
       </>,
     ],
     portfolio: [
       "FreshToHome",
       "DIL Foods",
       "Protein Chef",
-      "Boingg",
+      "Boingg!",
       "Freshleaf Tea",
       "Sandowitch",
       "Flawsome",
       "Thimblerr",
-      "SP Robotic Works",
       "Internshala",
-      "upGrad",
     ],
   },
   {
     number: "02",
     name: "Consumer Enablers",
     anchor: "consumer-enablers",
-    accentBg: "bg-neutral-700",
+    accentBg: "bg-[#0ab1d7]",
     accentText: "text-white",
-    pinColor: "blue",
+    pinColor: "cyan",
     badge: "THEME - INDUSTRIAL INFRASTRUCTURE",
-    innerBg: "bg-[#036089]/10",
-    innerBorder: "border-[#036089]/30",
-    numberColor: "text-[#036089]",
-    tiltClass: "lg:rotate-2 lg:ml-auto lg:mr-2 xl:mr-6",
-    tagline: "Empowering the next generation of consumer brands with cutting-edge technology and infrastructure.",
+    innerBg: "bg-[#0ab1d7]/10",
+    innerBorder: "border-[#0ab1d7]/30",
+    numberColor: "text-[#0ab1d7]",
+    tiltClass: "",
+    cardBg: "bg-[#0d748f]",
+    tagline: "Empowering the next generation of consumer brands with cutting-edge technology and infrastructure, and enabling consumer behaviour change",
     paragraphs: [
       <>
-        Behind every consumer titan sits an unsung network of industrial enablers: multi-channel
-        warehousing, automated middle-mile logistics, drone freight corridors, and the
-        reconciliation data layers that prevent inventory leakage. A massive proportion of
-        enterprise margin in India is destroyed here. We believe that margin is actively being
-        recaptured.
+        Behind every consumer brand, sits an unsung network of enablers of commerce that a customer never hears about - warehousing, freight, last-mile delivery, and the data layer that keeps inventory honest across half a dozen channels. A large share of the margin in Indian commerce is currently lost here, and we think that a fresh approach and innovation can recover much of this locked value.
+
       </>,
       <>
-        Our portfolio anchors today in{" "}
-        <strong className="text-neutral-900 font-semibold">
-          supply chain automation, cold chain orchestration, and aerial logistics
-        </strong>
-        . The identical logic applies to agritech, climate manufacturing, and enterprise
-        procurement.
+        Our portfolio in this area sits in logistics and supply chain today. Opportunities abound in climate, construction, manufacturing and beyond, and we expect to spend more time exploring these avenues as well.
       </>,
       <>
-        These are heavy, deliberate enterprises. Institutional buyers take quarters to audit and
-        decades to displace, producing{" "}
-        <strong className="text-neutral-900 font-semibold">
-          extraordinary retention and enterprise cashflows
-        </strong>
-        . We provide the enterprise boardroom access, B2B procurement introductions, and patient
-        reserves that do not force founders into unnatural growth cycles.
+        Technology and innovations are challenging the well-established status quo in this sphere. Improved visibility, increased awareness and better efficiency is enabling customers to switch and adopt newer solutions.
+        We help our founders with access - introductions to the buyers who actually sign, the operating details of running a B2B sales motion, and capital that does not force the company to grow faster than its sales cycle allows.
+
       </>,
     ],
     portfolio: ["Hexalog", "Skye Air", "Wiffy"],
@@ -138,36 +119,28 @@ const themes: Theme[] = [
     number: "03",
     name: "Disruptive Tech",
     anchor: "disruptive-tech",
-    accentBg: "bg-neutral-900",
+    accentBg: "bg-[#1e6086]",
     accentText: "text-white",
-    pinColor: "blue",
+    pinColor: "navy",
     badge: "THEME - HARD ENGINEERING & IP",
-    innerBg: "bg-[#036089]/10",
-    innerBorder: "border-[#036089]/30",
-    numberColor: "text-[#036089]",
-    tiltClass: "lg:-rotate-1.5 lg:mr-auto lg:ml-6 xl:ml-12",
-    tagline: "Proprietary IP, verified datasets, and hard engineering that cannot be copied.",
+    innerBg: "bg-[#1e6086]/10",
+    innerBorder: "border-[#1e6086]/30",
+    numberColor: "text-[#1e6086]",
+    tiltClass: "",
+    cardBg: "bg-[#1e6086]",
+    tagline: "Proprietary IP, verified datasets, and hard engineering that cannot be replicated, building monetisable, patentable and scalable technology",
     paragraphs: [
       <>
-        We back companies whose core defensibility sits in a{" "}
-        <strong className="text-neutral-900 font-semibold">
-          defensible patent, an authoritative biological or vision dataset, or deep engineering
-          moats
-        </strong>{" "}
-        that took years of relentless focus to synthesize. Today, this manifests across precision
-        oncology, medical robotics, and specialized cognitive architectures.
+        This is the hardest of the three to write about without sounding grandiose, so plainly: we back companies whose advantage sits in a patent, a dataset, or a piece of engineering that took years to get right. Today, that is mostly healthTech, Visual analytics and bioTech. Deep-data platforms, AI applications and next-generation edTech are areas we are actively looking at.
+
       </>,
       <>
-        The risk profile here is distinctive. Commercial failure is rarely about market size; it is
-        about clinical validation, scientific rigor, and navigating regulatory approvals. Our
-        diligence engages clinicians, researchers, and patent attorneys who have taken frontier
-        products through CE, FDA, and CDSCO approvals.
+        The risk here has a different shape. Failure is rarely commercial. It comes from the science, or from a regulatory step that was underestimated at the start. Our diligence reflects that. We spend it on the technical claim and the approval pathway, with help from clinicians, experts and researchers who have taken comparable products through.
+
       </>,
       <>
-        When validated, the defensive fortress is{" "}
-        <strong className="text-neutral-900 font-semibold">virtually impregnable</strong>. A
-        well-capitalized competitor cannot buy clinical trials, longitudinal patient cohorts, or
-        patent exclusivity in a six-month sprint.
+        When it does work, the position is very difficult to attack. A better-funded competitor still needs the patents, the data, and the approvals, and none of that can be bought quickly.
+
       </>,
     ],
     portfolio: [
@@ -178,6 +151,7 @@ const themes: Theme[] = [
       "Rubick.ai",
       "ExtraMile",
       "Gooru",
+      "upGrad",
     ],
   },
 ];
@@ -197,17 +171,37 @@ function findCompany(displayName: string): Company | undefined {
   });
 }
 
-function PushPin({ color = "blue" }: { color?: "gold" | "blue" | "orange" | "purple" }) {
+function PushPin({ color = "blue" }: { color?: "gold" | "blue" | "orange" | "purple" | "cyan" | "navy" }) {
   const configs = {
     gold: {
       headId: "pin-grad-gold",
       baseId: "pin-base-gold",
-      glowColor: "rgba(199, 141, 30, 0.45)",
-      primary: "#C78D1E",
+      glowColor: "rgba(183, 140, 45, 0.45)",
+      primary: "#b78c2d",
       highlight: "#fef3c7",
-      dark: "#8c600f",
-      bodyStart: "#d99e28",
-      ringColor: "#8c600f",
+      dark: "#7c622b",
+      bodyStart: "#c9a03a",
+      ringColor: "#7c622b",
+    },
+    cyan: {
+      headId: "pin-grad-cyan",
+      baseId: "pin-base-cyan",
+      glowColor: "rgba(10, 177, 215, 0.45)",
+      primary: "#0ab1d7",
+      highlight: "#ccf2fa",
+      dark: "#0d748f",
+      bodyStart: "#2cc5e5",
+      ringColor: "#0d748f",
+    },
+    navy: {
+      headId: "pin-grad-navy",
+      baseId: "pin-base-navy",
+      glowColor: "rgba(30, 96, 134, 0.45)",
+      primary: "#1e6086",
+      highlight: "#bae6fd",
+      dark: "#133f58",
+      bodyStart: "#2878a3",
+      ringColor: "#133f58",
     },
     blue: {
       headId: "pin-grad-blue",
@@ -314,48 +308,37 @@ function Thesis() {
     <div className="bg-[var(--paper)] text-[var(--ink)] min-h-screen">
 
       {/* ── 2. THE THREE FOUNDATIONAL PILLARS (HORIZONTAL FLOW PIPELINE) ── */}
-      <section className="relative border-b-2 border-neutral-950 bg-white py-14 md:py-20 overflow-hidden">
-        {/* Architectural Background Grid Texture */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px)
-            `,
-            backgroundSize: "28px 28px",
-          }}
-        />
-
+      <section className="relative border-b-2 border-neutral-950 bg-white pt-4 sm:pt-5 lg:pt-6 pb-12 sm:pb-14 md:pb-16 overflow-hidden">
         <div className="container-tight relative z-10">
           {/* Top Intro Section: Headline + Stat Card */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10 md:mb-12">
-            <div className="max-w-2xl">
-              <div className="font-mono text-xs tracking-[0.25em] text-[#036089] font-bold mb-3">
-                MJV thesis
-              </div>
-              <h2 className="font-display text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight text-neutral-950 leading-[0.95]">
-                Where India&rsquo;s Value Settles.
-              </h2>
-              <p className="mt-5 text-sm sm:text-base text-neutral-700 leading-relaxed font-sans font-medium">
-                Rather than spreading capital across hundreds of speculative experiments, Mount Judi
-                Ventures deploys into three enduring economic moats where enterprise cashflows
-                compound over decades.
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-6 md:mb-8">
+            <div className="max-w-3xl">
+
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-black tracking-tight text-neutral-950 leading-[1.05]">
+                Our Investment <span className="text-[#036089]">Thesis</span>
+              </h1>
+
+              <p className="mt-5 text-base sm:text-lg text-neutral-700 leading-relaxed font-sans">
+                Mount Judi has invested across two funds -{" "}
+                <strong className="font-bold text-neutral-950">MJIMF</strong> (Mount Judi India Micro
+                Fund) and <strong className="font-bold text-neutral-950">MJIGF</strong> (Mount Judi
+                India Growth Fund). We have built the thesis for our next fund,{" "}
+                <strong className="font-bold text-neutral-950">MJIGF II</strong>. Together they map
+                where India&rsquo;s next decade of value creation will happen.
               </p>
             </div>
 
-            {/* Warm Anchor Stat Card (#C78D1E) */}
-            <div className="shrink-0 lg:max-w-xs rounded-2xl bg-[#d9a13b] p-5 sm:p-6 shadow-xs text-neutral-950">
+            {/* Warm Anchor Stat Card (#b78c2d) */}
+            <div className="shrink-0 lg:max-w-xs w-full lg:w-auto rounded-2xl bg-[#b78c2d] p-5 sm:p-6 shadow-xs text-neutral-950">
               <div className="flex items-center justify-between font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-950/80">
                 <span>Portfolio Strategy</span>
-                <span className="text-neutral-950 font-black">₹150+ CR</span>
+                <span className="text-neutral-950 font-black">₹200+ CR</span>
               </div>
               <div className="mt-2 font-display text-2xl sm:text-3xl font-black tracking-tight text-neutral-950">
-                14+ Category Leaders
+                20 Investments
               </div>
               <p className="mt-2 text-xs text-neutral-950 font-sans leading-snug font-medium">
-                Zero subsidized vanity metrics. 100% focused on gross margins and defensible IP.
+                MJIMF &amp; MJIGF deployed. MJIGF II forward thesis active.
               </p>
               <div className="mt-4 pt-3 border-t border-neutral-950/20 flex items-center justify-between">
                 <a
@@ -369,8 +352,44 @@ function Thesis() {
             </div>
           </div>
 
+          {/* ── FORWARD THESIS / THE NEXT CHAPTER - MJIGF II ── */}
+          <div className="pt-4 sm:pt-6 border-t border-neutral-200/90 mb-0">
+
+            {/* 3-Theme Color Swatches Legend */}
+
+            {/* Narrative Body Copy */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-3 text-sm sm:text-base text-neutral-700 leading-relaxed font-sans">
+              <div>
+                <p>
+                  We invest across three themes:{" "}
+                  <strong className="font-bold text-[#b78c2d]">Consumer Brands</strong>,{" "}
+                  <strong className="font-bold text-[#0ab1d7]">Consumer Enablers</strong>, and{" "}
+                  <strong className="font-bold text-[#1e6086]">Disruptive Tech</strong>, each
+                  defined by where consumer behaviour, data, and category creation are heading in
+                  India. The boundaries between them are less tidy in practice than they look on a
+                  page, which suits us. A brand we back today may depend on a warehousing platform we
+                  backed two years ago, and both may eventually run on infrastructure from the third
+                  group.
+                </p>
+              </div>
+              <div>
+                <p>
+                  What holds the three together is a view about where value is settling in India over
+                  the next decade. Consumption is moving up the quality curve faster than most
+                  people expected. The physical infrastructure underneath it was built for a different
+                  era and is being replaced piece by piece. And Indian teams are now building
+                  science-heavy products that stand up to global scrutiny, which was rarely true ten
+                  years ago.
+                </p>
+              </div>
+            </div>
+
+            {/* Closing Conviction Statement */}
+
+          </div>
+
           {/* Horizontal Flow Pipeline (Borderless Canvas, Static Layout) */}
-          <div className="relative px-2 sm:px-4 py-6 md:py-12">
+          <div className="relative px-2 sm:px-4 pt-0 pb-2">
             {/* Continuous Wire Track SVG across the 3 horizontal cards */}
             <svg
               aria-hidden="true"
@@ -396,20 +415,6 @@ function Thesis() {
                 strokeLinecap="round"
               />
 
-              {/* Top-Left Entry Portal */}
-              <ellipse cx="75" cy="55" rx="42" ry="13" fill="#171717" stroke="#171717" strokeWidth="2" />
-              <ellipse cx="75" cy="55" rx="50" ry="16" fill="none" stroke="#171717" strokeWidth="1.5" />
-              <text x="75" y="28" textAnchor="middle" fontFamily="monospace" fontSize="9" fontWeight="bold" fill="#525252" letterSpacing="1.5">
-                DEALFLOW INGESTION
-              </text>
-
-              {/* Top-Right Exit Portal */}
-              <ellipse cx="1125" cy="105" rx="42" ry="13" fill="#171717" stroke="#171717" strokeWidth="2" />
-              <ellipse cx="1125" cy="105" rx="50" ry="16" fill="none" stroke="#171717" strokeWidth="1.5" />
-              <text x="1125" y="78" textAnchor="middle" fontFamily="monospace" fontSize="9" fontWeight="bold" fill="#525252" letterSpacing="1.5">
-                ENTERPRISE SCALE
-              </text>
-
               {/* Rolling Spheres / Value Nodes positioned precisely in open channels */}
               {/* Sphere on left margin */}
               <circle cx="55" cy="290" r="14" fill="#ffffff" stroke="#171717" strokeWidth="2.5" />
@@ -418,12 +423,12 @@ function Thesis() {
               {/* Sphere 1 in Gap 1 (between Card 1 and 2) */}
               <circle cx="425" cy="280" r="15" fill="#ffffff" stroke="#171717" strokeWidth="2.5" />
               <path d="M 418 273 A 7 7 0 0 1 426 268" stroke="#171717" strokeWidth="1.75" strokeLinecap="round" />
-              <circle cx="425" cy="280" r="3.5" fill="#C78D1E" />
+              <circle cx="425" cy="280" r="3.5" fill="#b78c2d" />
 
               {/* Sphere 2 in Gap 2 (between Card 2 and 3) */}
               <circle cx="775" cy="280" r="15" fill="#ffffff" stroke="#171717" strokeWidth="2.5" />
               <path d="M 768 273 A 7 7 0 0 1 776 268" stroke="#171717" strokeWidth="1.75" strokeLinecap="round" />
-              <circle cx="775" cy="280" r="3.5" fill="#036089" />
+              <circle cx="775" cy="280" r="3.5" fill="#0ab1d7" />
 
               {/* Sphere on right margin */}
               <circle cx="1135" cy="290" r="14" fill="#ffffff" stroke="#171717" strokeWidth="2.5" />
@@ -444,7 +449,7 @@ function Thesis() {
                 return (
                   <div
                     key={t.number}
-                    className={`rounded-2xl bg-[#0b7aa8] p-6 sm:p-7 shadow-xs flex flex-col justify-between min-h-[380px] ${verticalStagger} text-white`}
+                    className={`rounded-2xl ${t.cardBg} p-6 sm:p-7 shadow-xs flex flex-col justify-between min-h-[380px] ${verticalStagger} text-white`}
                   >
                     <div>
                       {/* Card Header Row */}
@@ -508,7 +513,7 @@ function Thesis() {
       </section>
 
       {/* ── 3. DEEP MONOGRAPH CHAPTERS (PINNED MEMO BOARD & NOTEBOOK CANVAS) ── */}
-      <section className="relative bg-white pt-8 pb-16 sm:pt-10 md:pt-12 md:pb-20 overflow-hidden">
+      <section className="relative bg-white pt-10 pb-16 sm:pt-14 md:pt-16 md:pb-24 overflow-x-clip">
         {/* Subtle Horizontal Ruled Notebook Lines */}
         <div
           aria-hidden="true"
@@ -555,7 +560,7 @@ function Thesis() {
                 <article
                   key={theme.number}
                   id={theme.anchor}
-                  className={`relative scroll-mt-28 rounded-[32px] sm:rounded-[38px] bg-white p-6 sm:p-10 lg:p-12 shadow-[0_24px_70px_-15px_rgba(0,0,0,0.12),0_10px_26px_-6px_rgba(0,0,0,0.06),0_1px_4px_rgba(0,0,0,0.04)] border border-neutral-950/10 ${tiltClass}`}
+                  className={`relative scroll-mt-36 rounded-[32px] sm:rounded-[38px] bg-white p-6 sm:p-10 lg:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08),0_10px_26px_-6px_rgba(0,0,0,0.04),0_1px_4px_rgba(0,0,0,0.04)] border border-neutral-950/10 w-full max-w-full ${tiltClass}`}
                 >
                   {/* Translucent 3D Pushpin on Top Edge */}
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
@@ -604,9 +609,24 @@ function Thesis() {
                           <span>DEPLOYED ASSETS</span>
                           <span className="text-[10px] text-neutral-400 font-normal">PORTFOLIO</span>
                         </div>
-                        <div className="flex flex-col gap-2.5">
+                        <div className="grid grid-cols-3 gap-2.5">
                           {theme.portfolio.map((cName) => {
                             const c = findCompany(cName);
+                            const isInternshala = c?.slug === "internshala";
+                            const isConvegenius = c?.slug === "convegenius";
+                            const isLoFoods = c?.slug === "protein-chef" || c?.slug === "lo-foods";
+                            const isBigLogo = c?.slug === "flawsome" || isInternshala;
+                            const logoSrc = isInternshala ? internshalaIcon : c?.logo;
+
+                            let logoClass = "max-h-12 sm:max-h-14 w-auto max-w-[85%] object-contain";
+                            if (isConvegenius) {
+                              logoClass = "max-h-11 sm:max-h-12 w-auto max-w-[85%] object-contain";
+                            } else if (isLoFoods) {
+                              logoClass = "max-h-14 sm:max-h-16 w-auto max-w-[88%] scale-[1.1] sm:scale-[1.15] object-contain origin-center";
+                            } else if (isBigLogo) {
+                              logoClass = "max-h-16 sm:max-h-20 w-auto max-w-[90%] object-contain";
+                            }
+
                             return c ? (
                               <Link
                                 key={cName}
@@ -614,40 +634,26 @@ function Thesis() {
                                 params={{ slug: c.slug }}
                                 title={c.name}
                                 aria-label={`View ${c.name} portfolio profile`}
-                                className="flex items-center justify-between px-4 py-3 rounded-xl bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white border border-neutral-950/15 text-left transition-all duration-200 group h-14 shadow-2xs"
+                                className="relative flex flex-col items-center justify-center aspect-square rounded-xl bg-white border border-neutral-950/15 transition-all duration-200 group shadow-2xs p-3 overflow-hidden"
                               >
-                                <div className="relative flex items-center h-full max-w-[190px]">
-                                  {c.logo ? (
-                                    <>
-                                      <img
-                                        src={c.logo}
-                                        alt={`${c.name} logo`}
-                                        className={`h-7 max-h-7 sm:h-8 sm:max-h-8 w-auto max-w-[160px] object-contain object-left transition-opacity duration-200 ${c.whiteLogo ? "group-hover:opacity-0" : "group-hover:brightness-0 group-hover:invert"
-                                          }`}
-                                      />
-                                      {c.whiteLogo && (
-                                        <img
-                                          src={c.whiteLogo}
-                                          alt={`${c.name} white logo`}
-                                          aria-hidden="true"
-                                          className="absolute left-0 top-1/2 -translate-y-1/2 h-7 max-h-7 sm:h-8 sm:max-h-8 w-auto max-w-[160px] object-contain object-left opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-                                        />
-                                      )}
-                                    </>
+                                <div className="relative flex items-center justify-center w-full flex-1">
+                                  {logoSrc ? (
+                                    <img
+                                      src={logoSrc}
+                                      alt={`${c.name} logo`}
+                                      className={`${logoClass}`}
+                                    />
                                   ) : (
-                                    <span className="font-mono text-xs font-semibold">
+                                    <span className="font-mono text-[10px] font-semibold text-center leading-tight">
                                       {c.name}
                                     </span>
                                   )}
                                 </div>
-                                <span className="w-6 h-6 rounded-full bg-neutral-100 group-hover:bg-white text-neutral-900 flex items-center justify-center text-[10px] font-bold transition-colors shadow-2xs shrink-0 ml-3">
-                                  ↗
-                                </span>
                               </Link>
                             ) : (
                               <div
                                 key={cName}
-                                className="px-4 py-3 rounded-xl bg-white border border-neutral-950/15 font-mono text-xs text-neutral-500 h-14 flex items-center"
+                                className="flex items-center justify-center aspect-square rounded-xl bg-white border border-neutral-950/15 font-mono text-[10px] text-neutral-500 p-3 text-center"
                               >
                                 {cName}
                               </div>

@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useMemo } from "react";
 import {
   team,
   generalPartners,
@@ -11,6 +11,9 @@ import {
 import { ArrowUpRight, X, Sparkles, Check, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/team")({
+  validateSearch: (search: Record<string, unknown>): { profile: string | undefined } => ({
+    profile: typeof search.profile === "string" ? search.profile : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Operators & Partners | Mount Judi Ventures" },
@@ -39,7 +42,7 @@ const EXCLUDED = new Set(["ajish-rahman", "mohammed-mobeen-ismail-batla"]);
 function FolderTabDeck({ label }: { label: string }) {
   return (
     <div className="w-full pb-10 md:pb-14">
-      {/* Rounded pill strip — matches home page "Stage Focus" bar */}
+      {/* Rounded pill strip - matches home page "Stage Focus" bar */}
       <div className="rounded-full border border-[rgba(12,26,46,0.08)] bg-[var(--paper-subtle)] pl-2 pr-2 py-2 flex items-center justify-between gap-3 select-none shadow-2xs">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900 text-white font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">
           <span className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -110,7 +113,28 @@ function GeometricEmblem({ type }: { type: 1 | 2 | 3 | 4 | 5 | 6 }) {
 
 function TeamPage() {
   const members = team.filter((m) => !EXCLUDED.has(m.slug));
-  const [active, setActive] = useState<ProfilePerson | null>(null);
+  const { profile } = Route.useSearch();
+  const navigate = useNavigate();
+
+  // Build a lookup of all people by slug
+  const allPeople = useMemo(() => {
+    const map = new Map<string, ProfilePerson>();
+    for (const m of members) map.set(m.slug, m);
+    for (const gp of generalPartners) if (gp.slug) map.set(gp.slug, gp);
+    for (const a of advisoryBoard) if (a.slug) map.set(a.slug, a);
+    return map;
+  }, [members]);
+
+  const active = profile ? allPeople.get(profile) ?? null : null;
+
+  const setActive = (person: ProfilePerson | null) => {
+    const slug = person?.slug ?? person?.name.toLowerCase().replace(/\s+/g, "-");
+    navigate({
+      to: "/team",
+      search: { profile: person ? slug : undefined },
+      replace: true,
+    });
+  };
 
   const memberMap = new Map(members.map((m) => [m.slug, m]));
   const sherif = memberMap.get("sherif-kottapurath");
@@ -128,7 +152,7 @@ function TeamPage() {
       key={m.slug}
       type="button"
       onClick={() => setActive(m)}
-      className="bg-white border-2 border-neutral-950 rounded-2xl sm:rounded-3xl p-3 flex flex-col text-left group cursor-pointer hover:shadow-lg transition-all duration-200"
+      className="bg-white border-2 border-neutral-950 rounded-2xl sm:rounded-3xl p-3 flex flex-col text-left group cursor-pointer hover:shadow-lg transition-all duration-200 h-full"
     >
       <div>
         <div className="aspect-[4/3] w-full rounded-xl overflow-hidden bg-neutral-100 flex items-center justify-center p-1">
@@ -152,7 +176,7 @@ function TeamPage() {
 
       {/* Dedicated Tagline Box with padding below (NOT on the photo) */}
       {m.summary && (
-        <div className="mt-2.5 bg-neutral-50 border border-black/10 rounded-xl p-2.5 sm:p-3">
+        <div className="mt-auto pt-2.5 bg-neutral-50 border border-black/10 rounded-xl p-2.5 sm:p-3">
           <div className="flex items-start gap-1.5">
             <span className="text-sm sm:text-base text-neutral-400 font-serif leading-none select-none shrink-0 mt-0.5">“</span>
             <p className="font-sans text-[13px] sm:text-sm text-neutral-900 leading-snug font-medium">{m.summary}</p>
@@ -191,24 +215,24 @@ function TeamPage() {
         <div className="relative container-tight">
           <div className="container-tight relative pt-10 md:pt-14">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-neutral-500 font-bold">
-            <span className="h-1.5 w-1.5 rounded-full bg-neutral-900" />
-            <span>Operator Network </span>
-          </div>
+              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-neutral-500 font-bold">
+                <span className="h-1.5 w-1.5 rounded-full bg-neutral-900" />
+                <span>Operator Network </span>
+              </div>
               <span className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest font-bold">
-                40+ years cumulative pedigree
+                125+ years cumulative pedigree
               </span>
             </div>
           </div>
           <div className="relative pb-10 md:pb-14">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
               {/* Cell 1 (Row 1, Col 1): Heading + Descriptive Text */}
               <div className="flex flex-col p-2 sm:p-3 pr-4 space-y-4">
                 <div>
                   <h2 className="font-display text-2xl sm:text-3xl lg:text-3xl font-black uppercase text-neutral-950 leading-tight tracking-tight">
-                    Brands & creative
+                    Executive
                     <br />
-                    partnerships
+                    Team
                   </h2>
                 </div>
                 <p className="text-base text-neutral-900 leading-relaxed">We bring together visionary brands, creative talent, and strategic partners to build meaningful collaborations. Through shared expertise, strong networks, and innovative thinking, by helping businesses strengthen their market presence, unlock new opportunities, and create lasting impact.</p>
@@ -225,7 +249,7 @@ function TeamPage() {
             </div>
           </div>
           <div className="relative pb-10 md:pb-14">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
               <div className="hidden lg:block"></div>
               {/* Cell 6 (Row 2, Col 2): Imad Ahmed Shariff */}
               {imad && renderPartnerCard(imad)}
@@ -233,34 +257,25 @@ function TeamPage() {
               {/* Cell 7 (Row 2, Col 3): Praharsh Shahi */}
               {praharsh && renderPartnerCard(praharsh)}
 
-              {/* Cell 8 (Row 2, Col 4): Areeb Khan */}
-              {areeb && renderPartnerCard(areeb)}
+              {/* Cell 8 (Row 2, Col 4): Shruthi Karnam */}
+              {shruti && renderPartnerCard(shruti)}
             </div>
           </div>
 
           {/* Second row for added members */}
           <div className="relative pb-10 md:pb-14">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
               <div className="flex flex-col justify-between h-full p-2 sm:p-3 pr-4 space-y-6">
                 <div>
                   <p>
 
                   </p>
                 </div>
-                <div className="pt-4 lg:pt-8">
-                  <p className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                    Worked with startups, local businesses, personal brands, and creative teams
-                    across fashion, lifestyle, food, and digital industries.
-                  </p>
-                  <p className="mt-4 font-sans text-xs text-neutral-500 leading-relaxed">
-                    Four decades of operating pedigree. Entrepreneurs, operators, and technologists
-                    backing category leaders across India.
-                  </p>
-                </div>
+
               </div>
+              {areeb && renderPartnerCard(areeb)}
               {anamika && renderPartnerCard(anamika)}
               {uzma && renderPartnerCard(uzma)}
-              {shruti && renderPartnerCard(shruti)}
             </div>
           </div>
 
@@ -279,10 +294,12 @@ function TeamPage() {
               {/* Left Column: Heading + Description */}
               <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-6">
                 <div>
-                  <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase text-neutral-900 leading-tight tracking-tight">
+                  <h2 className="font-display text-2xl sm:text-3xl lg:text-[28px] xl:text-[32px] 2xl:text-4xl font-extrabold uppercase text-neutral-900 leading-tight tracking-tight">
                     General partners &amp;
                     <br />
-                    investment team
+                    investment
+                    <br />
+                    <span className="whitespace-nowrap">committee members</span>
                   </h2>
                 </div>
 
@@ -292,10 +309,7 @@ function TeamPage() {
                     who anchor Mount Judi's ethical standards, vet every deployment, and provide
                     direct boardroom access.
                   </p>
-                  <p className="mt-4 font-sans text-xs text-neutral-500 leading-relaxed">
-                    Clean term sheets, UN PRI signatory standards, and fiduciary discipline across
-                    market cycles.
-                  </p>
+
                 </div>
               </div>
 
@@ -322,14 +336,14 @@ function TeamPage() {
                             }
                           />
                         </div>
-        <div className="mt-1.5 px-1">
-          <div className="font-display text-sm font-black text-neutral-950 tracking-tight truncate">
-            {gp.name}
-          </div>
-          <div className="font-mono text-[10px] text-neutral-500 tracking-wider mt-0 font-bold">
-            {gp.role ?? "General Partner"}
-          </div>
-        </div>
+                        <div className="mt-1.5 px-1">
+                          <div className="font-display text-sm font-black text-neutral-950 tracking-tight truncate">
+                            {gp.name}
+                          </div>
+                          <div className="font-mono text-[10px] text-neutral-500 tracking-wider mt-0 font-bold">
+                            {gp.role ?? "General Partner"}
+                          </div>
+                        </div>
                       </button>
                     );
                   })}
@@ -389,14 +403,14 @@ function TeamPage() {
                           className="h-full w-full object-cover object-top rounded-lg"
                         />
                       </div>
-                        <div className="mt-1.5 px-1">
-                          <div className="font-display text-sm font-black text-neutral-950 tracking-tight truncate">
-                            {advisor.name}
-                          </div>
-                          <div className="font-mono text-[10px] text-neutral-500 tracking-wider mt-0 font-bold">
-                            {advisor.role ?? "Advisor"}
-                          </div>
+                      <div className="mt-1.5 px-1">
+                        <div className="font-display text-sm font-black text-neutral-950 tracking-tight truncate">
+                          {advisor.name}
                         </div>
+                        <div className="font-mono text-[10px] text-neutral-500 tracking-wider mt-0 font-bold">
+                          {advisor.role ?? "Advisor"}
+                        </div>
+                      </div>
                     </button>
                   ))}
                 </div>

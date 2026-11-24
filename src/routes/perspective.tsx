@@ -66,7 +66,7 @@ import thimblerrLogo from "@/assets/logos/thimblerr.webp";
 import boinggLogo from "@/assets/logos/boingg.webp";
 import hexalogLogo from "@/assets/logos/hexalog.webp";
 import extramileLogo from "@/assets/logos/extramile.webp";
-import freshleafLogo from "@/assets/logos/freshleaf.png";
+import freshleafLogo from "@/assets/logos/freshleaf.svg";
 import sandowitchLogo from "@/assets/logos/sandowitch_logo.jpeg";
 import flawsomeLogo from "@/assets/logos/flawsome_xleap_care_logo.jpeg";
 import balkiratImg from "@/assets/founders/balkirat.png";
@@ -81,7 +81,7 @@ export const Route = createFileRoute("/perspective")({
       {
         name: "description",
         content:
-          "A public, written reason for every cheque we write. Founder background, market insight, investment rationale — and the lessons we're still learning.",
+          "A public, written reason for every cheque we write. Founder background, market insight, investment rationale - and the lessons we're still learning.",
       },
       { property: "og:title", content: "Perspectives | Mount Judi Ventures" },
       { property: "og:url", content: "/perspective" },
@@ -144,7 +144,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2022",
     founder: "Ankit Kumar, Founder & CEO",
     rationale:
-      "Ankit is doing something almost nobody attempts in Indian deep-tech — building regulation, hardware, and software in parallel. His aviation-grade discipline paired with a builder's speed convinced us Skye Air could turn Indian skies into a working logistics layer. Every conversation made it clearer that he wasn't building a drone company; he was building the invisible infrastructure that will move medicines, samples, and commerce across the parts of India that roads have never truly served. Backing him meant backing a founder willing to compound quietly across regulators, airports, and hospitals for a decade — exactly the kind of patient category-defining work MJV exists to support.",
+      "Ankit is doing something almost nobody attempts in Indian deep-tech - building regulation, hardware, and software in parallel. His aviation-grade discipline paired with a builder's speed convinced us Skye Air could turn Indian skies into a working logistics layer. Every conversation made it clearer that he wasn't building a drone company; he was building the invisible infrastructure that will move medicines, samples, and commerce across the parts of India that roads have never truly served. Backing him meant backing a founder willing to compound quietly across regulators, airports, and hospitals for a decade - exactly the kind of patient category-defining work MJV exists to support.",
     pillars: [
       "Parallel hardware, software, and regulatory build",
       "Aviation-grade operational discipline",
@@ -171,7 +171,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2022",
     founder: "Dibyanshu Tripathi · Utkarsh Tripathi · Vineet Malik · Shobhit Singh, Founders",
     rationale:
-      "Freight forwarding is stuck in spreadsheets, and only operators who have lived that pain rebuild the stack correctly. The Hexalog founders have — pairing that operator credibility with a design-forward product sense that logistics software rarely gets right. That combination is what made them formidable to us. They're building the modern operating system for a category that global software has largely ignored — and their early customers speak about them with the kind of loyalty that only real workflow understanding earns. Backing founders replacing decades-old TMS platforms across India and the GCC is exactly the kind of quiet, category-defining opportunity we want to be part of.",
+      "Freight forwarding is stuck in spreadsheets, and only operators who have lived that pain rebuild the stack correctly. The Hexalog founders have - pairing that operator credibility with a design-forward product sense that logistics software rarely gets right. That combination is what made them formidable to us. They're building the modern operating system for a category that global software has largely ignored - and their early customers speak about them with the kind of loyalty that only real workflow understanding earns. Backing founders replacing decades-old TMS platforms across India and the GCC is exactly the kind of quiet, category-defining opportunity we want to be part of.",
     pillars: [
       "Replacing fragmented legacy logistics spreadsheets",
       "Maritime container telemetry across 40+ trade routes",
@@ -215,7 +215,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2022",
     founder: "Hitesh Goswami & Kshitij Rishi, Co-Founders",
     rationale:
-      "Precision oncology in India needs founders who can hold clinical rigour and software velocity in the same head. Hitesh and Kshitij do — and their refusal to treat the South Asian genome as an afterthought is why we believe 4baseCare can define this category for emerging markets. What convinced us most was how deeply the team had thought about the oncologist's workflow, not just the science: the reports, the turnaround times, the tumour boards, the tough conversations with families. That empathy — combined with genuine research depth — is a rare compounding moat, and one we wanted to back for the long arc.",
+      "Precision oncology in India needs founders who can hold clinical rigour and software velocity in the same head. Hitesh and Kshitij do - and their refusal to treat the South Asian genome as an afterthought is why we believe 4baseCare can define this category for emerging markets. What convinced us most was how deeply the team had thought about the oncologist's workflow, not just the science: the reports, the turnaround times, the tumour boards, the tough conversations with families. That empathy - combined with genuine research depth - is a rare compounding moat, and one we wanted to back for the long arc.",
     pillars: [
       "South Asian indigenous genomic panel",
       "Deep clinical oncologist workflow empathy",
@@ -274,7 +274,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2019",
     founder: "Siraj Dhanani, Founder & CEO",
     rationale:
-      "Frugal medtech is a decade-long game, and the InnAccel founders have the exact temperament for it — Stanford Biodesign training, deep clinical fieldwork, and a patents-first discipline. Their willingness to build slowly and correctly for the next billion patients is why we backed them. Very few Indian teams have shown they can carry a medical device from clinical insight through regulatory approvals to manufacturing at cost points that district hospitals can actually afford — InnAccel has done it repeatedly. That platform of engineering, clinical, and regulatory muscle is the compounding asset we're investing behind.",
+      "Frugal medtech is a decade-long game, and the InnAccel founders have the exact temperament for it - Stanford Biodesign training, deep clinical fieldwork, and a patents-first discipline. Their willingness to build slowly and correctly for the next billion patients is why we backed them. Very few Indian teams have shown they can carry a medical device from clinical insight through regulatory approvals to manufacturing at cost points that district hospitals can actually afford - InnAccel has done it repeatedly. That platform of engineering, clinical, and regulatory muscle is the compounding asset we're investing behind.",
     pillars: [
       "Stanford India Biodesign clinical pedigree",
       "Patents-first medical device portfolio",
@@ -345,7 +345,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2021",
     founder: "Kiran Ramakrishna · Chandan Mishra, Co-Founders",
     rationale:
-      "Most founders defend their legacy stack when a platform shift arrives. Kiran and Chandan did the opposite — they rebuilt Rubick around AI faster than most first-time founders could ship a demo. That intellectual honesty and courage to reinvent their own company is why we doubled down. They now serve some of the world's most demanding marketplaces, in categories and languages where quality is unforgiving, and they've earned that trust by being obsessive about output quality long before it was a talking point. Backing a team willing to disrupt themselves — twice — is exactly the kind of bet we like to make.",
+      "Most founders defend their legacy stack when a platform shift arrives. Kiran and Chandan did the opposite - they rebuilt Rubick around AI faster than most first-time founders could ship a demo. That intellectual honesty and courage to reinvent their own company is why we doubled down. They now serve some of the world's most demanding marketplaces, in categories and languages where quality is unforgiving, and they've earned that trust by being obsessive about output quality long before it was a talking point. Backing a team willing to disrupt themselves - twice - is exactly the kind of bet we like to make.",
     pillars: [
       "Courage to cannibalize legacy tech for generative AI",
       "Global enterprise catalog automation",
@@ -379,7 +379,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2023",
     founder: "Arpita Aditi, Founder & CEO",
     rationale:
-      "Every investment starts with the founding team. In Arpita we saw a repeat operator with deep conviction, operational excellence, and the ambition to build for the long term. Her ability to execute while staying obsessively customer-focused — and respectful of the chefs and kitchens that power the model — is what made this an investment we were excited to make. Dil's asset-light thesis flips cloud-kitchen economics on its head, and Arpita's clarity on why the previous generation of dark kitchens burned capital gave us confidence in the roadmap. We're backing a founder who is building the version of Indian food-tech that finally works for the chef, the customer, and the balance sheet at the same time.",
+      "Every investment starts with the founding team. In Arpita we saw a repeat operator with deep conviction, operational excellence, and the ambition to build for the long term. Her ability to execute while staying obsessively customer-focused - and respectful of the chefs and kitchens that power the model - is what made this an investment we were excited to make. Dil's asset-light thesis flips cloud-kitchen economics on its head, and Arpita's clarity on why the previous generation of dark kitchens burned capital gave us confidence in the roadmap. We're backing a founder who is building the version of Indian food-tech that finally works for the chef, the customer, and the balance sheet at the same time.",
     pillars: [
       "Asset-light model flipping dark kitchen burn on its head",
       "Obsessive customer & kitchen-operator respect",
@@ -406,7 +406,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2020",
     founder: "Shan Kadavil · Mathew Joseph, Co-Founders",
     rationale:
-      "Building direct-from-fisherman seafood at scale demands both hard technology and deep empathy for the coast. Shan and Mathew are one of the few teams in Indian consumer with the technical depth and fisherman-first respect to build FreshToHome the right way — and that full-stack conviction is why we backed them. Their AI-driven demand forecasting quietly rewires an industry that has run on waste and middlemen for decades — and they've done it while keeping the fisherman at the centre of the value chain. That combination of engineering ambition and social conscience is rare, and it's why FreshToHome has become one of the most respected consumer companies in the region.",
+      "Building direct-from-fisherman seafood at scale demands both hard technology and deep empathy for the coast. Shan and Mathew are one of the few teams in Indian consumer with the technical depth and fisherman-first respect to build FreshToHome the right way - and that full-stack conviction is why we backed them. Their AI-driven demand forecasting quietly rewires an industry that has run on waste and middlemen for decades - and they've done it while keeping the fisherman at the centre of the value chain. That combination of engineering ambition and social conscience is rare, and it's why FreshToHome has become one of the most respected consumer companies in the region.",
     pillars: [
       "AI-driven coastal supply chain and auction bypass",
       "Chemical-free, antibiotic-free fresh food certification",
@@ -438,7 +438,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2022",
     founder: "Vikram Sharma · Deepanshu Goel, Co-Founders",
     rationale:
-      "Hyperlocal commerce only works when the founder has lived its messy realities. The Wiffy team has — their trust-first product instincts, willingness to grow neighborhood by neighborhood, and refusal to force-fit a mass-market playbook is what earned our early conviction. Instead of chasing top-down growth, they've built a community fabric that residents actually rely on — and that patience creates the kind of defensibility hyperlocal has struggled to find for a decade. We're backing a team building the invisible commerce layer of the Indian neighborhood, one street at a time. Wiffy was featured on Meet the Drapers (a global startup pitch platform), where CEO Mr. Vikram Sharma met Tim Draper himself.",
+      "Hyperlocal commerce only works when the founder has lived its messy realities. The Wiffy team has - their trust-first product instincts, willingness to grow neighborhood by neighborhood, and refusal to force-fit a mass-market playbook is what earned our early conviction. Instead of chasing top-down growth, they've built a community fabric that residents actually rely on - and that patience creates the kind of defensibility hyperlocal has struggled to find for a decade. We're backing a team building the invisible commerce layer of the Indian neighborhood, one street at a time. Wiffy was featured on Meet the Drapers (a global startup pitch platform), where CEO Mr. Vikram Sharma met Tim Draper himself.",
     pillars: [
       "Street-by-street hyperlocal network density",
       "Trust-first neighborhood community fabric",
@@ -464,14 +464,14 @@ export const perspectivesData: PerspectiveStory[] = [
   {
     id: "boingg",
     number: "11",
-    company: "Boingg",
+    company: "Boingg!",
     slug: "boingg",
-    title: "Why we invested in Boingg",
+    title: "Why we invested in Boingg!",
     sector: "Consumer",
     year: "2022",
     founder: "Dhruvan Barar, Founder & CEO",
     rationale:
-      "Kids furniture is a craft category masquerading as e-commerce. Dhruvan is a design-led founder who obsesses over materials, modularity, and the child's experience — and his taste, restraint, and hands-on operating instincts are why Boingg stood out to us from the very first meeting. He understands parents like an insider and children like a designer — a rare combination — and it shows in the loyalty of early cohorts. Backing him means backing a brand being built with love, patience, and product integrity in a category that rewards exactly those things.",
+      "Kids furniture is a craft category masquerading as e-commerce. Dhruvan is a design-led founder who obsesses over materials, modularity, and the child's experience - and his taste, restraint, and hands-on operating instincts are why Boingg stood out to us from the very first meeting. He understands parents like an insider and children like a designer - a rare combination - and it shows in the loyalty of early cohorts. Backing him means backing a brand being built with love, patience, and product integrity in a category that rewards exactly those things.",
     pillars: [
       "Design-led modularity for children's developmental stages",
       "Material safety and non-toxic finish obsession",
@@ -498,7 +498,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2023",
     founder: "Pooja Bajaj, Founder & CEO",
     rationale:
-      "Building fan experiences requires product craft and genuine fandom in equal measure — a pairing incumbents can rarely fake. The ExtraMile founders bring both, and it lets them design engagement loops that feel made by fans, for fans. That authenticity is why we backed them at seed. Instead of copying transactional fantasy models, they're building the community and creator layer that Indian cricket has been missing — and their early engagement depth reflects that difference. Backing founders who love the game as much as the product is a bet we're happy to make.",
+      "Building fan experiences requires product craft and genuine fandom in equal measure - a pairing incumbents can rarely fake. The ExtraMile founders bring both, and it lets them design engagement loops that feel made by fans, for fans. That authenticity is why we backed them at seed. Instead of copying transactional fantasy models, they're building the community and creator layer that Indian cricket has been missing - and their early engagement depth reflects that difference. Backing founders who love the game as much as the product is a bet we're happy to make.",
     pillars: [
       "Authentic fan-first community and creator loops",
       "Beyond transactional fantasy gaming models",
@@ -642,7 +642,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2018",
     founder: "Sneha Priya · Pranavan Sankar, Co-Founders",
     rationale:
-      "Great early-learning brands are built one parent cohort at a time. Sneha and Pranavan are educator-founders who invested years in curriculum craft before it was fashionable — and it shows in the trust SPRW has earned. That quiet, compounding discipline is exactly the founder profile we back. They chose to build hardware, curriculum, and instructor operations together — the hard triangle — because they understood that skill-building doesn't happen through content alone. The result is a durable, deeply loved learning brand that we believe can travel far beyond its home market.",
+      "Great early-learning brands are built one parent cohort at a time. Sneha and Pranavan are educator-founders who invested years in curriculum craft before it was fashionable - and it shows in the trust SPRW has earned. That quiet, compounding discipline is exactly the founder profile we back. They chose to build hardware, curriculum, and instructor operations together - the hard triangle - because they understood that skill-building doesn't happen through content alone. The result is a durable, deeply loved learning brand that we believe can travel far beyond its home market.",
     pillars: [
       "The hard triangle: hardware, curriculum & operations",
       "Educator-first pedagogical integrity",
@@ -674,7 +674,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2019",
     founder: "Sarvesh Agrawal, Founder & CEO",
     rationale:
-      "Sarvesh has spent over a decade building Internshala with a rare kind of quiet, capital-efficient discipline — choosing durability over hype at every fork. In a market obsessed with growth theatre, that long-term operator temperament is exactly the founder DNA we invest behind. Internshala became the default first step into the Indian workforce not through marketing spend but through relentless product craft, employer trust, and student obsession over many years. Investing behind that kind of compounding brand — built with taste, patience, and profitability — is a category of bet we will always want to make.",
+      "Sarvesh has spent over a decade building Internshala with a rare kind of quiet, capital-efficient discipline - choosing durability over hype at every fork. In a market obsessed with growth theatre, that long-term operator temperament is exactly the founder DNA we invest behind. Internshala became the default first step into the Indian workforce not through marketing spend but through relentless product craft, employer trust, and student obsession over many years. Investing behind that kind of compounding brand - built with taste, patience, and profitability - is a category of bet we will always want to make.",
     pillars: [
       "Quiet, capital-efficient compounding over a decade",
       "Default first step into India's corporate workforce",
@@ -701,7 +701,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2026",
     founder: "Ronnie Screwvala, Co-Founder & Chairperson",
     rationale:
-      "Our conviction in upGrad is an extension of our conviction in Internshala — when upGrad acquired a majority stake in Internshala, we inherited a front-row seat in Asia's largest integrated higher-education platform. Ronnie Screwvala has built and scaled category-defining businesses repeatedly, and his obsession with learning outcomes over vanity metrics mirrors the durability-first mindset we backed at Internshala. The acquisition stitches learning to employment in a single stack — degrees, skilling, internships, and first jobs — and we believe that end-to-end employability flywheel will define Indian edtech's next decade.",
+      "Our conviction in upGrad is an extension of our conviction in Internshala - when upGrad acquired a majority stake in Internshala, we inherited a front-row seat in Asia's largest integrated higher-education platform. Ronnie Screwvala has built and scaled category-defining businesses repeatedly, and his obsession with learning outcomes over vanity metrics mirrors the durability-first mindset we backed at Internshala. The acquisition stitches learning to employment in a single stack - degrees, skilling, internships, and first jobs - and we believe that end-to-end employability flywheel will define Indian edtech's next decade.",
     pillars: [
       "Full-stack degrees-to-employment flywheel",
       "Legendary repeat builder governance & leadership",
@@ -733,7 +733,7 @@ export const perspectivesData: PerspectiveStory[] = [
     year: "2020",
     founder: "Prasad Ram, Founder & CEO",
     rationale:
-      "Population-scale edtech is one of the hardest things to build, and Prasad brings a rare stack for it — Google-scale engineering, an educator's patience, and the humility to build in the open with school systems. That founder profile is why Gooru is now deployed to millions of learners globally. Gooru chose the harder path of open standards, research partnerships, and public-sector adoption long before AI made personalisation a headline. That decade of quiet infrastructure work is now compounding — and backing a founder who built the roads before the traffic is exactly our kind of bet.",
+      "Population-scale edtech is one of the hardest things to build, and Prasad brings a rare stack for it - Google-scale engineering, an educator's patience, and the humility to build in the open with school systems. That founder profile is why Gooru is now deployed to millions of learners globally. Gooru chose the harder path of open standards, research partnerships, and public-sector adoption long before AI made personalisation a headline. That decade of quiet infrastructure work is now compounding - and backing a founder who built the roads before the traffic is exactly our kind of bet.",
     pillars: [
       "GPS for Learning open architectural standards",
       "Google-scale systems engineering pedigree",
@@ -760,13 +760,13 @@ export const perspectivesData: PerspectiveStory[] = [
     title: "Why we invested in Thimblerr",
     sector: "Fashion Supply Chain",
     year: "2023",
-    founder: "Dinesh K. & Team, Founders",
+    founder: "Piyush Jalan, Founder & CEO",
     rationale:
-      "Underwriting India's small merchants is intuition, not just algorithms. The Thimblerr founders lived that ground truth first-hand before writing a line of code — and their platform-first approach paired with lender-grade rigour is what made this an early conviction bet for us in embedded finance. They're patient about credit performance in a category that punishes shortcuts, and they've resisted the temptation to grow ahead of underwriting quality. That discipline — pairing empathy for the merchant with hard-nosed risk management — is exactly what India's MSME credit stack has been missing.",
+      "Underwriting India's small merchants is intuition, not just algorithms. The Thimblerr founders lived that ground truth first-hand before writing a line of code - and their platform-first approach paired with lender-grade rigour is what made this an early conviction bet for us in embedded finance. They're patient about credit performance in a category that punishes shortcuts, and they've resisted the temptation to grow ahead of underwriting quality. That discipline - pairing empathy for the merchant with hard-nosed risk management - is exactly what India's MSME credit stack has been missing.",
     pillars: [
+      "Operates D2C brand Maison X crafted from mill fabrics",
       "Grounded MSME factory floor intuition",
       "Underwriting quality over reckless growth",
-      "Digitizing textile supply chains in Tirupur & Surat",
       "Collapsing lead times from 90 days to 15 days",
     ],
     founders: [

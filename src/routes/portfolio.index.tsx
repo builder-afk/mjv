@@ -53,11 +53,11 @@ const COMPANY_LOCATIONS: Record<string, string> = {
   "protein-chef": "Bengaluru",
   "innaccel": "Bengaluru",
   "rubickai": "Bengaluru",
-  "sp-robotic-works": "Chennai",
+  "sp-robotic-works": "Bengaluru",
   "internshala": "Gurugram",
   "upgrad": "Mumbai",
   "freshtohome": "Bengaluru",
-  "wiffy": "Delhi NCR",
+  "wiffy": "Mumbai",
   "gooru": "Bengaluru",
   "thimblerr": "Mumbai",
   "boingg": "Gurugram",
@@ -128,6 +128,76 @@ function matchesFund(c: Company, filter: FundFilter): boolean {
   if (filter === "MJIGF") return c.fund === "Growth Fund" || c.fund === "Both";
   if (filter === "MJIMF") return c.fund === "Micro Fund" || c.fund === "Both";
   return true;
+}
+
+// Portfolio company display order matching Mount Judi official fund rosters
+const MJIGF_ORDER = [
+  "innaccel",
+  "4basecare",
+  "skye-air",
+  "rubickai",
+  "hexalog",
+  "internshala",
+  "protein-chef",
+  "freshtohome",
+  "dil-foods",
+  "convegenius",
+  "wiffy",
+  "staqu",
+  "gooru",
+  "upgrad",
+];
+
+const MJIMF_ORDER = [
+  "4basecare",
+  "rubickai",
+  "protein-chef",
+  "dil-foods",
+  "wiffy",
+  "skye-air",
+  "thimblerr",
+  "boingg",
+  "sp-robotic-works",
+  "extramile",
+  "freshleaf-tea",
+  "sandowitch",
+  "flawsome",
+];
+
+const ALL_ORDER = [
+  "innaccel",
+  "4basecare",
+  "skye-air",
+  "rubickai",
+  "hexalog",
+  "internshala",
+  "protein-chef",
+  "freshtohome",
+  "dil-foods",
+  "convegenius",
+  "wiffy",
+  "staqu",
+  "gooru",
+  "upgrad",
+  "thimblerr",
+  "boingg",
+  "sp-robotic-works",
+  "extramile",
+  "freshleaf-tea",
+  "sandowitch",
+  "flawsome",
+];
+
+function getCompanyOrderRank(slug: string, fund: FundFilter): number {
+  const orderList =
+    fund === "MJIGF"
+      ? MJIGF_ORDER
+      : fund === "MJIMF"
+        ? MJIMF_ORDER
+        : ALL_ORDER;
+
+  const idx = orderList.indexOf(slug);
+  return idx !== -1 ? idx : 999;
 }
 
 export default function PortfolioIndex() {
@@ -204,7 +274,12 @@ export default function PortfolioIndex() {
         }
       }
       return true;
-    }).sort((a, b) => b.year - a.year);
+    }).sort((a, b) => {
+      const rankA = getCompanyOrderRank(a.slug, activeFund);
+      const rankB = getCompanyOrderRank(b.slug, activeFund);
+      if (rankA !== rankB) return rankA - rankB;
+      return b.year - a.year;
+    });
   }, [activeFund, selectedSector, searchQuery]);
 
   const currentMeta = FUND_META[activeFund];
@@ -273,10 +348,10 @@ export default function PortfolioIndex() {
                     key={company.slug}
                     to="/portfolio/$slug"
                     params={{ slug: company.slug }}
-                    className="group relative flex flex-col rounded-2xl border-2 border-[#cee7fc] bg-neutral-900 overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-300 aspect-[4/3] sm:aspect-[16/11] min-h-[220px]"
+                    className="group relative flex flex-col rounded-2xl border-2 border-[#cee7fc] bg-white overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-300 aspect-[4/3] sm:aspect-[16/11] min-h-[220px]"
                   >
                     {/* Full Card Image (Base Visual) */}
-                    <div className="absolute inset-0 w-full h-full overflow-hidden bg-neutral-900">
+                    <div className="absolute inset-0 w-full h-full overflow-hidden bg-neutral-100">
                       {company.image ? (
                         <img
                           src={company.image}
@@ -287,17 +362,17 @@ export default function PortfolioIndex() {
                             } transition-transform duration-700 ease-out group-hover:scale-108`}
                         />
                       ) : (
-                        <div className="h-full w-full flex items-center justify-center bg-neutral-900 p-8">
+                        <div className="h-full w-full flex items-center justify-center bg-[#f0f8ff] p-8">
                           <img
-                            src={company.whiteLogo || company.logo}
+                            src={company.logo}
                             alt=""
                             className="max-h-14 w-auto object-contain"
                           />
                         </div>
                       )}
 
-                      {/* Gentle Gradient Scrim for Base Readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/35 pointer-events-none group-hover:opacity-0 transition-opacity duration-300" />
+                      {/* Gentle Bottom-Only Gradient for Text Readability (Leaves photo 100% full vibrant color) */}
+                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-300" />
 
                       {/* Top Badges (Visible on Image) */}
                       <div className="absolute inset-x-0 top-0 p-3 sm:p-3.5 flex items-center justify-between z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-200">
@@ -395,7 +470,15 @@ export default function PortfolioIndex() {
                               <Zap className="w-3 h-3 text-[#0284c7]" />
                               {company.stage}
                             </span>
-                            <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-sans font-medium bg-[#f8fafc] text-neutral-600 border border-neutral-200 shrink-0">
+                            <span
+                              className={`px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-sans font-semibold shrink-0 border ${
+                                company.thesis === "Consumer Brands"
+                                  ? "bg-[#b78c2d]/10 text-[#7c622b] border-[#b78c2d]/30"
+                                  : company.thesis === "Consumer Enablers"
+                                    ? "bg-[#0ab1d7]/10 text-[#0d748f] border-[#0ab1d7]/30"
+                                    : "bg-[#1e6086]/10 text-[#1e6086] border-[#1e6086]/30"
+                              }`}
+                            >
                               {company.thesis}
                             </span>
                           </div>
@@ -490,7 +573,15 @@ export default function PortfolioIndex() {
                             <Zap className="w-3 h-3 text-[#0284c7]" />
                             {company.stage}
                           </span>
-                          <span className="px-3 py-0.5 rounded-full text-xs font-sans font-medium bg-[#f8fafc] text-neutral-600 border border-neutral-200">
+                          <span
+                            className={`px-3 py-0.5 rounded-full text-xs font-sans font-semibold border ${
+                              company.thesis === "Consumer Brands"
+                                ? "bg-[#b78c2d]/10 text-[#7c622b] border-[#b78c2d]/30"
+                                : company.thesis === "Consumer Enablers"
+                                  ? "bg-[#0ab1d7]/10 text-[#0d748f] border-[#0ab1d7]/30"
+                                  : "bg-[#1e6086]/10 text-[#1e6086] border-[#1e6086]/30"
+                            }`}
+                          >
                             {company.thesis}
                           </span>
                         </div>

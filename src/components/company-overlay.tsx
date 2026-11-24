@@ -56,7 +56,7 @@ export function CompanyOverlay({
         <div className="flex items-center justify-between border-b border-[var(--ink)] pb-4">
           <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-[var(--ink-muted)]">
             <span className="h-2 w-2 bg-[var(--signal-red)]" />
-            <span>{company.name.toUpperCase()}</span>
+            <span>{company.name}</span>
           </div>
 
           <button
@@ -120,6 +120,18 @@ export function CompanyOverlay({
                   </a>
                 </div>
               )}
+              {company.associatedBrand?.website && (
+                <div className="mt-2.5">
+                  <a
+                    href={company.associatedBrand.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full text-center block font-mono text-xs uppercase tracking-wider py-2 px-3 border border-[var(--ink)]/30 hover:border-[var(--ink)] hover:bg-[var(--ink)] hover:text-white transition rounded"
+                  >
+                    Visit {company.associatedBrand.name} ↗
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
@@ -132,7 +144,7 @@ export function CompanyOverlay({
               <span>{company.stages.join(" → ")}</span>
             </div>
 
-            <h2 className="mt-3 font-display text-4xl sm:text-6xl font-bold uppercase tracking-tight text-balance">
+            <h2 className="mt-3 font-display text-4xl sm:text-6xl font-bold tracking-tight text-balance">
               {company.name}
             </h2>
 
@@ -315,7 +327,7 @@ export function CompanyOverlay({
                   &ldquo;{company.testimonial.quote}&rdquo;
                 </p>
                 <footer className="mt-3 font-mono text-[11px] uppercase tracking-widest text-[var(--ink-muted)]">
-                  — {company.testimonial.author}
+                  - {company.testimonial.author}
                 </footer>
               </blockquote>
             )}

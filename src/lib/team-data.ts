@@ -190,8 +190,8 @@ export const team: TeamMember[] = [
       "The best platform work is invisible when it is working, and unmistakable when it is missing.",
     focus: ["Portfolio Growth", "Talent Networks", "Community", "Brand", "Go-to-Market"],
     timeline: [
-      { company: "Mount Judi Ventures", role: "Sr. Manager / Growth", years: "Present" },
-      { company: "Entrepreneur: EdTech & Food", role: "Founder / Operator", years: "Prior" },
+      { company: "Mount Judi Ventures", role: "Sr. Manager - Growth", years: "Present" },
+      { company: "Entrepreneur: EdTech & Food", role: "Founder - Operator", years: "Prior" },
       { company: "INSEAD", role: "Strategic Management & Business Essentials Program", years: "" },
       { company: "Mechanical Engineering", role: "Engineer at Heart", years: "" },
     ],
@@ -230,14 +230,14 @@ export const team: TeamMember[] = [
       "Financial Analysis",
     ],
     timeline: [
-      { company: "Mount Judi Ventures", role: "Manager / Investments", years: "Present" },
+      { company: "Mount Judi Ventures", role: "Manager - Investments", years: "Present" },
       { company: "Klub", role: "Investment Manager", years: "Prior" },
       {
         company: "Protiviti",
-        role: "Deputy Manager / Transaction Advisory Services",
+        role: "Deputy Manager - Transaction Advisory Services",
         years: "Prior",
       },
-      { company: "Finvista", role: "Senior Analyst / M&A and Private Equity", years: "Prior" },
+      { company: "Finvista", role: "Senior Analyst - M&A and Private Equity", years: "Prior" },
       { company: "Northern Trust", role: "Financial Analyst", years: "Prior" },
       { company: "IBS Hyderabad", role: "MBA", years: "" },
       { company: "Manipal Academy of Higher Education", role: "BBM", years: "" },
@@ -266,7 +266,8 @@ export const team: TeamMember[] = [
     bio: [
       "Areeb Khan is an Analyst at Mount Judi Ventures, where he focuses on identifying and evaluating promising technology-driven companies and emerging opportunities.",
       "With a background in Electronics and Communication Engineering and hands-on experience building AI automation solutions, he brings a technology-first perspective to investment research and diligence.",
-      "His core interests span artificial intelligence, the Internet of Things, deep tech and emerging technologies. He is especially interested in understanding both the underlying technology and the enduring businesses that can be built around it.",
+      "His core interests span artificial intelligence, IoT, Deep tech and emerging technologies. At Mount Judi Ventures, he has driven operational efficiency by automating repetitive tasks, optimizing manual workflows, and developing end-to-end automation pipelines. He is especially interested in understanding both the underlying technology and the enduring businesses that can be built around it.",
+      "Areeb also loves building AI applications and while at college, he built an entire EdTech platform enabling high school students to access high quality curriculum-aligned content",
     ],
     philosophy:
       "The true impact of technology lies in the problems it solves and the value it creates for the society.",
@@ -278,7 +279,7 @@ export const team: TeamMember[] = [
       "Investment Research",
     ],
     timeline: [
-      { company: "Mount Judi Ventures", role: "Analyst / Investments", years: "Present" },
+      { company: "Mount Judi Ventures", role: "Analyst - Investments", years: "Present" },
       { company: "AI Automation", role: "Solution Building & Technology Research", years: "Prior" },
       { company: "PES University", role: "B.Tech in Electronics and Communication Engineering", years: "" },
     ],
@@ -310,7 +311,7 @@ export const team: TeamMember[] = [
       "Founder Support",
     ],
     timeline: [
-      { company: "Mount Judi Ventures", role: "Analyst / Growth", years: "Present" },
+      { company: "Mount Judi Ventures", role: "Analyst - Growth", years: "Present" },
       { company: "QBS Learning", role: "Business Finance Analyst", years: "Prior" },
       { company: "Lady Shri Ram College for Women", role: "Economics & Statistics", years: "2025" },
     ],
@@ -360,21 +361,20 @@ export const team: TeamMember[] = [
   {
     slug: "uzma-khanum",
     name: "Uzma Khanum",
-    role: "Compliance & Administrative Officer",
+    role: "Account & Administrative Officer",
     group: "Platform",
     photo: uzmaPhoto,
     linkedin: "https://www.linkedin.com/in/uzma-khanum-353a63241/",
-    summary: "Compliance is not a checklist; it is the culture that protects both the founder and the fund.",
+    summary: "Precision in operations and clear communication is the engine that lets great ventures grow with confidence.",
     intro:
-      "Uzma anchors compliance and administration at MJV from regulatory adherence to day-to-day operations, with a bias for precision, process and quiet rigour.",
+      "Uzma anchors accounts and administration at MJV from regulatory adherences to day-to-day operations, with a bias for precision, process and quiet rigour.",
     bio: [
-      "Uzma Khanum leads compliance and administrative execution at Mount Judi Ventures, where she is responsible for ensuring regulatory adherence, maintaining statutory records, and managing internal operations and governance. She brings a meticulous, process-driven approach to every task, ensuring that what needs to get done gets done correctly and on time.",
-      "As an early-career professional, she brings a focused and detail-oriented approach to streamlining administrative workflows, coordinating compliance frameworks, and supporting organizational efficiency across functions.",
+      "Uzma Khanum anchors the accounts and administrative execution at Mount Judi Ventures, where she is responsible for ensuring regulatory adherences, investor communications and compliances, maintaining statutory records, and managing internal operations and accounts. She brings a meticulous, process-driven approach to every task, ensuring that what needs to get done gets done correctly and on time.",
+      "As an early-career professional, she brings a focused and detail-oriented approach to streamlining administrative workflows, coordinating operational frameworks, and supporting organizational efficiency across functions.",
       "Uzma has completed her B. Com and is currently pursuing Company Secretary (CS).",
-      '"Compliance is not a checklist; it is the culture that protects both the founder and the fund."',
     ],
     philosophy:
-      "Compliance is not a checklist; it is the culture that protects both the founder and the fund.",
+      "Precision in operations and clear communication is the engine that lets great ventures grow with confidence",
     focus: ["Compliance", "Administration", "Governance", "Statutory Records", "Process"],
     timeline: [
       { company: "Mount Judi Ventures", role: "Compliance & Administrative Officer", years: "Present" },
@@ -385,7 +385,7 @@ export const team: TeamMember[] = [
   {
     slug: "shruthi-karnam",
     name: "Shruthi Karnam",
-    role: "Company Secretary",
+    role: "Associate - Compliance and Legal",
     group: "Platform",
     photo: shrutiPhoto,
     linkedin: "https://www.linkedin.com/in/shruthi-karnam-0a69b4137/",
@@ -394,10 +394,10 @@ export const team: TeamMember[] = [
     bio: [
       "Shruthi is a qualified Company Secretary from the Institute of Company Secretaries of India (ICSI) and a Law Graduate from Karnataka State Law University (KSLU), Class of 2022. She brings over four years of professional experience spanning fundraising, corporate law, regulatory compliance.",
       "At Mount Judi Ventures, Shruthi oversees legal and compliance functions relating to Alternative Investment Funds (AIFs), with a focus on SEBI regulations, fund governance, investor documentation and regulatory reporting. Her responsibilities extend to fundraising support, transaction documentation, statutory compliance and coordination with regulatory authorities and key stakeholders.",
-      "Her expertise encompasses the Companies Act, FEMA, LLP regulations and the regulatory framework governing AIFs. She works closely with legal advisors, trustees, custodians and other stakeholders to ensure regulatory adherence and facilitate seamless fund operations.",
+      "Her expertise encompasses the Companies Act, FEMA, LLP regulations and the regulatory framework governing AIFs. She works closely with legal advisors, trustees, custodians and other stakeholders to ensure regulatory adherence and facilitate seamless fund operations. Shruthi also actively contributes to fundraising activities, and helps monitor and improve the legal and governance processes at the portfolio companies.",
       "At Mount Judi Ventures, she works across the firm's legal, compliance and fund operations functions, contributing to the execution of fundraising activities, regulatory obligations and governance processes.",
     ],
-    philosophy: "Good governance enables good decisions.",
+    philosophy: "Compliance is not a checklist; it is the culture that protects both the founder and the fund.",
     focus: ["Company Secretarial", "Governance", "Compliance"],
     timeline: [
       { company: "Mount Judi Ventures", role: "Company Secretary", years: "Present" },
@@ -405,8 +405,8 @@ export const team: TeamMember[] = [
       { company: "Guitcom Consulting Pvt. Limited", role: "Associate Company Secretary", years: "Prior" },
       { company: "Prozone Advisors Private Limited", role: "Compliance Intern", years: "Prior" },
     ],
-    notable: ["Company Secretary"],
-    interests: ["Governance", "Compliance"],
+    notable: ["Associate - Compliance and Legal"],
+    interests: ["Legal", "Governance"],
   },
 ];
 
@@ -573,7 +573,7 @@ export const generalPartners: GeneralPartner[] = [
   {
     slug: "kazi-arif-zaman",
     name: "Kazi Arif Zaman",
-    role: "Investment Committee",
+    role: "General Partner",
     photo: kaziPhoto,
     linkedin: "https://www.linkedin.com/in/kaziz",
     based: "Bengaluru, India",

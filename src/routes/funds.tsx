@@ -66,7 +66,7 @@ const funds = [
     accentText: "text-white",
     arrowBg: "bg-[#C78D1E] text-white",
     launched: "Active · Open for Investments",
-    corpus: "₹50 Cr",
+    corpus: "100 Cr",
     status: "OPEN FOR LP COMMITMENTS",
     type: "SEBI registered Category I AIF (VCF Angel Fund)",
     description:
@@ -117,7 +117,7 @@ const governancePillars = [
     title: "Independent Valuation & Audits",
     tag: "VALUATION & AUDITS",
     summary:
-      "Annual portfolio valuation conducted by accredited independent valuers and annual statutory fund audits by leading chartered accountants—both reports delivered directly to LPs.",
+      "Annual portfolio valuation conducted by accredited independent valuers and annual statutory fund audits by leading chartered accountants - both reports delivered directly to LPs.",
     tags: ["Annual Valuer Report", "Statutory Audit", "Direct to LPs"],
   },
   {

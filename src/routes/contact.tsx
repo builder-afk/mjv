@@ -124,17 +124,16 @@ function Contact() {
                       <ShieldCheck className="w-4 h-4" />
                     </div>
                     <span className="font-mono text-[9px] uppercase tracking-widest text-neutral-400 font-bold">
-                      14-DAY SLA
+                      Founder-first
                     </span>
                   </div>
 
                   <div>
                     <div className="font-display text-base font-black uppercase tracking-tight text-neutral-950 leading-tight">
-                      Direct Review
+                      Vision
                     </div>
-                    <p className="text-[11px] text-neutral-600 mt-1 leading-snug line-clamp-2">
-                      Pitch logs directly to General Partners. Zero analyst filters.
-                    </p>
+                    <p className="text-[11px] text-neutral-600 mt-1 leading-snug">
+                      A generation of Indian companies admired equally for what they build and how they build it.                    </p>
                     <div className="mt-2.5 inline-flex items-center px-2 py-0.5 rounded-full bg-neutral-100 border border-black/10 text-[9px] font-mono uppercase font-bold text-neutral-900">
                       Lead Cheques
                     </div>
@@ -148,16 +147,16 @@ function Contact() {
                       <TrendingUp className="w-4 h-4" />
                     </div>
                     <span className="font-mono text-[9px] uppercase tracking-widest text-white/50 font-bold">
-                      CHEQUES
+                      Long-term
                     </span>
                   </div>
 
                   <div>
                     <div className="font-display text-base font-black uppercase tracking-tight text-white leading-tight">
-                      ₹2 Cr – ₹25 Cr
+                      Mission
                     </div>
-                    <p className="text-[11px] text-neutral-300 mt-1 leading-snug line-clamp-2">
-                      Seed to Series A conviction capital with follow-on reserves.
+                    <p className="text-[11px] text-neutral-300 mt-1 leading-snug">
+                      To back ethical founders building responsible companies that compound value for decades, not quarters.
                     </p>
                     <div className="mt-2.5 inline-flex items-center px-2 py-0.5 rounded-full bg-white/10 text-[9px] font-mono uppercase font-bold text-white/90">
                       Seed → Series A
