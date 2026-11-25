@@ -112,6 +112,43 @@ const funds = [
       "Audited SEBI Cat-I compliance and quarterly NAV reporting",
     ],
   },
+  {
+    code: "MJIGF2",
+    number: "03",
+    name: "Mount Judi India Growth Fund II",
+    badge: "CATEGORY II AIF",
+    cardBorder: "border-2 border-emerald-700/20",
+    numberBg: "bg-emerald-700 text-white border-emerald-700",
+    badgeClass: "bg-emerald-700/10 text-emerald-800 border-emerald-700/25",
+    statusClass: "bg-emerald-600/10 text-emerald-800 border-emerald-600/30",
+    launchedClass: "bg-emerald-700/[0.04] text-emerald-800/80 border-emerald-700/20",
+    accentBg: "bg-emerald-700",
+    accentText: "text-white",
+    accentBorder: "border-emerald-700",
+    featureBoxClass: "bg-emerald-700/[0.04] border border-emerald-700/20",
+    featureIconClass: "text-emerald-600",
+    featureHeadingClass: "text-emerald-800",
+    bulletClass: "bg-emerald-600",
+    ledgerClass: "bg-white border border-emerald-700/20 divide-y divide-emerald-700/10",
+    ledgerLabelClass: "text-emerald-800/70",
+    ctaBtnClass: "bg-emerald-700 hover:bg-emerald-800 text-white border-2 border-emerald-700",
+    arrowBg: "bg-emerald-600 text-white",
+    launched: "2026 · First Close Planned 2027",
+    corpus: "₹400 Cr",
+    status: "IN LAUNCH MODE",
+    type: "Category II AIF · 400 Cr Corpus + 400 Cr Green Shoe approved",
+    description:
+      "MJIGF II is planned to invest into Pre-Series A, and Series A rounds across three core themes of Consumer Brands, Consumer Enablers and Disruptive Technologies. We plan to maintain dedicated follow-on reserves and work closely with portfolio executives on enterprise customer acquisition, pricing, and corporate governance.",
+    cta: { label: "CONNECT FOR LP ACCESS", to: "/contact" as const, fund: "MJIGF" as const },
+    registration: "IN/AIF2/18-19/0536",
+    manager: "Mount Judi Ventures LLP",
+    scoresId: "AIF00656",
+    highlights: [
+      "Backing potential category leaders across healthcare, AI & deeptech, Travel & Logistics, Food",
+      "Realized early liquidity via M&A exit (Internshala / upGrad)",
+      "High follow-on reserves dedicated to Series B breakout winners",
+    ],
+  },
 ];
 
 const governancePillars = [
@@ -193,30 +230,30 @@ function Funds() {
   return (
     <div className="bg-[var(--paper)] text-[var(--ink)] min-h-screen">
       {/* ── 1. FUND VEHICLE BENTO CARDS ── */}
-      <section className="container-tight pt-10 sm:pt-14 pb-16 md:pb-24">
+      <section className="container-wide pt-10 sm:pt-14 pb-16 md:pb-24">
         {/* Editorial Sub-Header Ticker */}
         <div className="flex items-center gap-2.5 font-sans text-xs font-black uppercase tracking-[0.25em] text-[#1e6086] mb-8 sm:mb-10">
           <span className="w-2 h-2 rounded-full bg-[#0ab1d7] animate-pulse" />
           <span>SEBI REGISTERED ALTERNATIVE INVESTMENT FUNDS</span>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-3">
           {funds.map((fund) => (
             <article
               key={fund.code}
-              className={`rounded-3xl ${fund.cardBorder} bg-white p-7 sm:p-10 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group`}
+              className={`rounded-2xl ${fund.cardBorder} bg-white p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group`}
             >
               <div>
                 {/* Header Row */}
-                <div className="flex items-center justify-between gap-4 pb-6 border-b border-black/10">
-                  <div className="flex items-center gap-2.5">
+                <div className="flex items-start justify-between gap-3 pb-5 border-b border-black/10">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span
-                      className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-sans text-xs font-bold border ${fund.numberBg}`}
+                      className={`inline-flex items-center justify-center w-7 h-7 rounded-full font-sans text-xs font-bold border shrink-0 ${fund.numberBg}`}
                     >
                       {fund.number}
                     </span>
                     <span
-                      className={`px-3 py-1 rounded-full font-sans text-[11px] uppercase tracking-wider font-bold border ${fund.badgeClass}`}
+                      className={`px-2 py-0.5 rounded-full font-sans text-[10px] uppercase tracking-wider font-bold border ${fund.badgeClass}`}
                     >
                       {fund.badge}
                     </span>
@@ -224,42 +261,42 @@ function Funds() {
 
                   {/* Corpus Tag */}
                   <div
-                    className={`px-4 py-1.5 rounded-full ${fund.accentBg} ${fund.accentText} border-2 ${fund.accentBorder} font-display text-base sm:text-lg font-black tracking-tight shadow-xs flex items-center gap-1.5`}
+                    className={`whitespace-nowrap shrink-0 px-2.5 py-1 rounded-full ${fund.accentBg} ${fund.accentText} border-2 ${fund.accentBorder} font-display text-sm font-black tracking-tight shadow-xs flex items-center gap-1`}
                   >
                     <span>{fund.corpus}</span>
-                    <span className="text-xs uppercase opacity-90 font-bold">CORPUS</span>
+                    <span className="text-[9px] uppercase opacity-90 font-bold">CORPUS</span>
                   </div>
                 </div>
 
                 {/* Fund Title & Description */}
-                <div className="mt-6">
-                  <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-950">
+                <div className="mt-5">
+                  <h2 className="font-display text-xl font-black uppercase tracking-tight text-neutral-950">
                     {fund.name}
                   </h2>
-                  <div className="mt-3 flex flex-wrap gap-2 font-sans text-[11px]">
-                    <span className={`px-3 py-1 rounded-full font-bold border ${fund.statusClass}`}>
+                  <div className="mt-2.5 flex flex-wrap gap-1.5 font-sans text-[10px]">
+                    <span className={`px-2.5 py-0.5 rounded-full font-bold border ${fund.statusClass}`}>
                       {fund.status}
                     </span>
-                    <span className={`px-3 py-1 rounded-full font-medium border ${fund.launchedClass}`}>
+                    <span className={`px-2.5 py-0.5 rounded-full font-medium border ${fund.launchedClass}`}>
                       {fund.launched}
                     </span>
                   </div>
-                  <p className="mt-5 text-sm text-neutral-700 leading-relaxed font-sans font-normal">
+                  <p className="mt-3.5 text-xs text-neutral-700 leading-relaxed font-sans font-normal">
                     {fund.description}
                   </p>
                 </div>
 
                 {/* Key Features Bento Subsection */}
-                <div className={`mt-8 rounded-2xl p-5 sm:p-6 shadow-2xs ${fund.featureBoxClass}`}>
+                <div className={`mt-5 rounded-xl p-4 shadow-2xs ${fund.featureBoxClass}`}>
                   <div
-                    className={`font-sans text-[10px] uppercase tracking-[0.2em] font-black mb-3.5 flex items-center gap-2 ${fund.featureHeadingClass}`}
+                    className={`font-sans text-[9px] uppercase tracking-[0.2em] font-black mb-2.5 flex items-center gap-1.5 ${fund.featureHeadingClass}`}
                   >
-                    <CheckCircle2 className={`w-4 h-4 ${fund.featureIconClass}`} />
+                    <CheckCircle2 className={`w-3.5 h-3.5 ${fund.featureIconClass}`} />
                     KEY FEATURES &amp; ALLOCATION:
                   </div>
-                  <ul className="space-y-2.5 font-sans text-xs sm:text-[13px] text-neutral-800 font-medium">
+                  <ul className="space-y-1.5 font-sans text-xs text-neutral-800 font-medium">
                     {fund.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
+                      <li key={i} className="flex items-start gap-2">
                         <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${fund.bulletClass}`} />
                         <span>{h}</span>
                       </li>
@@ -267,8 +304,8 @@ function Funds() {
                   </ul>
 
                   {fund.note && (
-                    <div className="mt-4 pt-4 border-t border-[#b78c2d]/20 font-sans text-[11px] text-neutral-700 leading-relaxed">
-                      <span className="font-black text-[#b78c2d] mr-1.5">NOTE:</span>
+                    <div className="mt-3 pt-3 border-t border-[#b78c2d]/20 font-sans text-[10px] text-neutral-700 leading-relaxed">
+                      <span className="font-black text-[#b78c2d] mr-1">NOTE:</span>
                       {fund.note}
                     </div>
                   )}
@@ -276,26 +313,26 @@ function Funds() {
               </div>
 
               {/* Bottom Regulatory Ledger & CTA */}
-              <div className="mt-8 pt-6 border-t border-black/10">
+              <div className="mt-5 pt-5 border-t border-black/10">
                 {/* Registration Metadata Ledger */}
-                <div className={`rounded-2xl p-4 sm:p-5 mb-6 font-sans text-xs shadow-2xs ${fund.ledgerClass}`}>
-                  <div className="flex justify-between py-1.5">
-                    <span className={`text-[10px] uppercase tracking-wider font-bold ${fund.ledgerLabelClass}`}>
+                <div className={`rounded-xl p-3.5 mb-4 font-sans text-xs shadow-2xs ${fund.ledgerClass}`}>
+                  <div className="flex justify-between py-1">
+                    <span className={`text-[9px] uppercase tracking-wider font-bold ${fund.ledgerLabelClass}`}>
                       SEBI REGISTRATION
                     </span>
-                    <span className="font-bold text-neutral-950">{fund.registration}</span>
+                    <span className="font-bold text-neutral-950 text-[11px]">{fund.registration}</span>
                   </div>
-                  <div className="flex justify-between py-1.5">
-                    <span className={`text-[10px] uppercase tracking-wider font-bold ${fund.ledgerLabelClass}`}>
+                  <div className="flex justify-between py-1">
+                    <span className={`text-[9px] uppercase tracking-wider font-bold ${fund.ledgerLabelClass}`}>
                       INVESTMENT MANAGER
                     </span>
-                    <span className="font-bold text-neutral-950">{fund.manager}</span>
+                    <span className="font-bold text-neutral-950 text-[11px]">{fund.manager}</span>
                   </div>
-                  <div className="flex justify-between py-1.5">
-                    <span className={`text-[10px] uppercase tracking-wider font-bold ${fund.ledgerLabelClass}`}>
+                  <div className="flex justify-between py-1">
+                    <span className={`text-[9px] uppercase tracking-wider font-bold ${fund.ledgerLabelClass}`}>
                       SCORES COMPLAINT ID
                     </span>
-                    <span className="font-bold text-neutral-950">{fund.scoresId}</span>
+                    <span className="font-bold text-neutral-950 text-[11px]">{fund.scoresId}</span>
                   </div>
                 </div>
 
@@ -304,11 +341,11 @@ function Funds() {
                   to={fund.cta.to}
                   search={{ fund: fund.cta.fund }}
                   onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                  className={`inline-flex items-center justify-between w-full px-6 py-4 rounded-full text-xs font-sans uppercase tracking-wider transition-all duration-200 shadow-sm group/btn ${fund.ctaBtnClass}`}
+                  className={`inline-flex items-center justify-between w-full px-5 py-3 rounded-full text-xs font-sans uppercase tracking-wider transition-all duration-200 shadow-sm group/btn ${fund.ctaBtnClass}`}
                 >
                   <span className="font-bold">{fund.cta.label}</span>
                   <span
-                    className={`w-7 h-7 rounded-full ${fund.arrowBg} flex items-center justify-center text-xs group-hover/btn:translate-x-1 transition-transform font-black`}
+                    className={`w-6 h-6 rounded-full ${fund.arrowBg} flex items-center justify-center text-xs group-hover/btn:translate-x-1 transition-transform font-black`}
                   >
                     →
                   </span>

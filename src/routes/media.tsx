@@ -70,12 +70,9 @@ function MediaPage() {
       {/* ═══════════════════════════════════════════════════════════
           0. LEAD HERO - 3-COLUMN PORTFOLIO DOSSIER & MEDIA HIGHLIGHTS
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-white pt-10 pb-4 sm:pt-14 sm:pb-6">
+      <section className="relative overflow-hidden bg-white pt-4 pb-4 sm:pt-6 sm:pb-6">
         <div className="container-tight">
-          <div className="flex items-center gap-2.5 font-mono text-xs font-black uppercase tracking-[0.25em] text-neutral-800 mb-4">
-            <span className="w-2 h-2 rounded-full bg-neutral-900 animate-pulse" />
-            <span>MEDIA COVERAGE</span>
-          </div>
+
           <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl tracking-[-0.03em] leading-[0.98] text-neutral-950 mb-8 sm:mb-10">
             Press Releases
           </h1>
@@ -93,131 +90,131 @@ function MediaPage() {
               </div>
 
               <div className="space-y-4">
-                  {/* Card 1: 4baseCare & Cancer Institute (WIA) */}
-                  <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#036089] text-white text-[11px] font-bold tracking-wide">
-                        2024–Present
-                      </span>
-                    </div>
-                    <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
-                      Clinical Lab Ecosystem
-                    </div>
-                    <p className="text-sm font-bold text-neutral-900 leading-snug">
-                      Partnership of{" "}
-                      <a
-                        href="https://www.linkedin.com/company/4basecare/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
-                      >
-                        4baseCare
-                      </a>{" "}
-                      with{" "}
-                      <a
-                        href="https://www.linkedin.com/company/cancer-institute-wia/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
-                      >
-                        Cancer Institute (WIA)
-                      </a>
-                      , Adyar, Chennai is an important step. The partnership will add Comprehensive
-                      Genomic Profiling (CGP) to the institute’s laboratory ecosystem.
-                    </p>
-                    <div className="mt-4 pt-1">
-                      <div className="relative flex items-center w-full">
-                        <div className="w-full h-[2px] bg-neutral-200 rounded-full" />
-                        <div className="absolute left-0 w-2 h-2 rounded-full bg-neutral-900" />
-                        <div className="absolute right-0 w-2 h-2 rounded-full bg-neutral-900" />
-                      </div>
-                      <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400 mt-1">
-                        <span>Adyar</span>
-                        <span>Present</span>
-                      </div>
-                    </div>
+                {/* Card 1: 4baseCare & Cancer Institute (WIA) */}
+                <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#036089] text-white text-[11px] font-bold tracking-wide">
+                      2024–Present
+                    </span>
                   </div>
-
-                  {/* Card 2: Skye Air Mobility in Ericsson Innovation Challenge */}
-                  <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#036089] text-white text-[11px] font-bold tracking-wide">
-                        2024–Present
-                      </span>
-                    </div>
-                    <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
-                      Autonomous Drone Logistics
-                    </div>
-                    <p className="text-sm font-bold text-neutral-900 leading-snug">
-                      <a
-                        href="https://www.linkedin.com/company/skye-air-mobility/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
-                      >
-                        Skye Air Mobility
-                      </a>{" "}
-                      emerged as one of the six winning startups globally at the{" "}
-                      <a
-                        href="https://www.linkedin.com/company/ericsson/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
-                      >
-                        Ericsson
-                      </a>{" "}
-                      Innovation Challenge for autonomous beyond-visual-line-of-sight drone logistics networks.
-                    </p>
-                    <div className="mt-4 pt-1">
-                      <div className="relative flex items-center w-full">
-                        <div className="w-full h-[2px] bg-neutral-200 rounded-full" />
-                        <div className="absolute left-0 w-2 h-2 rounded-full bg-neutral-900" />
-                        <div className="absolute right-0 w-2 h-2 rounded-full bg-neutral-900" />
-                      </div>
-                      <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400 mt-1">
-                        <span>Nov</span>
-                        <span>Present</span>
-                      </div>
-                    </div>
+                  <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
+                    Clinical Lab Ecosystem
                   </div>
-
-                  {/* Card 3: 4baseCare Series B */}
-                  <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#C78D1E] text-white text-[11px] font-bold tracking-wide">
-                        2021–2024
-                      </span>
-                      <div className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-500">
-                        <Check className="w-3.5 h-3.5" />
-                      </div>
+                  <p className="text-sm font-bold text-neutral-900 leading-snug">
+                    Partnership of{" "}
+                    <a
+                      href="https://www.linkedin.com/company/4basecare/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
+                    >
+                      4baseCare
+                    </a>{" "}
+                    with{" "}
+                    <a
+                      href="https://www.linkedin.com/company/cancer-institute-wia/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
+                    >
+                      Cancer Institute (WIA)
+                    </a>
+                    , Adyar, Chennai is an important step. The partnership will add Comprehensive
+                    Genomic Profiling (CGP) to the institute’s laboratory ecosystem.
+                  </p>
+                  <div className="mt-4 pt-1">
+                    <div className="relative flex items-center w-full">
+                      <div className="w-full h-[2px] bg-neutral-200 rounded-full" />
+                      <div className="absolute left-0 w-2 h-2 rounded-full bg-neutral-900" />
+                      <div className="absolute right-0 w-2 h-2 rounded-full bg-neutral-900" />
                     </div>
-                    <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
-                      Series B / Institutional Scale
-                    </div>
-                    <p className="text-sm font-bold text-neutral-900 leading-snug">
-                      <a
-                        href="https://www.linkedin.com/company/4basecare/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
-                      >
-                        4baseCare
-                      </a>{" "}
-                      closed ₹128 Cr ($15M+) Series B led by Infosys Technology Trust to expand South Asian cancer genomics testing across APAC &amp; global clinical research centers.
-                    </p>
-                    <div className="mt-4 pt-1">
-                      <div className="relative flex items-center w-full">
-                        <div className="w-full h-[2px] bg-neutral-200 rounded-full" />
-                        <div className="absolute left-0 w-2 h-2 rounded-full bg-neutral-900" />
-                        <div className="absolute right-0 w-2 h-2 rounded-full bg-neutral-900" />
-                      </div>
-                      <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400 mt-1">
-                        <span>Sept</span>
-                        <span>Aug</span>
-                      </div>
+                    <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400 mt-1">
+                      <span>Adyar</span>
+                      <span>Present</span>
                     </div>
                   </div>
                 </div>
+
+                {/* Card 2: Skye Air Mobility in Ericsson Innovation Challenge */}
+                <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#036089] text-white text-[11px] font-bold tracking-wide">
+                      2024–Present
+                    </span>
+                  </div>
+                  <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
+                    Autonomous Drone Logistics
+                  </div>
+                  <p className="text-sm font-bold text-neutral-900 leading-snug">
+                    <a
+                      href="https://www.linkedin.com/company/skye-air-mobility/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
+                    >
+                      Skye Air Mobility
+                    </a>{" "}
+                    emerged as one of the six winning startups globally at the{" "}
+                    <a
+                      href="https://www.linkedin.com/company/ericsson/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
+                    >
+                      Ericsson
+                    </a>{" "}
+                    Innovation Challenge for autonomous beyond-visual-line-of-sight drone logistics networks.
+                  </p>
+                  <div className="mt-4 pt-1">
+                    <div className="relative flex items-center w-full">
+                      <div className="w-full h-[2px] bg-neutral-200 rounded-full" />
+                      <div className="absolute left-0 w-2 h-2 rounded-full bg-neutral-900" />
+                      <div className="absolute right-0 w-2 h-2 rounded-full bg-neutral-900" />
+                    </div>
+                    <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400 mt-1">
+                      <span>Nov</span>
+                      <span>Present</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3: 4baseCare Series B */}
+                <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#C78D1E] text-white text-[11px] font-bold tracking-wide">
+                      2021–2024
+                    </span>
+                    <div className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-500">
+                      <Check className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                  <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
+                    Series B / Institutional Scale
+                  </div>
+                  <p className="text-sm font-bold text-neutral-900 leading-snug">
+                    <a
+                      href="https://www.linkedin.com/company/4basecare/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#036089] hover:text-[#C78D1E] hover:underline inline-flex items-center gap-0.5"
+                    >
+                      4baseCare
+                    </a>{" "}
+                    closed ₹128 Cr ($15M+) Series B led by Infosys Technology Trust to expand South Asian cancer genomics testing across APAC &amp; global clinical research centers.
+                  </p>
+                  <div className="mt-4 pt-1">
+                    <div className="relative flex items-center w-full">
+                      <div className="w-full h-[2px] bg-neutral-200 rounded-full" />
+                      <div className="absolute left-0 w-2 h-2 rounded-full bg-neutral-900" />
+                      <div className="absolute right-0 w-2 h-2 rounded-full bg-neutral-900" />
+                    </div>
+                    <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400 mt-1">
+                      <span>Sept</span>
+                      <span>Aug</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* ──────────────────────────────────────────────────────────
@@ -260,26 +257,39 @@ function MediaPage() {
                   </h2>
                 </div>
                 <div className="flex flex-wrap gap-2.5 pt-1">
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#036089] text-white text-xs font-semibold shadow-xs">
-                    #Genomics
+                  {/* Consumer Brands — gold */}
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#b78c2d] text-white text-xs font-semibold shadow-xs">
+                    Consumer Brands
                   </span>
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                    #Cancer_Institute_WIA
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-[#b78c2d] text-[#b78c2d] text-xs font-medium shadow-xs">
+                    Category Creation
                   </span>
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                    #Drone_Corridors
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-[#b78c2d] text-[#b78c2d] text-xs font-medium shadow-xs">
+                    Unit Economics
                   </span>
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                    #Ericsson_Innovation
+                  {/* Consumer Enablers — cyan */}
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#0ab1d7] text-white text-xs font-semibold shadow-xs">
+                    Consumer Enablers
                   </span>
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#036089] text-white text-xs font-semibold shadow-xs">
-                    #CGP_Testing
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-[#0ab1d7] text-[#0ab1d7] text-xs font-medium shadow-xs">
+                    Supply Chain Rails
                   </span>
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                    #Clinical_Validation
+                  {/* Disruptive Tech — navy */}
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1e6086] text-white text-xs font-semibold shadow-xs">
+                    Disruptive Tech
                   </span>
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#C78D1E] text-white text-xs font-semibold shadow-xs">
-                    #Series_B_Scale
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-[#1e6086] text-[#1e6086] text-xs font-medium shadow-xs">
+                    Proprietary IP
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-[#1e6086] text-[#1e6086] text-xs font-medium shadow-xs">
+                    Hard Engineering
+                  </span>
+                  {/* Cross-cutting */}
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-600 text-xs font-medium shadow-xs">
+                    Seed → Series A
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-600 text-xs font-medium shadow-xs">
+                    Operator-Led
                   </span>
                 </div>
               </div>
@@ -296,71 +306,71 @@ function MediaPage() {
               </div>
 
               <div className="space-y-4">
-                  {/* Card 1: Ericsson Innovation */}
-                  <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-white text-neutral-950 text-xs font-bold">
-                        2026
-                      </span>
-                      <div className="w-6 h-6 rounded-full bg-neutral-700 text-white flex items-center justify-center text-xs font-bold">
-                        <Check className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-                    <div className="mt-3">
-                      <div className="text-xs font-medium text-neutral-400">Ericsson Global Laureate</div>
-                      <div className="text-base font-bold text-white mt-0.5 leading-snug">
-                        Innovation Challenge Winner
-                      </div>
-                      <div className="text-xs text-neutral-400 font-mono mt-1">
-                        (Selected Among Top 6 Startups Globally)
-                      </div>
+                {/* Card 1: Ericsson Innovation */}
+                <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-white text-neutral-950 text-xs font-bold">
+                      2026
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-neutral-700 text-white flex items-center justify-center text-xs font-bold">
+                      <Check className="w-3.5 h-3.5" />
                     </div>
                   </div>
-                  <div className="h-[1px] bg-neutral-300/70" />
-
-                  {/* Card 2: Cancer Institute CGP */}
-                  <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-white text-neutral-950 text-xs font-bold">
-                        2024–2025
-                      </span>
-                      <div className="w-6 h-6 rounded-full bg-neutral-700 text-white flex items-center justify-center text-xs font-bold">
-                        <Check className="w-3.5 h-3.5" />
-                      </div>
+                  <div className="mt-3">
+                    <div className="text-xs font-medium text-neutral-400">Ericsson Global Laureate</div>
+                    <div className="text-base font-bold text-white mt-0.5 leading-snug">
+                      Innovation Challenge Winner
                     </div>
-                    <div className="mt-3">
-                      <div className="text-xs font-medium text-neutral-400">Cancer Institute (WIA), Adyar</div>
-                      <div className="text-base font-bold text-white mt-0.5 leading-snug">
-                        Comprehensive Genomic Profiling
-                      </div>
-                      <div className="text-xs text-neutral-400 font-mono mt-1">
-                        (Laboratory Ecosystem Integration)
-                      </div>
-                    </div>
-                  </div>
-                  <div className="h-[1px] bg-neutral-300/70" />
-
-                  {/* Card 3: Infosys Technology Trust */}
-                  <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-white text-neutral-950 text-xs font-bold">
-                        2021–2024
-                      </span>
-                      <div className="w-6 h-6 rounded-full bg-neutral-700 text-white flex items-center justify-center text-xs font-bold">
-                        <Check className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-                    <div className="mt-3">
-                      <div className="text-xs font-medium text-neutral-400">Infosys Technology Trust</div>
-                      <div className="text-base font-bold text-white mt-0.5 leading-snug">
-                        ₹128 Crore Institutional Series B
-                      </div>
-                      <div className="text-xs text-neutral-400 font-mono mt-1">
-                        (Global Precision Oncology Scaling)
-                      </div>
+                    <div className="text-xs text-neutral-400 font-mono mt-1">
+                      (Selected Among Top 6 Startups Globally)
                     </div>
                   </div>
                 </div>
+                <div className="h-[1px] bg-neutral-300/70" />
+
+                {/* Card 2: Cancer Institute CGP */}
+                <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-white text-neutral-950 text-xs font-bold">
+                      2024–2025
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-neutral-700 text-white flex items-center justify-center text-xs font-bold">
+                      <Check className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                  <div className="mt-3">
+                    <div className="text-xs font-medium text-neutral-400">Cancer Institute (WIA), Adyar</div>
+                    <div className="text-base font-bold text-white mt-0.5 leading-snug">
+                      Comprehensive Genomic Profiling
+                    </div>
+                    <div className="text-xs text-neutral-400 font-mono mt-1">
+                      (Laboratory Ecosystem Integration)
+                    </div>
+                  </div>
+                </div>
+                <div className="h-[1px] bg-neutral-300/70" />
+
+                {/* Card 3: Infosys Technology Trust */}
+                <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-white text-neutral-950 text-xs font-bold">
+                      2021–2024
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-neutral-700 text-white flex items-center justify-center text-xs font-bold">
+                      <Check className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                  <div className="mt-3">
+                    <div className="text-xs font-medium text-neutral-400">Infosys Technology Trust</div>
+                    <div className="text-base font-bold text-white mt-0.5 leading-snug">
+                      ₹128 Crore Institutional Series B
+                    </div>
+                    <div className="text-xs text-neutral-400 font-mono mt-1">
+                      (Global Precision Oncology Scaling)
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
