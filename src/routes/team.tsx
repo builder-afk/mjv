@@ -368,7 +368,7 @@ function TeamPage() {
               <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-6">
                 <div>
                   <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase text-neutral-900 leading-tight tracking-tight">
-                    Advisory Council &amp;
+                    Advisory Board &amp;
                     <br />
                     Global Strategists
                   </h2>

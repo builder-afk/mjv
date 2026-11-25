@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { TrendingUp, ShieldCheck } from "lucide-react";
 import creedMountainPeak from "@/assets/get.jpg";
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Pitch your startup directly to Mount Judi Ventures. Direct partner review, no analyst filters, guaranteed response. Cheques from ₹2 Cr to ₹25 Cr.",
+          "Pitch your startup directly to Mount Judi Ventures. Direct partner review, no analyst filters, target response within 7 business days. Cheques from ₹2 Cr to ₹25 Cr.",
       },
       { property: "og:title", content: "Pitch Mount Judi Ventures" },
       {
@@ -28,6 +28,7 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [consentAccepted, setConsentAccepted] = useState<boolean>(false);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -67,14 +68,13 @@ function Contact() {
                   <br />
                   through symbiotic
                   <br />
-                  growth.
-                  <br />
-                  Pitch us directly.
+                  <span className="text-[#036089]">growth</span>
+
                 </h1>
                 <p className="mt-6 sm:mt-8 font-sans text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-2xl">
                   Every submission below is logged directly to our General Partners and
                   Investment Committee. We know how much focus it takes to build. We
-                  commit to an unambiguous, candid decision within 14 calendar days.
+                  target an unambiguous, candid response within 7 business days.
                 </p>
               </div>
 
@@ -189,11 +189,9 @@ function Contact() {
           {/* Left Column: Direct Inquiries & Office Info */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-700">
-                Direct Communication
-              </div>
+
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-black tracking-tight text-neutral-900 leading-tight">
-                Get in touch with Mount Judi.
+                Get in touch with Mount Judi Ventures
               </h2>
               <p className="mt-3 text-sm text-neutral-600 font-sans leading-relaxed">
                 Whether you are a founder building category-defining technology, an investor inquiring about our funds, or seeking partnership dialogue, our leadership team reviews every submission directly.
@@ -268,7 +266,7 @@ function Contact() {
                 Zero Analyst Gatekeeping
               </div>
               <p className="text-[11px] font-sans text-neutral-600 leading-relaxed">
-                All submissions reach our Investment Committee partners directly. Clear, candid responses guaranteed.
+                All submissions reach our Investment Committee partners directly. Target response within 7 business days.
               </p>
             </div>
           </div>
@@ -299,6 +297,7 @@ function Contact() {
                       type="button"
                       onClick={() => {
                         setSubmitted(false);
+                        setConsentAccepted(false);
                         setFormData({
                           name: "",
                           email: "",
@@ -431,6 +430,30 @@ function Contact() {
                       placeholder="Tell us about what you are building, your traction, or your inquiry..."
                       className={textareaClasses}
                     />
+                  </label>
+
+                  {/* Privacy & Non-NDA Consent */}
+                  <label className="flex items-start gap-3 rounded-xl border border-black/10 bg-neutral-50 p-3.5 cursor-pointer">
+                    <input
+                      required
+                      type="checkbox"
+                      checked={consentAccepted}
+                      onChange={(e) => setConsentAccepted(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 accent-[#036089]"
+                    />
+                    <span className="font-sans text-xs text-neutral-600 leading-relaxed">
+                      I understand this form opens my email client to contact{" "}
+                      <span className="font-semibold text-neutral-900">pitch@mountjudi.com</span>{" "}
+                      directly (not stored on this website), and I agree to the{" "}
+                      <Link to="/privacy" className="font-semibold text-[#036089] underline">
+                        Privacy Policy
+                      </Link>{" "}
+                      and{" "}
+                      <Link to="/terms" className="font-semibold text-[#036089] underline">
+                        Terms of Use
+                      </Link>{" "}
+                      (including non-confidential pitch submission terms).
+                    </span>
                   </label>
 
                   <div className="pt-2 flex justify-end">

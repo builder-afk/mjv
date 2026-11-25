@@ -12,15 +12,18 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DisclosuresRouteImport } from './routes/disclosures'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FundsRouteImport } from './routes/funds'
 import { Route as MediaRouteImport } from './routes/media'
 import { Route as PerspectiveRouteImport } from './routes/perspective'
 import { Route as PerspectivesRouteImport } from './routes/perspectives'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ThesisRouteImport } from './routes/thesis'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
@@ -38,6 +41,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclosuresRoute = DisclosuresRouteImport.update({
+  id: '/disclosures',
+  path: '/disclosures',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -70,6 +78,11 @@ const PortfolioRoute = PortfolioRouteImport.update({
   path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
@@ -83,6 +96,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThesisRoute = ThesisRouteImport.update({
@@ -105,15 +123,18 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/disclosures': typeof DisclosuresRoute
   '/faq': typeof FaqRoute
   '/funds': typeof FundsRoute
   '/media': typeof MediaRoute
   '/perspective': typeof PerspectiveRoute
   '/perspectives': typeof PerspectivesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/thesis': typeof ThesisRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -122,14 +143,17 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/disclosures': typeof DisclosuresRoute
   '/faq': typeof FaqRoute
   '/funds': typeof FundsRoute
   '/media': typeof MediaRoute
   '/perspective': typeof PerspectiveRoute
   '/perspectives': typeof PerspectivesRoute
+  '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/thesis': typeof ThesisRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio': typeof PortfolioIndexRoute
@@ -139,15 +163,18 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/disclosures': typeof DisclosuresRoute
   '/faq': typeof FaqRoute
   '/funds': typeof FundsRoute
   '/media': typeof MediaRoute
   '/perspective': typeof PerspectiveRoute
   '/perspectives': typeof PerspectivesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/thesis': typeof ThesisRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -158,15 +185,18 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/disclosures'
     | '/faq'
     | '/funds'
     | '/media'
     | '/perspective'
     | '/perspectives'
     | '/portfolio'
+    | '/privacy'
     | '/resources'
     | '/sitemap.xml'
     | '/team'
+    | '/terms'
     | '/thesis'
     | '/portfolio/$slug'
     | '/portfolio/'
@@ -175,14 +205,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/disclosures'
     | '/faq'
     | '/funds'
     | '/media'
     | '/perspective'
     | '/perspectives'
+    | '/privacy'
     | '/resources'
     | '/sitemap.xml'
     | '/team'
+    | '/terms'
     | '/thesis'
     | '/portfolio/$slug'
     | '/portfolio'
@@ -191,15 +224,18 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/disclosures'
     | '/faq'
     | '/funds'
     | '/media'
     | '/perspective'
     | '/perspectives'
     | '/portfolio'
+    | '/privacy'
     | '/resources'
     | '/sitemap.xml'
     | '/team'
+    | '/terms'
     | '/thesis'
     | '/portfolio/$slug'
     | '/portfolio/'
@@ -209,15 +245,18 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  DisclosuresRoute: typeof DisclosuresRoute
   FaqRoute: typeof FaqRoute
   FundsRoute: typeof FundsRoute
   MediaRoute: typeof MediaRoute
   PerspectiveRoute: typeof PerspectiveRoute
   PerspectivesRoute: typeof PerspectivesRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
   ResourcesRoute: typeof ResourcesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
+  TermsRoute: typeof TermsRoute
   ThesisRoute: typeof ThesisRoute
 }
 
@@ -242,6 +281,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclosures': {
+      id: '/disclosures'
+      path: '/disclosures'
+      fullPath: '/disclosures'
+      preLoaderRoute: typeof DisclosuresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -286,6 +332,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
@@ -305,6 +358,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thesis': {
@@ -349,15 +409,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  DisclosuresRoute: DisclosuresRoute,
   FaqRoute: FaqRoute,
   FundsRoute: FundsRoute,
   MediaRoute: MediaRoute,
   PerspectiveRoute: PerspectiveRoute,
   PerspectivesRoute: PerspectivesRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
   ResourcesRoute: ResourcesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
+  TermsRoute: TermsRoute,
   ThesisRoute: ThesisRoute,
 }
 export const routeTree = rootRouteImport

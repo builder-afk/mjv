@@ -271,33 +271,31 @@ function PartTwoDeck() {
         </div>
       </div>
 
-      {/* COLUMN 3: Photo (Tall, Hitesh Goswami) + Dark Anchor Text Card */}
+      {/* COLUMN 3: White Text Card + Photo (Tall, Hitesh Goswami) */}
       <div className="flex flex-col gap-5 sm:gap-6">
-        <FounderPhotoCard founder={foundersLoop[2]} height={TALL} />
-
         <div
-          className={`rounded-2xl sm:rounded-3xl bg-[#036089] text-white p-6 sm:p-7 flex flex-col justify-between gap-3 relative overflow-hidden min-h-[230px] sm:min-h-[245px] lg:min-h-0 lg:h-[260px] border-2 border-transparent hover:border-neutral-950 shadow-xs hover:shadow-md transition-all duration-300`}
+          className={`rounded-2xl sm:rounded-3xl bg-white border border-black/10 p-6 sm:p-7 flex flex-col justify-between gap-3 relative overflow-hidden min-h-[230px] sm:min-h-[245px] lg:min-h-0 lg:h-[260px] hover:border-neutral-950 shadow-xs hover:shadow-md transition-all duration-300`}
         >
           <div className="relative z-10 max-w-[85%]">
-            <div className="font-mono text-[10px] uppercase tracking-wider text-[#C78D1E] font-bold mb-2">
+            <div className="font-mono text-[10px] uppercase tracking-wider text-[#036089] font-bold mb-2">
               [ PARTNERSHIP ]
             </div>
-            <h3 className="font-display text-xl sm:text-[1.35rem] font-bold tracking-tight text-white leading-snug">
+            <h3 className="font-display text-xl sm:text-[1.35rem] font-bold tracking-tight text-neutral-950 leading-snug">
               Partners in every inflection point.
             </h3>
           </div>
 
           <div className="relative z-10 mt-auto space-y-2">
-            <p className="font-sans text-xs sm:text-[13px] text-white/85 leading-relaxed">
+            <p className="font-sans text-xs sm:text-[13px] text-neutral-800 leading-relaxed">
               &ldquo;MJV didn't just write a cheque - they sat with us through the hardest hiring and
               partnership decisions. That kind of partnership compounds.&rdquo;
             </p>
-            <div className="pt-2 border-t border-white/15 flex items-center justify-between gap-2">
+            <div className="pt-2 border-t border-black/10 flex items-center justify-between gap-2">
               <div>
-                <div className="font-sans font-bold text-xs text-white leading-tight">
+                <div className="font-sans font-bold text-xs text-neutral-950 leading-tight">
                   Hitesh Goswami
                 </div>
-                <div className="font-sans text-[10px] sm:text-[11px] text-white/70 leading-tight mt-0.5">
+                <div className="font-sans text-[10px] sm:text-[11px] text-neutral-600 leading-tight mt-0.5">
                   Co-founder, 4baseCare
                 </div>
               </div>
@@ -307,6 +305,8 @@ function PartTwoDeck() {
             </div>
           </div>
         </div>
+
+        <FounderPhotoCard founder={foundersLoop[2]} height={TALL} />
       </div>
     </div>
   );

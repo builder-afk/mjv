@@ -19,6 +19,13 @@ import {
 import { useState, useMemo, useRef } from "react";
 
 export const Route = createFileRoute("/portfolio/")({
+  validateSearch: (search: Record<string, unknown>): { fund?: FundFilter } => {
+    const f = search.fund;
+    if (f === "ALL" || f === "MJIGF" || f === "MJIMF") {
+      return { fund: f };
+    }
+    return {};
+  },
   head: () => ({
     meta: [
       { title: "Portfolio | Mount Judi Ventures" },
@@ -136,7 +143,7 @@ const MJIGF_ORDER = [
   "4basecare",
   "skye-air",
   "rubickai",
-  "hexalog",
+  "sp-robotic-works",
   "internshala",
   "protein-chef",
   "freshtohome",
@@ -157,8 +164,9 @@ const MJIMF_ORDER = [
   "skye-air",
   "thimblerr",
   "boingg",
-  "sp-robotic-works",
+  "hexalog",
   "extramile",
+  "gooru",
   "freshleaf-tea",
   "sandowitch",
   "flawsome",
@@ -169,15 +177,15 @@ const ALL_ORDER = [
   "4basecare",
   "skye-air",
   "rubickai",
-  "hexalog",
-  "internshala",
+  "dil-foods",
+  "gooru",
   "protein-chef",
   "freshtohome",
-  "dil-foods",
+  "hexalog",
   "convegenius",
   "wiffy",
   "staqu",
-  "gooru",
+  "internshala",
   "upgrad",
   "thimblerr",
   "boingg",
@@ -186,6 +194,41 @@ const ALL_ORDER = [
   "freshleaf-tea",
   "sandowitch",
   "flawsome",
+];
+
+const CATEGORY_FILTERS: { label: string; slugs: string[] }[] = [
+  {
+    label: "Food & Beverage",
+    slugs: ["protein-chef", "dil-foods", "freshtohome", "sandowitch"],
+  },
+  {
+    label: "Healthcare & MedTech",
+    slugs: ["4basecare", "innaccel"],
+  },
+  {
+    label: "Enterprise Tech",
+    slugs: ["rubickai", "staqu", "extramile"],
+  },
+  {
+    label: "Education & EdTech",
+    slugs: ["sp-robotic-works", "internshala", "gooru", "convegenius", "upgrad"],
+  },
+  {
+    label: "Logistics & Mobility",
+    slugs: ["skye-air", "hexalog"],
+  },
+  {
+    label: "Consumer & Lifestyle",
+    slugs: ["freshleaf-tea", "thimblerr"],
+  },
+  {
+    label: "FemTech",
+    slugs: ["flawsome"],
+  },
+  {
+    label: "Home & Living",
+    slugs: ["wiffy", "boingg"],
+  },
 ];
 
 function getCompanyOrderRank(slug: string, fund: FundFilter): number {
@@ -202,9 +245,17 @@ function getCompanyOrderRank(slug: string, fund: FundFilter): number {
 
 export default function PortfolioIndex() {
   const navigate = useNavigate();
-  const [activeFund, setActiveFund] = useState<FundFilter>("ALL");
+  const { fund: searchFund } = Route.useSearch();
+  const activeFund: FundFilter = searchFund ?? "ALL";
+  const setActiveFund = (tab: FundFilter) => {
+    navigate({
+      to: "/portfolio",
+      search: tab === "ALL" ? {} : { fund: tab },
+      replace: true,
+    });
+  };
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSector, setSelectedSector] = useState<string>("ALL");
+  const [selectedCategory, setSelectedCategory] = useState<string>("ALL");
   const [viewMode, setViewMode] = useState<"grid" | "ledger">("grid");
 
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -235,20 +286,17 @@ export default function PortfolioIndex() {
     MJIMF: microCount,
   };
 
-  // Distinct sectors
-  const sectors = useMemo(() => {
-    const set = new Set<string>();
-    companies.forEach((c) => {
-      if (c.sector) set.add(c.sector);
-    });
-    return Array.from(set).sort();
-  }, []);
+  const activeCategorySlugs = useMemo(() => {
+    if (selectedCategory === "ALL") return null;
+    const found = CATEGORY_FILTERS.find((cat) => cat.label === selectedCategory);
+    return found ? new Set(found.slugs) : null;
+  }, [selectedCategory]);
 
-  // Filtered companies (sorted newest to oldest by year)
+  // Filtered companies (sorted by fund display order, then newest to oldest)
   const filteredCompanies = useMemo(() => {
     return companies.filter((c) => {
       if (!matchesFund(c, activeFund)) return false;
-      if (selectedSector !== "ALL" && c.sector !== selectedSector) return false;
+      if (activeCategorySlugs && !activeCategorySlugs.has(c.slug)) return false;
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const matchesName = c.name.toLowerCase().includes(q);
@@ -280,7 +328,7 @@ export default function PortfolioIndex() {
       if (rankA !== rankB) return rankA - rankB;
       return b.year - a.year;
     });
-  }, [activeFund, selectedSector, searchQuery]);
+  }, [activeFund, activeCategorySlugs, searchQuery]);
 
   const currentMeta = FUND_META[activeFund];
 
@@ -332,6 +380,44 @@ export default function PortfolioIndex() {
                   );
                 })}
               </div>
+            </div>
+
+            {/* Category Filter Bar */}
+            <div
+              role="group"
+              aria-label="Filter companies by category"
+              className="mt-6 flex flex-wrap items-center gap-2.5"
+            >
+              <button
+                type="button"
+                aria-pressed={selectedCategory === "ALL"}
+                onClick={() => setSelectedCategory("ALL")}
+                className={`rounded-full px-4 py-1.5 font-sans text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+                  selectedCategory === "ALL"
+                    ? "bg-[#0284c7] text-white border border-[#0284c7] shadow-xs font-semibold"
+                    : "bg-white text-neutral-700 border border-[#cee7fc] hover:text-[#0284c7] hover:bg-[#f0f8ff] hover:border-[#0284c7]/40"
+                }`}
+              >
+                All
+              </button>
+              {CATEGORY_FILTERS.map((cat) => {
+                const isActive = selectedCategory === cat.label;
+                return (
+                  <button
+                    key={cat.label}
+                    type="button"
+                    aria-pressed={isActive}
+                    onClick={() => setSelectedCategory(cat.label)}
+                    className={`rounded-full px-4 py-1.5 font-sans text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "bg-[#0284c7] text-white border border-[#0284c7] shadow-xs font-semibold"
+                        : "bg-white text-neutral-700 border border-[#cee7fc] hover:text-[#0284c7] hover:bg-[#f0f8ff] hover:border-[#0284c7]/40"
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -619,7 +705,7 @@ export default function PortfolioIndex() {
                 type="button"
                 onClick={() => {
                   setSearchQuery("");
-                  setSelectedSector("ALL");
+                  setSelectedCategory("ALL");
                   setActiveFund("ALL");
                 }}
                 className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0284c7] text-white font-sans text-xs font-semibold hover:bg-[#036089] transition-colors"
@@ -632,30 +718,30 @@ export default function PortfolioIndex() {
       </section>
 
       {/* ── 5. CORPORATE TELEMETRY & FOUNDER VOICES STRIP ── */}
-      <section className="py-14 sm:py-18 border-y-2 border-neutral-900 bg-neutral-950 text-white">
+      <section className="py-14 sm:py-18 border-y-2 border-[#1e6086] bg-[#1e6086] text-white">
         <div className="container-tight">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
             <div>
               <div className="font-display font-black text-4xl sm:text-5xl text-white">{companies.length}</div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-neutral-400 font-bold">
+              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-white/75 font-bold">
                 Category Leaders Backed
               </div>
             </div>
             <div>
               <div className="font-display font-black text-4xl sm:text-5xl text-white">2</div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-neutral-400 font-bold">
+              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-white/75 font-bold">
                 SEBI-Registered AIFs
               </div>
             </div>
             <div>
               <div className="font-display font-black text-4xl sm:text-5xl text-white">₹2-25 Cr</div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-neutral-400 font-bold">
+              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-white/75 font-bold">
                 Institutional Cheques
               </div>
             </div>
             <div>
               <div className="font-display font-black text-4xl sm:text-5xl text-white">100%</div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-neutral-400 font-bold">
+              <div className="mt-1 font-mono text-xs uppercase tracking-wider text-white/75 font-bold">
                 Direct Partner Lead
               </div>
             </div>
@@ -689,8 +775,7 @@ export default function PortfolioIndex() {
                 Pitch Your Startup
               </h4>
               <p className="mt-2 font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                Seed to Series A checks from ₹2 Cr to ₹25 Cr. Direct partner evaluation within 14
-                days.
+                Seed to Series A checks from ₹2 Cr to ₹25 Cr. Direct partner evaluation with a target response within 7 business days.
               </p>
             </div>
             <div className="font-mono text-xs uppercase tracking-wider text-neutral-950 font-bold flex items-center justify-between pt-4 border-t border-black/10">
@@ -706,28 +791,28 @@ export default function PortfolioIndex() {
             onClick={() => navigate({ to: "/funds" })}
             role="button"
             tabIndex={0}
-            className="group relative h-72 sm:h-80 rounded-[28px] border-2 border-neutral-800 hover:border-white bg-neutral-950 text-white p-7 sm:p-8 flex flex-col justify-between cursor-pointer hover:bg-neutral-900 transition-all shadow-md hover:shadow-xl"
+            className="group relative h-72 sm:h-80 rounded-[28px] border-2 border-[#1e6086] hover:border-[#0ab1d7]/60 bg-[#1e6086] text-white p-7 sm:p-8 flex flex-col justify-between cursor-pointer hover:bg-[#185070] transition-all shadow-md hover:shadow-xl"
           >
             <div className="flex items-center justify-between font-mono text-[10px]">
-              <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white font-bold">
+              <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white font-bold">
                 ALLOCATION
               </span>
-              <span className="text-white/60 font-semibold">SEBI AIFs</span>
+              <span className="text-white/80 font-semibold">SEBI AIFs</span>
             </div>
             <div className="my-auto text-left">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-white/50 font-bold mb-1">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-white/70 font-bold mb-1">
                 FOR INVESTORS
               </div>
               <h4 className="font-display text-3xl font-black uppercase tracking-tight text-white">
                 Funds &amp; LPs
               </h4>
-              <p className="mt-2 font-sans text-xs sm:text-sm text-white/70 leading-relaxed">
+              <p className="mt-2 font-sans text-xs sm:text-sm text-white/80 leading-relaxed">
                 Institutional LP access, co-investment rights, and audited fiduciary governance.
               </p>
             </div>
-            <div className="font-mono text-xs uppercase tracking-wider text-white font-bold flex items-center justify-between pt-4 border-t border-white/15">
+            <div className="font-mono text-xs uppercase tracking-wider text-white font-bold flex items-center justify-between pt-4 border-t border-white/20">
               <span>Explore Vehicles</span>
-              <span className="w-7 h-7 rounded-full bg-white text-neutral-950 flex items-center justify-center text-xs group-hover:translate-x-1 transition-transform font-bold">
+              <span className="w-7 h-7 rounded-full bg-white text-[#1e6086] flex items-center justify-center text-xs group-hover:translate-x-1 transition-transform font-bold">
                 →
               </span>
             </div>

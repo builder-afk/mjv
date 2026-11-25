@@ -46,7 +46,7 @@ const FAQ_DATA: FAQItem[] = [
     tag: "STAGE & RESERVES",
     question: "What stage do you invest in, and what is your cheque size?",
     answer:
-      "We invest primarily at Seed to Series A stages. Our initial ticket sizes range from ₹2 Crore to ₹15 Crore ($250K to $2M). We deliberately retain up to 50% of our fund corpus in reserve to back our highest-conviction founders with pro-rata follow-on capital in subsequent growth rounds.",
+      "We invest primarily at Seed to Series A stages. Our initial ticket sizes range from ₹2 Crore to ₹25 Crore. We deliberately retain up to 50% of our fund corpus in reserve to back our highest-conviction founders with pro-rata follow-on capital in subsequent growth rounds.",
     links: [
       { label: "Review Fund Criteria", to: "/funds" },
       { label: "Explore Portfolio", to: "/portfolio" },
@@ -76,7 +76,7 @@ const FAQ_DATA: FAQItem[] = [
     tag: "SUBMISSION",
     question: "How do we pitch to Mount Judi Ventures?",
     answer:
-      "You can submit your pitch deck and executive memo through our founder portal, or reach out through a warm introduction from our portfolio founders or venture partners. We review every submission systematically and guarantee direct partner feedback.",
+      "You can submit your pitch deck and executive memo through our founder portal, or reach out through a warm introduction from our portfolio founders or venture partners. We review every submission systematically and target direct partner feedback within 7 business days.",
     links: [{ label: "Submit Pitch Memo", to: "/contact" }],
   },
   {
@@ -95,7 +95,7 @@ const FAQ_DATA: FAQItem[] = [
     question: "What materials should we have ready before pitching?",
     answer:
       "A concise pitch deck (10 to 15 slides) covering: the customer problem, market size, your differentiated technology or moat, current revenue traction, unit economics (CAC, LTV, payback period, gross margins), cap table structure, and founder backgrounds. Having an active data room speeds diligence considerably.",
-    links: [{ label: "Diligence Checklist", to: "/resources" }],
+    links: [{ label: "Submit Pitch Deck", to: "/contact" }],
   },
   {
     id: "sector-focus",
@@ -130,7 +130,7 @@ const FAQ_DATA: FAQItem[] = [
     tag: "UN PRI & ETHICS",
     question: "What does being a UN PRI signatory mean for founders?",
     answer:
-      "Being a signatory to the United Nations Principles for Responsible Investment (UN PRI) means our capital adheres to ethical, environmental, and sound corporate governance standards. We do not invest in predatory lending, tobacco, weapons, or harmful products. For founders, it guarantees a clean governance partner that protects long-term shareholder equity and reputation.",
+      "Being a signatory to the United Nations Principles for Responsible Investment (UN PRI) means our capital adheres to ethical, environmental, and sound corporate governance standards. We do not invest in predatory lending, tobacco, weapons, or harmful products. For founders, it commits us to a clean governance partnership that protects long-term shareholder equity and reputation.",
     links: [{ label: "Governance & Creed", to: "/about" }],
   },
   {
@@ -230,7 +230,7 @@ function FAQPage() {
               <div className="rounded-2xl border-2 border-transparent hover:border-neutral-950 bg-white p-5 shadow-xs transition-all">
 
                 <div className="mt-1 text-2xl font-black text-neutral-950 font-display">
-                  ₹2 Cr - ₹15 Cr
+                  ₹2 Cr - ₹25 Cr
                 </div>
                 <div className="text-[11px] text-neutral-600 mt-0.5">
                   Seed to Series A with follow-on reserves

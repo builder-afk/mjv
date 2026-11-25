@@ -7,6 +7,7 @@ import faviconIcon from "@/assets/favicon.png";
 const nav = [
   { to: "/portfolio", label: "Portfolio" },
   { to: "/thesis", label: "Thesis" },
+  { to: "/funds", label: "Funds" },
   { to: "/team", label: "Team" },
   { to: "/about", label: "About" },
   { to: "/media", label: "Media" },
@@ -206,17 +207,6 @@ export function SiteHeader() {
 }
 
 export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-    }
-  };
-
   return (
     <footer className="w-full bg-[var(--paper)] text-neutral-900 pt-12 sm:pt-16 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-10 relative overflow-hidden">
       {/* Mountain watermark overlapping the main footer */}
@@ -230,16 +220,16 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
       </div>
 
       <div className="mx-auto max-w-[1280px] relative z-10">
-        {/* ── Main Rounded Container (Split Black/White Card) ── */}
-        <div className="rounded-[32px] sm:rounded-[40px] border border-black/10 hover:border-neutral-950 overflow-hidden bg-white shadow-xs transition-all duration-300">
-          {/* Top Half: Left (Black) / Right (White) */}
+        {/* ── Main Rounded Container (Split Slate Navy/White Card) ── */}
+        <div className="rounded-[32px] sm:rounded-[40px] border border-black/10 hover:border-[#1e6086] overflow-hidden bg-white shadow-xs transition-all duration-300">
+          {/* Top Half: Left (Slate Navy) / Right (White) */}
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            {/* Left Column: Black Box */}
-            <div className="lg:col-span-6 bg-black text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-between">
+            {/* Left Column: Slate Navy Box */}
+            <div className="lg:col-span-6 bg-[#1e6086] text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-between">
               <div>
                 {/* Label */}
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-neutral-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-white/90">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#b78c2d]" />
                   <span>Mount Judi | Investment Partners</span>
                 </div>
 
@@ -248,7 +238,7 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                   Backing bold ideas. Building enduring companies.
                 </h2>
 
-                <p className="mt-4 max-w-md font-sans text-sm sm:text-base text-neutral-300 leading-relaxed">
+                <p className="mt-4 max-w-md font-sans text-sm sm:text-base text-white/85 leading-relaxed">
                   We partner with ambitious founders building businesses that shape industries and create lasting impact.
                 </p>
 
@@ -256,7 +246,7 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                   <Link
                     to="/portfolio"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/35 px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0"
                   >
                     Explore Our Portfolio
                     <ArrowRight className="h-4 w-4" />
@@ -266,20 +256,20 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
 
               {/* Bottom Left: Institutional Portals & Inquiries */}
               <div className="mt-10 sm:mt-14">
-                <div className="font-sans text-xs text-neutral-400 mb-3 font-medium">
+                <div className="font-sans text-xs text-white/75 mb-3 font-medium">
                   Institutional Portals &amp; Inquiries
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
                   {/* Founder Pitch Deck */}
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white hover:bg-neutral-100 text-neutral-950 transition-all shadow-xs group"
+                    className="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white hover:bg-[#f0f8ff] text-neutral-950 transition-all shadow-xs group"
                   >
-                    <span className="w-7 h-7 rounded-full bg-neutral-950 text-white flex items-center justify-center text-xs">
+                    <span className="w-7 h-7 rounded-full bg-[#1e6086] text-white flex items-center justify-center text-xs">
                       <ArrowRight className="h-3.5 w-3.5" />
                     </span>
                     <span className="text-left leading-tight">
-                      <span className="block font-mono text-[8.5px] uppercase tracking-wider text-neutral-500 font-bold">
+                      <span className="block font-mono text-[8.5px] uppercase tracking-wider text-[#1e6086]/75 font-bold">
                         FOR FOUNDERS
                       </span>
                       <span className="font-sans text-xs font-bold text-neutral-900 flex items-center gap-1">
@@ -291,13 +281,13 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                   {/* LP Allocation Data */}
                   <Link
                     to="/funds"
-                    className="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/10 transition-all shadow-xs group"
+                    className="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all shadow-xs group"
                   >
-                    <span className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs">
+                    <span className="w-7 h-7 rounded-full bg-white/15 text-white flex items-center justify-center text-xs">
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
                     <span className="text-left leading-tight">
-                      <span className="block font-mono text-[8.5px] uppercase tracking-wider text-white/50 font-bold">
+                      <span className="block font-mono text-[8.5px] uppercase tracking-wider text-white/70 font-bold">
                         FOR INVESTORS
                       </span>
                       <span className="font-sans text-xs font-bold text-white flex items-center gap-1">
@@ -372,6 +362,16 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
                       </span>
                     </li>
                     <li>
+                      <span className="block text-[11px] text-neutral-400 font-mono uppercase tracking-wider">Registered Address</span>
+                      <span className="block text-xs text-neutral-600 mt-0.5 leading-snug">
+                        Mount Judi Ventures LLP
+                        <br />
+                        1/1, The Presidency, #1, St. Marks Road,
+                        <br />
+                        Bengaluru – 560 001
+                      </span>
+                    </li>
+                    <li>
                       <div className="text-xs text-neutral-700 font-mono flex flex-wrap items-center gap-1.5">
                         <a href="tel:+919699831366" className="hover:text-black hover:underline">+91 96998 31366</a>
                         <span className="text-neutral-400">/</span>
@@ -396,11 +396,12 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-black/10 px-8 sm:px-12 py-6 bg-white">
             {/* Left: Legal Links */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-8 font-sans text-xs font-bold text-neutral-700">
-              <Link to="/resources" className="hover:text-black transition-colors">Privacy</Link>
+              <Link to="/privacy" className="hover:text-black transition-colors">Privacy</Link>
+              <Link to="/terms" className="hover:text-black transition-colors">Terms</Link>
+              <Link to="/disclosures" className="hover:text-black transition-colors">SEBI Disclosures</Link>
               <Link to="/faq" className="hover:text-black transition-colors">FAQs</Link>
               <Link to="/contact" className="hover:text-black transition-colors">Contact</Link>
               <Link to="/team" search={{ profile: undefined }} className="hover:text-black transition-colors">Careers</Link>
-              <Link to="/funds" className="hover:text-black transition-colors">SEBI Disclosures</Link>
             </div>
 
             {/* Center: The Two Circular Stamps */}
@@ -440,8 +441,17 @@ export function SiteFooter({ hideCta = false }: { hideCta?: boolean } = {}) {
 
             {/* Right: Copyright */}
             <div className="font-sans text-xs text-neutral-600 font-medium">
-              ©{new Date().getFullYear()} Mount Judi Ventures
+              ©{new Date().getFullYear()} Mount Judi Ventures LLP
             </div>
+          </div>
+
+          {/* Regulatory Non-Offer Disclaimer Strip */}
+          <div className="border-t border-black/10 px-8 sm:px-12 py-4 bg-neutral-50/80 font-sans text-[11px] leading-relaxed text-neutral-600">
+            Informational only: Nothing on this site constitutes an offer to sell or solicitation of an offer to buy units in any Alternative Investment Fund, nor investment, legal, or tax advice. AIF participation is restricted to eligible investors via confidential Private Placement Memorandum under SEBI (AIF) Regulations, 2012. Venture investments carry capital-loss and illiquidity risk; past performance does not indicate future returns.{" "}
+            <Link to="/disclosures" className="font-semibold text-[#1e6086] underline underline-offset-2 hover:text-neutral-950">
+              Read full SEBI &amp; Risk Disclosures
+            </Link>
+            .
           </div>
         </div>
 

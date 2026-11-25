@@ -456,27 +456,27 @@ function MediaPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="border-t border-[var(--ink)]/15">
         <div className="container-tight py-16 md:py-24">
-          <div className="relative overflow-hidden rounded-[28px] border-2 border-neutral-950 bg-neutral-950 p-6 text-white shadow-sm sm:p-8 md:p-12">
+          <div className="relative overflow-hidden rounded-[28px] border-2 border-[#1e6086] bg-[#1e6086] p-6 text-white shadow-sm sm:p-8 md:p-12">
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-70"
               style={{
                 background:
-                  "linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.10) 38%, transparent 52%), linear-gradient(250deg, transparent 40%, rgba(216,251,53,0.10) 60%, transparent 75%)",
+                  "linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.10) 38%, transparent 52%), linear-gradient(250deg, transparent 40%, rgba(10,177,215,0.16) 60%, transparent 75%)",
               }}
             />
             <div className="grid md:grid-cols-2 gap-10 items-center relative z-10">
               <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 font-mono text-[10px] font-semibold tracking-wider text-white shadow-xs">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-                  <span>Press & Broadcast Access</span>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 font-mono text-[10px] font-semibold tracking-wider text-white shadow-xs border border-white/20">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#b78c2d] animate-pulse" />
+                  <span>Press &amp; Broadcast Access</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-5xl font-black tracking-tight leading-tight">
                   Media &amp; Investor
                   <br />
                   Inquiries.
                 </h2>
-                <p className="mt-6 font-mono text-xs text-white/60 leading-relaxed max-w-md">
+                <p className="mt-6 font-mono text-xs text-white/80 leading-relaxed max-w-md">
                   Direct contact with investment partners and portfolio CEOs. We provide verified
                   data dossiers, founder access, and regulatory commentary within 24 business hours.
                 </p>
@@ -485,13 +485,13 @@ function MediaPage() {
               <div className="space-y-3.5">
                 <Link
                   to="/contact"
-                  className="block w-full rounded-full bg-white px-8 py-3.5 text-center font-mono text-xs font-bold  tracking-widest text-neutral-950 shadow-xs transition-colors hover:bg-neutral-100"
+                  className="block w-full rounded-full bg-white px-8 py-3.5 text-center font-mono text-xs font-bold tracking-widest text-[#1e6086] shadow-xs transition-colors hover:bg-[#f0f8ff]"
                 >
                   Request Press Info →
                 </Link>
                 <a
                   href="mailto:info@mountjudi.com"
-                  className="block w-full rounded-full border border-white/20 px-8 py-3.5 text-center font-mono text-xs  tracking-widest text-white transition-colors hover:border-white hover:text-white"
+                  className="block w-full rounded-full border border-white/25 px-8 py-3.5 text-center font-mono text-xs tracking-widest text-white transition-colors hover:border-white hover:bg-white/10"
                 >
                   info@mountjudi.com
                 </a>
@@ -499,7 +499,7 @@ function MediaPage() {
                   href="https://www.linkedin.com/company/mount-judi-ventures/"
                   target="_blank"
                   rel="noreferrer"
-                  className="block w-full rounded-full border border-white/20 px-8 py-3.5 text-center font-mono text-xs tracking-widest text-white transition-colors hover:border-white hover:text-white"
+                  className="block w-full rounded-full border border-white/25 px-8 py-3.5 text-center font-mono text-xs tracking-widest text-white transition-colors hover:border-white hover:bg-white/10"
                 >
                   Follow on LinkedIn ↗
                 </a>

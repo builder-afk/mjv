@@ -17,8 +17,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/about",
           "/contact",
           "/perspective",
-          "/resources",
+          "/media",
           "/faq",
+          "/privacy",
+          "/terms",
+          "/disclosures",
           ...companies.map((c) => `/portfolio/${c.slug}`),
         ];
         const urls = paths

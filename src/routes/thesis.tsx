@@ -688,35 +688,35 @@ function Thesis() {
 
       {/* ── 4. BOTTOM ALLOCATION TERMINAL ── */}
       <section className="container-tight pt-4 sm:pt-6 md:pt-8 pb-20 md:pb-28">
-        <div className="rounded-[36px] bg-neutral-950 text-white p-8 sm:p-12 md:p-16 relative overflow-hidden shadow-xl border border-white/10">
+        <div className="rounded-[36px] bg-[#1e6086] text-white p-8 sm:p-12 md:p-16 relative overflow-hidden shadow-xl border border-[#1e6086]">
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-mono text-xs uppercase tracking-wider font-semibold mb-4 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 text-white font-mono text-xs uppercase tracking-wider font-semibold mb-4 border border-white/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b78c2d]" />
                 <span>BUILD WITH MOUNT JUDI VENTURES</span>
               </div>
               <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
                 Are You Building in One of These Pillars?
               </h2>
-              <p className="mt-4 text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans">
+              <p className="mt-4 text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
                 We write initial checks from ₹2 Cr to ₹25 Cr between Seed and Series A. Pitch
-                directly to partners with a guaranteed response within seven business days.
+                directly to partners with a target response within 7 business days.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white hover:bg-neutral-200 text-neutral-900 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white hover:bg-[#f0f8ff] text-[#1e6086] font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Pitch Your Company</span>
-                <span className="w-6 h-6 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs">
+                <span className="w-6 h-6 rounded-full bg-[#1e6086] text-white flex items-center justify-center text-xs">
                   →
                 </span>
               </Link>
               <Link
                 to="/portfolio"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all border border-white/15 hover:border-white/30"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all border border-white/25 hover:border-white/40"
               >
                 <span>View Full Portfolio</span>
                 <span>↗</span>
