@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import {
-  ChevronDown,
-  RotateCw,
   Check,
 } from "lucide-react";
 import { companies, type Company } from "../lib/portfolio-data";
@@ -34,13 +32,6 @@ export const Route = createFileRoute("/media")({
 
 function MediaPage() {
   const [showAllCompanyPress, setShowAllCompanyPress] = useState(false);
-
-  /* Interactive section collapses matching reference controls */
-  const [experienceOpen, setExperienceOpen] = useState(true);
-  const [expertiseOpen, setExpertiseOpen] = useState(true);
-  const [hardskillOpen, setHardskillOpen] = useState(true);
-  const [softskillOpen, setSoftskillOpen] = useState(true);
-  const [educationOpen, setEducationOpen] = useState(true);
 
   /* Quick map to lookup full company profiles & official logos */
   const companyMap = useMemo(() => {
@@ -81,10 +72,13 @@ function MediaPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-white pt-10 pb-4 sm:pt-14 sm:pb-6">
         <div className="container-tight">
-          <div className="flex items-center gap-2.5 font-mono text-xs font-black uppercase tracking-[0.25em] text-neutral-800 mb-8 sm:mb-10">
+          <div className="flex items-center gap-2.5 font-mono text-xs font-black uppercase tracking-[0.25em] text-neutral-800 mb-4">
             <span className="w-2 h-2 rounded-full bg-neutral-900 animate-pulse" />
             <span>MEDIA COVERAGE</span>
           </div>
+          <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl tracking-[-0.03em] leading-[0.98] text-neutral-950 mb-8 sm:mb-10">
+            Press Releases
+          </h1>
 
           {/* 3-Column Dossier Dashboard */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-10 items-start">
@@ -96,30 +90,15 @@ function MediaPage() {
                 <h2 className="text-3xl font-display font-black text-neutral-950 tracking-tight">
                   Portfolio Milestones
                 </h2>
-                <button
-                  type="button"
-                  onClick={() => setExperienceOpen(!experienceOpen)}
-                  className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-100 flex items-center justify-center text-neutral-700 transition-colors cursor-pointer"
-                  aria-label="Toggle Portfolio Milestones section"
-                >
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${experienceOpen ? "" : "-rotate-90"
-                      }`}
-                  />
-                </button>
               </div>
 
-              {experienceOpen && (
-                <div className="space-y-4">
+              <div className="space-y-4">
                   {/* Card 1: 4baseCare & Cancer Institute (WIA) */}
                   <div className="rounded-[24px] bg-white border border-neutral-300/80 p-5 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#036089] text-white text-[11px] font-bold tracking-wide">
                         2024–Present
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-500">
-                        <RotateCw className="w-3.5 h-3.5" />
-                      </div>
                     </div>
                     <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
                       Clinical Lab Ecosystem
@@ -165,9 +144,6 @@ function MediaPage() {
                       <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#036089] text-white text-[11px] font-bold tracking-wide">
                         2024–Present
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-500">
-                        <RotateCw className="w-3.5 h-3.5" />
-                      </div>
                     </div>
                     <div className="text-xs font-semibold text-neutral-400 mt-3 mb-1 uppercase tracking-wider">
                       Autonomous Drone Logistics
@@ -242,7 +218,6 @@ function MediaPage() {
                     </div>
                   </div>
                 </div>
-              )}
             </div>
 
             {/* ──────────────────────────────────────────────────────────
@@ -255,23 +230,10 @@ function MediaPage() {
                   <h2 className="text-3xl font-display font-black text-neutral-950 tracking-tight">
                     Sector Focus
                   </h2>
-                  <button
-                    type="button"
-                    onClick={() => setExpertiseOpen(!expertiseOpen)}
-                    className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-100 flex items-center justify-center text-neutral-700 transition-colors cursor-pointer"
-                    aria-label="Toggle Sector Focus section"
-                  >
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${expertiseOpen ? "" : "-rotate-90"
-                        }`}
-                    />
-                  </button>
                 </div>
-                {expertiseOpen && (
-                  <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-medium">
-                    Precision Oncology, Autonomous Drone Corridors, Vision AI &amp; Video Intelligence, Clinical Bio-Informatics, Cross-Border Trade Infrastructure
-                  </p>
-                )}
+                <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-medium">
+                  Precision Oncology, Autonomous Drone Corridors, Vision AI &amp; Video Intelligence, Clinical Bio-Informatics, Cross-Border Trade Infrastructure
+                </p>
               </div>
 
               {/* Block 2: Portfolio in Action */}
@@ -280,27 +242,14 @@ function MediaPage() {
                   <h2 className="text-3xl font-display font-black text-neutral-950 tracking-tight">
                     Portfolio in Action
                   </h2>
-                  <button
-                    type="button"
-                    onClick={() => setHardskillOpen(!hardskillOpen)}
-                    className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-100 flex items-center justify-center text-neutral-700 transition-colors cursor-pointer"
-                    aria-label="Toggle Portfolio in Action section"
-                  >
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${hardskillOpen ? "" : "-rotate-90"
-                        }`}
-                    />
-                  </button>
                 </div>
-                {hardskillOpen && (
-                  <div className="rounded-[24px] overflow-hidden border border-neutral-300/80 shadow-xs bg-white">
-                    <img
-                      src={skyeairWebp}
-                      alt="Skye Air Mobility Autonomous Drone Logistics"
-                      className="w-full h-auto aspect-[16/10] object-cover object-center hover:scale-[1.02] transition-transform duration-300"
-                    />
-                  </div>
-                )}
+                <div className="rounded-[24px] overflow-hidden border border-neutral-300/80 shadow-xs bg-white">
+                  <img
+                    src={skyeairWebp}
+                    alt="Skye Air Mobility Autonomous Drone Logistics"
+                    className="w-full h-auto aspect-[16/10] object-cover object-center hover:scale-[1.02] transition-transform duration-300"
+                  />
+                </div>
               </div>
 
               {/* Block 3: Thesis Tags */}
@@ -309,43 +258,30 @@ function MediaPage() {
                   <h2 className="text-3xl font-display font-black text-neutral-950 tracking-tight">
                     Thesis
                   </h2>
-                  <button
-                    type="button"
-                    onClick={() => setSoftskillOpen(!softskillOpen)}
-                    className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-100 flex items-center justify-center text-neutral-700 transition-colors cursor-pointer"
-                    aria-label="Toggle Thesis Tags section"
-                  >
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${softskillOpen ? "" : "-rotate-90"
-                        }`}
-                    />
-                  </button>
                 </div>
-                {softskillOpen && (
-                  <div className="flex flex-wrap gap-2.5 pt-1">
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#036089] text-white text-xs font-semibold shadow-xs">
-                      #Genomics
-                    </span>
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                      #Cancer_Institute_WIA
-                    </span>
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                      #Drone_Corridors
-                    </span>
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                      #Ericsson_Innovation
-                    </span>
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#036089] text-white text-xs font-semibold shadow-xs">
-                      #CGP_Testing
-                    </span>
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
-                      #Clinical_Validation
-                    </span>
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#C78D1E] text-white text-xs font-semibold shadow-xs">
-                      #Series_B_Scale
-                    </span>
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-2.5 pt-1">
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#036089] text-white text-xs font-semibold shadow-xs">
+                    #Genomics
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
+                    #Cancer_Institute_WIA
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
+                    #Drone_Corridors
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
+                    #Ericsson_Innovation
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#036089] text-white text-xs font-semibold shadow-xs">
+                    #CGP_Testing
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-neutral-300 text-neutral-800 text-xs font-medium shadow-xs">
+                    #Clinical_Validation
+                  </span>
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#C78D1E] text-white text-xs font-semibold shadow-xs">
+                    #Series_B_Scale
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -357,21 +293,9 @@ function MediaPage() {
                 <h2 className="text-3xl font-display font-black text-neutral-950 tracking-tight">
                   Key Achievements
                 </h2>
-                <button
-                  type="button"
-                  onClick={() => setEducationOpen(!educationOpen)}
-                  className="w-8 h-8 rounded-full border border-neutral-300 bg-white hover:bg-neutral-100 flex items-center justify-center text-neutral-700 transition-colors cursor-pointer"
-                  aria-label="Toggle Key Achievements section"
-                >
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${educationOpen ? "" : "-rotate-90"
-                      }`}
-                  />
-                </button>
               </div>
 
-              {educationOpen && (
-                <div className="space-y-4">
+              <div className="space-y-4">
                   {/* Card 1: Ericsson Innovation */}
                   <div className="rounded-[24px] bg-[#1a1a1a] text-white p-5 border border-neutral-800 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors">
                     <div className="flex items-center justify-between">
@@ -437,7 +361,6 @@ function MediaPage() {
                     </div>
                   </div>
                 </div>
-              )}
             </div>
           </div>
         </div>
