@@ -109,7 +109,7 @@ function About() {
                       />
                     </svg>
                     <span className="font-serif italic text-base text-[#036089] tracking-tight whitespace-nowrap">
-                      Patient. Principled. Present.
+                      Capital. Conviction. Character.
                     </span>
                   </div>
                 </div>

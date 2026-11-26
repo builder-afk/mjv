@@ -457,7 +457,7 @@ export default function PortfolioIndex() {
                       )}
 
                       {/* Gentle Bottom-Only Gradient for Text Readability (Leaves photo 100% full vibrant color) */}
-                      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/85 via-black/45 to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-300" />
+                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-300" />
 
                       {/* Top Badges (Visible on Image) */}
                       <div className="absolute inset-x-0 top-0 p-3 sm:p-3.5 flex items-center justify-between z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-200">
@@ -479,8 +479,8 @@ export default function PortfolioIndex() {
 
                       {/* Bottom Brand Bar (Visible on Image) */}
                       <div className="absolute inset-x-0 bottom-0 p-3 sm:p-3.5 z-10 flex items-end justify-between gap-2.5 group-hover:opacity-0 transition-opacity duration-200 pointer-events-none">
-                        <div className="flex items-start gap-2 min-w-0">
-                          <div className="px-2 py-1 rounded-lg bg-white/95 backdrop-blur-md border border-[#cee7fc]/80 shadow-xs inline-flex items-center shrink-0 mt-0.5">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <div className="px-2 py-1 rounded-lg bg-white/95 backdrop-blur-md border border-[#cee7fc]/80 shadow-xs inline-flex items-center shrink-0">
                             <img
                               src={company.logo}
                               alt={`${company.name} logo`}
@@ -495,11 +495,6 @@ export default function PortfolioIndex() {
                               <MapPin className="w-3 h-3 text-[#38bdf8]" />
                               {city}
                             </span>
-                            {(company.oneLiner || company.tagline) && (
-                              <p className="mt-0.5 font-sans text-[10px] text-white/75 leading-snug line-clamp-2">
-                                {company.oneLiner || company.tagline}
-                              </p>
-                            )}
                           </div>
                         </div>
                       </div>
@@ -546,7 +541,7 @@ export default function PortfolioIndex() {
                           </div>
 
                           {/* One-Liner Description (NO CAPS, Sentence Case) */}
-                          <p className="mt-1 font-sans text-xs sm:text-[13px] text-neutral-600 line-clamp-2 leading-relaxed">
+                          <p className="mt-1 font-sans text-xs text-neutral-600 line-clamp-3 leading-snug">
                             {company.oneLiner || company.tagline}
                           </p>
 
