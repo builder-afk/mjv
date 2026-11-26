@@ -173,7 +173,7 @@ export const companies: Company[] = [
     vintage: "FY25",
     status: "Active",
     tagline: "India's drone logistics network is being built right now.",
-    oneLiner: "Pioneer in last-mile drone-enabled logistics in India, across sectors.",
+    oneLiner: "India's new-age hyperlocal autonomous drone logistic provider optimizing delivery efficiency",
     description:
       "Skye Air is a pioneer in drone-enabled last-mile logistics in India, building autonomous aerial delivery infrastructure for enterprises in India. It operates air corridors, fleet operations, and unmanned traffic management to move medicines, diagnostic samples, and e-commerce parcels faster and more reliably than road networks allow. Its customers include hospitals, diagnostics chains, retailers, and logistics providers, particularly across geographies where last-mile delivery is slow or uneconomical. Working closely with aviation regulators, Skye Air combines hardware, software, and ground operations into a single integrated offering within the emerging drone logistics category.",
     founders: "Ankit Kumar",
@@ -249,7 +249,7 @@ export const companies: Company[] = [
     vintage: "FY21",
     status: "Partially Exited",
     tagline: "Precision oncology, accessible to every patient.",
-    oneLiner: "Innovated a South-Asian panel for genetic tests, aiding precision oncology.",
+    oneLiner: "Precision oncology platform innovating South-Asian population specific gene panels",
     description:
       "4baseCare is a precision oncology company that has innovated a South-Asian panel for genetic tests, with genomic testing solutions tailored to South Asian populations. It combines next-generation sequencing with clinical interpretation to help oncologists match patients to targeted therapies based on individual genetic profiles. Its diagnostic panels and reporting tools are used by hospitals, cancer centres, and treating physicians across India and international markets. By building genomic reference data specific to the region, the company addresses a gap left by Western-centric datasets, operating at the intersection of diagnostics, genomics, and personalised cancer care.",
     founders: "Hitesh Goswami · Kshitij Rishi",
@@ -327,7 +327,7 @@ export const companies: Company[] = [
     vintage: "FY23",
     status: "Active",
     tagline: "Turning every camera into intelligence.",
-    oneLiner: "Video intelligence platform for enterprise and law enforcement.",
+    oneLiner: "Video analytics AI platform for business process monitoring and security",
     description:
       "JARVIS by Staqu Technologies is an AI-powered video intelligence platform trusted across 12+ state police forces and 100+ enterprise customers. JARVIS transforms conventional CCTV infrastructure into real-time intelligence for security, safety, and business operations.\n\nThe platform has powered large-scale deployments across law enforcement, prisons, homeland security, retail, sports venues, and critical infrastructure, including the Ayodhya Ram Mandir inauguration, G20 Delhi, Karnataka Prisons, and RCB at M. Chinnaswamy Stadium.\n\nBacked by 25+ published research papers and 4 patents, JARVIS brings together video and audio analytics, VMS, and JARVIS GPT to make existing video infrastructure significantly more intelligent and actionable.",
     founders: "Atul Rai · Anurag Saini · Pankaj Sharma",
@@ -406,7 +406,7 @@ export const companies: Company[] = [
     vintage: "FY24",
     status: "Active",
     tagline: "Reimagining cloud kitchens, with heart.",
-    oneLiner: "Virtual kitchens using existing restaurants to serve regional food brands.",
+    oneLiner: "Internet-first chain of virtual cloud kitchen brands serving regional and gourmet food",
     description:
       "Dil Foods runs virtual kitchens using existing restaurants, enabling them to expand revenue by operating regional food brands from their existing kitchen infrastructure. Restaurant partners access recipes, supply chain, packaging, and demand generation through the platform, adding new cuisines without additional capital investment. Consumers order these regional and specialty brands through online delivery platforms. Its asset-light model differs from conventional cloud kitchens, which carry the cost of real estate and staffing, and positions Dil Foods within the food-tech and restaurant enablement category.",
     founders: "Arpita Aditi",
@@ -476,7 +476,7 @@ export const companies: Company[] = [
     vintage: "FY24",
     status: "Active",
     tagline: "An AI tutor for every learner without requiring an app.",
-    oneLiner: "Conversational AI and big data analytics in public education.",
+    oneLiner: "Personalized education & administration platform using conversational AI & big data analytics",
     description:
       "ConveGenius brings conversational AI and big data analytics to public education, delivering AI tutoring to learners in low-income and low-bandwidth settings. Its assistants run over widely used messaging apps, removing the need for a dedicated application or high-end device, and support assessment, remediation, and curriculum-aligned practice. The company works with state governments, public school systems, and non-profit partners to reach students at scale. Its distribution model and vernacular language support differentiate it within the AI-led learning and public education category.",
     founders: "Jairaj Bhattacharya · Shashank Pandey",
@@ -551,7 +551,7 @@ export const companies: Company[] = [
     vintage: "FY23",
     status: "Active",
     tagline: "Functional food delivering measurable metabolic health outcomes.",
-    oneLiner: "Functional health food products focused on improving individual health at scale.",
+    oneLiner: "ProteinChef brand focused on high protein, keto and diabetic friendly foods for Indian consumers",
     description:
       "Protein Chef is building functional health food products focused on improving the health of individuals at scale and enabling measurable health outcomes.",
     founders: "Sudarshan Gangrade · Ajay S Tanwar",
@@ -629,7 +629,7 @@ export const companies: Company[] = [
     vintage: "FY21",
     status: "Active",
     tagline: "Frugal medical devices for the next billion patients.",
-    oneLiner: "MedTech start-up that has innovated 3 novel life-saving devices.",
+    oneLiner: "A MedTech start-up making infrastructure independent life-saving devices",
     description:
       "InnAccel is a MedTech start-up that has innovated three novel life-saving devices \u2014 affordable, clinically validated products built for emerging markets. It identifies critical gaps in patient care and designs, tests, and commercialises products across maternal health, critical care, and neonatal care that improve clinical outcomes at a fraction of imported device costs. Its customers are hospitals, government health systems, and healthcare providers, particularly in resource-constrained settings. In-house engineering, clinical validation, and manufacturing across multiple product lines set it apart within the medical devices category.",
     founders: "Siraj Dhanani · Nitesh Kumar Jangir · Vijayarajan Alagumalai",
@@ -650,6 +650,11 @@ export const companies: Company[] = [
     milestones: [
       {
         title:
+          "Gates Foundation: Backed and spotlighted Bengaluru-based medical device maker InnAccel Technologies",
+        url: "https://www.gatesfoundation.org/about/committed-grants/2025/11/inv-092355",
+      },
+      {
+        title:
           "YourStory: Medtech startup InnAccel raises $1.5M in pre-Series A round led by Mount Judi Ventures",
         url: "https://yourstory.com/2020/10/funding-alert-medtech-startup-innaccel-mount-judi-ventures",
         image: press_yourstory_9a3c8304ea,
@@ -660,6 +665,12 @@ export const companies: Company[] = [
       },
     ],
     mediaMentions: [
+      {
+        source: "Gates Foundation",
+        headline:
+          "Gates Foundation have backed and spotlighted Bengaluru-based medical device maker InnAccel Technologies",
+        url: "https://www.gatesfoundation.org/about/committed-grants/2025/11/inv-092355",
+      },
       {
         source: "YourStory",
         headline:
@@ -697,7 +708,7 @@ export const companies: Company[] = [
     vintage: "FY23",
     status: "Active",
     tagline: "AI-powered content operations for global commerce.",
-    oneLiner: "Digital cataloguing and content suite enabling rapid GTM in e-commerce.",
+    oneLiner: "AI-Powered retail ecosystem to manage brands and sellers across E-com, Q-com & Marketplaces",
     description:
       "Rubick.ai provides a digital cataloguing and content suite that enables rapid go-to-market in e-commerce \u2014 an AI-powered product cataloguing and content management platform for consumer brands, retailers, and marketplaces. The platform automates content creation, enrichment, taxonomy, and distribution of product data across sales channels, reducing manual effort in listing and merchandising. Customers use it to accelerate go-to-market, improve product discovery, and maintain consistency across storefronts. By combining automation with managed services across global markets, Rubick.ai differentiates itself in the e-commerce content operations category.",
     founders: "Kiran Ramakrishna · Chandan Mishra",
@@ -766,7 +777,7 @@ export const companies: Company[] = [
     vintage: "FY22",
     status: "Active",
     tagline: "Where India's next generation learns to build.",
-    oneLiner: "Next-gen skills EdTech for school kids.",
+    oneLiner: "An Ed-tech company imparting next generation tech skills to school kids",
     description:
       "SP Robotic Works is a next-gen skills EdTech company for school kids, equipping them with future-ready skills through experiential, hands-on learning. Its curriculum spans robotics, coding, artificial intelligence, electronics, and design thinking, delivered through learning kits, online classes, and school partnerships. Customers include schools, parents, and institutions seeking practical STEM programmes beyond conventional syllabi. The combination of physical build kits with structured digital instruction differentiates it within the K-12 skilling and edtech category.",
     founders: "Sneha Priya · Pranavan Sankar",
@@ -839,7 +850,7 @@ export const companies: Company[] = [
     vintage: "FY23",
     status: "Acquired",
     tagline: "Careers built one internship at a time.",
-    oneLiner: "India's top career-tech platform for internships, up-skilling and fresher jobs.",
+    oneLiner: "India's no.1 Career-tech platform in internships, upskilling and fresher jobs",
     description:
       "Internshala is India's top career-tech platform for internships, up-skilling, and fresher jobs, connecting students and early-career professionals with employers. Employers use it to source entry-level talent, while learners access training courses designed to improve employability in areas such as programming, marketing, and design. The platform serves millions of students across India alongside a large base of recruiting companies. By pairing recruitment with training on a single platform, Internshala addresses both sides of the education-to-industry gap.",
     founders: "Sarvesh Agrawal",
@@ -969,7 +980,7 @@ export const companies: Company[] = [
     status: "Active",
     tagline: "Chemical-free fish and meat, delivered fresh.",
     oneLiner:
-      "India & UAE's leading D2C fish & meat platform serving fresh, chemical-free products.",
+      "India and UAE’s leading clean, chemical-free, D2C fish and meat platform",
     description:
       "FreshToHome is India & UAE's leading D2C fish & meat platform, delivering fresh, chemical-free seafood, meat, and ready-to-cook products directly to consumers. It operates a farm-to-fork supply chain with direct sourcing from fishermen and farmers, quality checks, and no added chemical preservatives, supported by technology for procurement and demand forecasting. The company serves households across India and the UAE. Direct sourcing, traceability, and preservative-free positioning differentiate it within the fresh food e-commerce category.",
     founders: "Shan Kadavil · Mathew Joseph",
@@ -1039,7 +1050,7 @@ export const companies: Company[] = [
     vintage: "FY25",
     status: "Active",
     tagline: "Every install, done right the first time.",
-    oneLiner: "India's largest B2B2C full-stack home installation company.",
+    oneLiner: "India’s largest B2B2C home improvement, installation and after-sales maintenance company",
     description:
       "Wify is India's largest B2B2C full-stack home installation company, running installation and after-sales service connecting brands with a nationwide network of trained service professionals. It manages installation, assembly, maintenance, and post-purchase support for categories such as furniture, appliances, and home improvement, with technology for scheduling, tracking, and quality assurance. Its customers are consumer brands and retailers that need consistent last-mile service. A managed, trained technician network rather than an open marketplace differentiates Wify within the home services and post-purchase experience category.",
     founders: "Vikram Sharma · Deepanshu Goel",
@@ -1104,7 +1115,7 @@ export const companies: Company[] = [
     vintage: "FY25",
     status: "Active",
     tagline: "Navigating every learner to mastery.",
-    oneLiner: "US-based deep-tech AI software providing a GPS for personalized learning.",
+    oneLiner: "AI software enabling personalized healthcare, and learning across K-12 & higher-ed",
     description:
       "Gooru is US-based deep-tech AI software that acts as a GPS for personalized learning, using learning data to personalise instruction for individual students. Its navigator maps competencies, identifies gaps, and routes learners along adaptive pathways, while giving educators visibility into progress. The platform is used by schools, districts, governments, and non-profits across multiple countries. An open, standards-based approach to learning content and competency mapping differentiates Gooru within the adaptive learning and public education technology category.",
     founders: "Prasad Ram (Founder & CEO, ex-Google)",
@@ -1143,7 +1154,7 @@ export const companies: Company[] = [
         url: "https://gooru.org/about/portfolio/national-science-foundation-nsf/",
       },
     ],
-    fund: "Both",
+    fund: "Growth Fund",
     logo: gooruLogo,
     whiteLogo: gooruWhiteLogo,
     image: press_thehindu_9e2e3c3f4a,
@@ -1167,7 +1178,7 @@ export const companies: Company[] = [
     vintage: "FY26",
     status: "Active",
     tagline: "Tech-enabled fast-fashion outsourcing for large brands.",
-    oneLiner: "Platform for tech-enabled fast-fashion outsourcing for large brands.",
+    oneLiner: "Fashion-Tech company with its own D2C apparel brand “Maison X”",
     description:
       "Thimblerr is a platform for tech-enabled fast-fashion outsourcing for large brands, connecting apparel brands with verified manufacturing partners. It digitises sourcing, sampling, production tracking, and quality management, giving brands visibility into order status across a distributed supplier base. Customers include emerging and established apparel brands seeking reliable capacity without building in-house sourcing teams. By vetting manufacturers and managing production workflows on a single platform, Thimblerr addresses fragmentation and opacity in the garment manufacturing and supply chain category.\n\nMaison X is an Indian direct-to-consumer clothing brand operated by Thimblerr Commerce and Technology Private Limited. Founded in 2022 and based in Gurgaon by Piyush Jalan, it sells everyday essentials—such as linen shirts, cotton tees, polos, crewnecks, and women's wear—crafted from mill fabrics without luxury brand markups.",
     founders: "Piyush Jalan",
@@ -1248,7 +1259,7 @@ export const companies: Company[] = [
     vintage: "FY26",
     status: "Active",
     tagline: "Furniture designed for how kids actually live.",
-    oneLiner: "Internet-first brand offering kids' furniture & decor.",
+    oneLiner: "Vertically integrated, omni-channel brand offering customizable Kids furniture & décor",
     description:
       "Boingg! is an internet-first brand offering kids' furniture and decor, designing for young families. Its product range spans beds, storage, study and play furniture, and décor built around child safety, durability, and space-efficient design for urban homes. The brand sells directly to consumers online and through marketplace channels. A design language and safety standard built specifically for children, rather than scaled-down adult furniture, differentiates Boingg! within the D2C kids' furniture and home category.",
     founders: "Dhruvan Barar",
@@ -1318,7 +1329,7 @@ export const companies: Company[] = [
     vintage: "FY26",
     status: "Active",
     tagline: "Cross-border trade, end to end.",
-    oneLiner: "End-to-end import-export managing platform for Indian brands.",
+    oneLiner: "AI-driven, end-to-end cross-border supply chain platform tech-enabling imports & exports",
     description:
       "Hexalog is an end-to-end import-export management platform for Indian brands and businesses trading across borders. It digitises procurement, supplier management, logistics coordination, documentation, and compliance in a single workflow, replacing the spreadsheets and intermediaries that typically govern cross-border trade. Its customers are exporters, importers, and brands scaling into international markets. By combining software with operational support across the trade lifecycle, Hexalog differentiates itself within the cross-border trade and logistics technology category.",
     founders: "Dibyanshu Tripathi · Utkarsh Tripathi · Vineet Malik · Shobhit Singh",
@@ -1387,7 +1398,7 @@ export const companies: Company[] = [
     vintage: "FY26",
     status: "Active",
     tagline: "Employee engagement & wellbeing, powered by an AI-driven gamified platform.",
-    oneLiner: "Enabling employee engagement & wellbeing via an AI-driven gamified platform.",
+    oneLiner: "On-demand gamified Platform enabling employee engagement & workplace collaboration",
     description:
       "ExtraMile Play enables employee engagement and wellbeing via an AI-driven gamified platform, using gamification and artificial intelligence to improve workplace participation, learning, and well-being. It delivers interactive challenges, quizzes, rewards, and recognition programmes that integrate with the tools employees already use, along with analytics for HR teams. Customers are mid-to-large enterprises seeking measurable engagement outcomes rather than one-off activities. Game mechanics applied to learning and culture programmes differentiate it within the HR technology and employee experience category.",
     founders: "Pooja Bajaj",
@@ -1457,7 +1468,7 @@ export const companies: Company[] = [
     vintage: "FY27",
     status: "Active",
     tagline: "Whole-leaf artisanal teas sourced fresh from heritage single-origin estates.",
-    oneLiner: "Artisanal beverage company bringing premium, single-origin whole-leaf tea to everyday lifestyle.",
+    oneLiner: "A premium whole leaf tea brand with D2C agility disrupting traditional tea consumption",
     description:
       "Freshleaf Tea is a modern artisanal beverage company dedicated to redefining daily tea rituals across India. By eliminating multi-layered broker chains, Freshleaf sources whole-leaf harvest directly from certified organic estates in Assam, Darjeeling, and the Nilgiris within days of plucking. The company creates innovative whole-leaf blends and convenient packaging formats for contemporary urban households and wellness-first consumers, combining rich tradition with uncompromising freshness and fair trade transparency.",
     founders: "Balkirat Singh · Muneet Arora",
@@ -1523,7 +1534,7 @@ export const companies: Company[] = [
     vintage: "FY27",
     status: "Active",
     tagline: "Chef-crafted gourmet sandwiches built for fast-casual convenience.",
-    oneLiner: "Fast-casual culinary brand serving gourmet craft sandwiches with disciplined commissary economics.",
+    oneLiner: "QSR brand built around bold, flavour-forward sandwiches with retro diner-inspired identity",
     description:
       "Sandowitch is a high-growth fast-casual culinary brand creating fresh, chef-curated sandwiches, sourdough melts, and nutritious bowls designed for urban lunch velocity. Operating through a hub-and-spoke model that pairs centralized prep commissaries with high-efficiency grab-and-go retail storefronts, Sandowitch delivers restaurant-grade quality at accessible price points with industry-leading preparation times.",
     founders: "Vivek Prabhakar",
@@ -1587,7 +1598,7 @@ export const companies: Company[] = [
     vintage: "FY27",
     status: "Active",
     tagline: "Clean, barrier-first personal care celebrating real, healthy skin.",
-    oneLiner: "Clean formulation beauty and personal care brand built on radical ingredient transparency.",
+    oneLiner: "India’s 1st flushable, 100% biodegradable, plant-based sanitary pad that dissolves in water.",
     description:
       "Flawsome is a clean beauty and personal care brand formulated specifically for Indian environmental conditions and diverse skin types. Rejecting toxic beauty standards and harsh instant-stripping treatments, Flawsome formulates science-backed, barrier-strengthening skincare leveraging bio-compatible ceramides, adaptogenic botanicals, and microbiome-supporting prebiotics. Every formulation is 100% cruelty-free, fragrance-transparent, and packaged in recyclable materials.",
     founders: "Ranu Khade",

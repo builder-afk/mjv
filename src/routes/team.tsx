@@ -440,7 +440,9 @@ function ProfileOverlay({
 }) {
   if (!member) return null;
   const isMjvTeam = "group" in member;
+  const isLogo = member.name.includes("Family Office");
   const bio = member.bio ?? [];
+  const bioSections = member.bioSections ?? [];
   const focus = member.focus ?? [];
   const timeline = member.timeline ?? [];
   const notable = member.notable ?? [];
@@ -480,7 +482,11 @@ function ProfileOverlay({
                 alt={member.name}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover object-top rounded-2xl"
+                className={
+                  isLogo
+                    ? "h-full w-full object-contain p-6 rounded-2xl"
+                    : "h-full w-full object-cover object-top rounded-2xl"
+                }
               />
             </div>
 
@@ -533,10 +539,19 @@ function ProfileOverlay({
               {member.intro ?? member.summary}
             </p>
 
-            <div className="mt-8 font-mono text-xs sm:text-sm leading-relaxed text-neutral-700 space-y-4 max-w-3xl">
-              {bio.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+            <div className="mt-8 font-mono text-xs sm:text-sm leading-relaxed text-neutral-700 space-y-5 max-w-3xl">
+              {bioSections.length > 0
+                ? bioSections.map((section, i) => (
+                    <div key={i} className="space-y-2">
+                      {section.heading && (
+                        <h3 className="font-display text-base sm:text-lg font-bold text-neutral-950 tracking-tight pt-2">
+                          {section.heading}
+                        </h3>
+                      )}
+                      <p>{section.body}</p>
+                    </div>
+                  ))
+                : bio.map((p, i) => <p key={i}>{p}</p>)}
             </div>
 
             {member.philosophy && (

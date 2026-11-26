@@ -420,6 +420,7 @@ export type GeneralPartner = {
   summary?: string;
   intro?: string;
   bio?: string[];
+  bioSections?: { heading?: string; body: string }[];
   philosophy?: string;
   focus?: string[];
   timeline?: { company: string; role: string; years: string }[];
@@ -438,6 +439,7 @@ export type ProfilePerson = {
   intro?: string;
   summary?: string;
   bio?: string[];
+  bioSections?: { heading?: string; body: string }[];
   philosophy?: string;
   focus?: string[];
   timeline?: { company: string; role: string; years: string }[];
@@ -601,13 +603,48 @@ export const generalPartners: GeneralPartner[] = [
     ],
   },
   {
+    slug: "baraka-khan-family-office",
     name: "Baraka Khan Family Office",
     role: "Anchor Investor",
     photo: barakaPhoto,
-
+    based: "London · Dubai · South Asia",
+    summary:
+      "Bringing sovereign-grade capital, cross-border strategic expertise, and deep financial knowledge to bridge the Gulf, the UK, and the subcontinent.",
+    intro:
+      "Bringing sovereign-grade capital, cross-border strategic expertise, and deep financial knowledge to bridge the Gulf, the UK, and the subcontinent.",
     bio: [
-      "Family office set up by Mr. Iqbal Khan (Ex Founding CEO of HSBC Amanah & CEO Fajr Capital)",
-      "Represented by Ms. Somaiya Khan Piachaud & Mr. Mohammed Iqbal Khan",
+      "Baraka Khan Family Office represents a powerful presence within Mount Judi Ventures. Established by Mr. Iqbal Khan—the pioneering Founding CEO of HSBC Amanah and a Board Member and CEO of Fajr Capital—the Family Office brings a legacy of institutional leadership, deep finance expertise, and an extensive network spanning the Middle East, the UK, and South Asia. At Mount Judi Ventures, the Family Office is represented by Ms. Somaiya Khan Piachaud and Mr. Mohammed Iqbal Khan, who serve as General Partners.",
+      "Somaiya is a United Kingdom-based professional with a background spanning finance, media, and community work. She served as General Factotum at PMB Capital Limited (2015–2018) and as a Research Analyst at Edmond de Rothschild (LCF Rothschild) (2012–2015). Earlier, she was Deputy Director at the Muslim Institute (2010) and Features Editor at Emel Media (2008–2009). She holds a BA in Classics with English from King's College London.",
+      "Based in London, Mohammed serves as the Head of Business Development MENA at TTB Partners. For Mount Judi, he focuses on internationalising suitable portfolio companies in the Middle East. He was previously Product Commercialisation Officer at Notamvis. Mohammed holds a BSc (Hons) in Economics from the University of Warwick.",
+      "Together, Somaiya and Mohammed embody the Family Office's commitment to ethical, cross-border investing. Their combined expertise in finance, research, business development, and community engagement ensures that Mount Judi Ventures can support founders not just in India, but across the Gulf, the UK, and beyond—building truly global ventures rooted in sound governance and strategic capital.",
+    ],
+    bioSections: [
+      {
+        heading: "The Cross-Border Catalysts: Bridging Continents, Building Bridges",
+        body: "Baraka Khan Family Office represents a powerful presence within Mount Judi Ventures. Established by Mr. Iqbal Khan—the pioneering Founding CEO of HSBC Amanah and a Board Member and CEO of Fajr Capital—the Family Office brings a legacy of institutional leadership, deep finance expertise, and an extensive network spanning the Middle East, the UK, and South Asia. At Mount Judi Ventures, the Family Office is represented by Ms. Somaiya Khan Piachaud and Mr. Mohammed Iqbal Khan, who serve as General Partners.",
+      },
+      {
+        heading: "Somaiya Khan Piachaud",
+        body: "Somaiya is a United Kingdom-based professional with a background spanning finance, media, and community work. She served as General Factotum at PMB Capital Limited (2015–2018) and as a Research Analyst at Edmond de Rothschild (LCF Rothschild) (2012–2015). Earlier, she was Deputy Director at the Muslim Institute (2010) and Features Editor at Emel Media (2008–2009). She holds a BA in Classics with English from King's College London.",
+      },
+      {
+        heading: "Mohammed Iqbal Khan",
+        body: "Based in London, Mohammed serves as the Head of Business Development MENA at TTB Partners. For Mount Judi, he focuses on internationalising suitable portfolio companies in the Middle East. He was previously Product Commercialisation Officer at Notamvis. Mohammed holds a BSc (Hons) in Economics from the University of Warwick.",
+      },
+      {
+        body: "Together, Somaiya and Mohammed embody the Family Office's commitment to ethical, cross-border investing. Their combined expertise in finance, research, business development, and community engagement ensures that Mount Judi Ventures can support founders not just in India, but across the Gulf, the UK, and beyond—building truly global ventures rooted in sound governance and strategic capital.",
+      },
+    ],
+    focus: [
+      "Sovereign-Grade Capital",
+      "Cross-Border Strategy",
+      "Gulf · UK · Subcontinent",
+      "Ethical Investing",
+    ],
+    notable: [
+      "Founded by Mr. Iqbal Khan (Founding CEO, HSBC Amanah & CEO, Fajr Capital)",
+      "Ms. Somaiya Khan Piachaud (General Partner)",
+      "Mr. Mohammed Iqbal Khan (General Partner)",
     ],
   },
 ];

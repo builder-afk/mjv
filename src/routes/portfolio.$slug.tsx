@@ -19,7 +19,6 @@ import {
   Award,
   Users,
   Newspaper,
-  Quote,
 } from "lucide-react";
 
 export const Route = createFileRoute("/portfolio/$slug")({
@@ -781,33 +780,6 @@ function CompanyPage() {
               </div>
             )}
 
-            {/* 08 // FOUNDER TESTIMONIAL */}
-            {c.testimonial && (
-              <div>
-                <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-[#036089] font-bold mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#036089]" />
-                  <span> Founder Endorsement</span>
-                </div>
-                <div className="rounded-2xl sm:rounded-3xl border border-neutral-900 bg-neutral-950 text-white p-8 sm:p-10 relative overflow-hidden shadow-lg">
-                  <Quote
-                    aria-hidden="true"
-                    className="absolute -right-4 -bottom-4 w-32 h-32 text-white/[0.04] select-none pointer-events-none"
-                  />
-                  <blockquote className="font-serif italic text-xl sm:text-2xl text-neutral-100 leading-snug relative z-10">
-                    &ldquo;{c.testimonial.quote}&rdquo;
-                  </blockquote>
-                  <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 relative z-10">
-                    <div className="font-mono text-xs uppercase tracking-widest text-[#d9a13b] font-bold flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#d9a13b]" />
-                      <span>- {c.testimonial.author}</span>
-                    </div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400">
-                      Portfolio Company Founder
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
